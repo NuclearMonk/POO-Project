@@ -1,16 +1,27 @@
 package src.java.deck;
 
-public class Card {
-    private static final String STR_IS_INVALID = "Str is Invalid";
-    private final int value;
-    private final Suit suit;
+public class Card implements Comparable<Card>{
 
+    private static final String STR_IS_INVALID = "Str is Invalid"; // used in multiple places so a constant was created
+
+    private final int value; /* The card's face value */
+    private final Suit suit; /* The card's suit */
+
+    /* Constants to make handling weird cards easier */
     public static final int ACE = 1;
     public static final int TEN = 10;
     public static final int JACK = 11;
     public static final int QUEEN = 12;
     public static final int KING = 13;
 
+    /**
+     * Constructs a new Card object with the specified object with the specified
+     * value and suit
+     * 
+     * @param value the face value of the Card
+     * @param suit  One of the valid Suits
+     * @throws IllegalArgumentException in case the value is outside the 1-13 range
+     */
     public Card(int value, Suit suit) {
         if (value <= 0 || value > 13) {
             throw new IllegalArgumentException("Value is Invalid");
@@ -19,6 +30,13 @@ public class Card {
         this.suit = suit;
     }
 
+    /**
+     * Constructs a new Card object from a string
+     * 
+     * @param str the source string
+     * @throws IllegalArgumentException if the string doesn't match
+     *                                  ^[ATJQK2-9][CDHS]$
+     */
     public Card(String str) {
         if (null == str || str.length() != 2) {
             throw new IllegalArgumentException(STR_IS_INVALID);
@@ -74,10 +92,16 @@ public class Card {
         }
     }
 
+    /**
+     * @return the card's suit
+     */
     public Suit getSuit() {
         return suit;
     }
 
+    /**
+     * @return the card's value
+     */
     public int getValue() {
         return value;
     }
@@ -107,6 +131,9 @@ public class Card {
         return true;
     }
 
+    /**
+     * @return String a string that matches ^[ATJQK2-9][CDHS]$
+     */
     @Override
     public String toString() {
         String output = "";
@@ -132,5 +159,15 @@ public class Card {
         }
         return output + suit.getShorthand();
     }
+
+    @Override
+    public int compareTo(Card otherCard) {
+        int compValue = this.value - otherCard.value;
+        if(compValue==0)return 0;
+        if(this.value == ACE)return 1;
+        if(otherCard.value == ACE)return -1;
+        return compValue;
+    }
+
 
 }

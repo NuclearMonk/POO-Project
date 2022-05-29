@@ -20,6 +20,11 @@ public class Deck {
 		Collections.shuffle(this.cards);
 	}
 
+	public void sort()
+	{
+		Collections.sort(this.cards);
+	}
+
 	public List<Card> drawCard(int numberOfCards) {
 		if (this.numberOfRemainingCards() - numberOfCards < 0)
 			throw new IllegalArgumentException("Deck does not have enough cards");
