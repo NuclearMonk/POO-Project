@@ -28,6 +28,11 @@ public class Deck {
 		return drawedCards;
 	}
 
+	@Override
+	public String toString() {
+		return "Deck [cards=" + cards + "]";
+	}
+
 	public int numberOfRemainingCards() {
 		return this.cards.size();
 	}
