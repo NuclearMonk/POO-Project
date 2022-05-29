@@ -15,11 +15,13 @@ public class Deck {
 		}
 	}
 
-	public void shuffle()
-	{
+	public void shuffle() {
 		Collections.shuffle(this.cards);
 	}
+
 	public ArrayList<Card> drawCard(int N) {
+		if (this.numberOfRemainingCards() - N < 0)
+			throw new IllegalArgumentException("Deck does not have enough cards");
 		ArrayList<Card> drawedCards = new ArrayList<Card>();
 		for (int i = 0; i < N; i++) {
 			drawedCards.add(this.cards.get(0));
