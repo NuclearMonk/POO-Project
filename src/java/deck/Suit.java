@@ -16,14 +16,14 @@ public enum Suit {
         return shorthand;
     }
 
-    public static Suit shorthandToSuit(char c) {
+    public static Suit shorthandToSuit(char character) {
         for (Suit suit : Suit.values()) {
-            if(suit.shorthand == c)
+            if(suit.shorthand == character)
             {
                 return suit;
             }
         }
-        throw new IllegalArgumentException("c is invalid, not a shorthand for a valid suit");
+        throw new IllegalArgumentException("character is invalid, not a shorthand for a valid suit");
     }
 
 }

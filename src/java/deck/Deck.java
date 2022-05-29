@@ -2,9 +2,10 @@ package src.java.deck;
 
 import java.util.ArrayList; // import the ArrayList class
 import java.util.Collections;
+import java.util.List;
 
 public class Deck {
-	private ArrayList<Card> cards = new ArrayList<Card>();
+	private ArrayList<Card> cards = new ArrayList<>();
 
 	public Deck() {
 		for (Suit suit : Suit.values()) {
@@ -19,20 +20,20 @@ public class Deck {
 		Collections.shuffle(this.cards);
 	}
 
-	public ArrayList<Card> drawCard(int N) {
-		if (this.numberOfRemainingCards() - N < 0)
+	public List<Card> drawCard(int numberOfCards) {
+		if (this.numberOfRemainingCards() - numberOfCards < 0)
 			throw new IllegalArgumentException("Deck does not have enough cards");
-		ArrayList<Card> drawedCards = new ArrayList<Card>();
-		for (int i = 0; i < N; i++) {
-			drawedCards.add(this.cards.get(0));
+		ArrayList<Card> drawnCards = new ArrayList<>();
+		for (int i = 0; i < numberOfCards; i++) {
+			drawnCards.add(this.cards.get(0));
 			this.cards.remove(0);
 		}
-		return drawedCards;
+		return drawnCards;
 	}
 
 	@Override
 	public String toString() {
-		return "Deck [cards=" + cards + "]";
+		return "Deck=" + cards;
 	}
 
 	public int numberOfRemainingCards() {
