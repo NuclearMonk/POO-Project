@@ -1,3 +1,6 @@
 /Card.class
 /Suit.class
 /Deck.class
+/DebugDeck.class
+/StandardDeck.class
+/Hand.class
