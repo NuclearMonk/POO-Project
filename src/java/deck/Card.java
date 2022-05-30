@@ -1,5 +1,8 @@
 package src.java.deck;
 
+/**
+ * Class for a standard playing card
+ */
 public class Card implements Comparable<Card> {
 
     private static final String STR_IS_INVALID = "Str is Invalid"; // used in multiple places so a constant was created
@@ -106,8 +109,7 @@ public class Card implements Comparable<Card> {
         return value;
     }
 
-    
-    /** 
+    /**
      * @return int
      */
     @Override
@@ -119,8 +121,7 @@ public class Card implements Comparable<Card> {
         return result;
     }
 
-    
-    /** 
+    /**
      * @param obj
      * @return boolean
      */
@@ -169,8 +170,7 @@ public class Card implements Comparable<Card> {
         return output + suit.getShorthand();
     }
 
-    
-    /** 
+    /**
      * @param otherCard
      * @return int
      */

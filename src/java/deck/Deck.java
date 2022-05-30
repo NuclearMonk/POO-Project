@@ -4,9 +4,15 @@ import java.util.ArrayList; // import the ArrayList class
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * A Class that holds a deck of cards
+ */
 public abstract class Deck {
 	protected ArrayList<Card> cards = new ArrayList<>();
 
+	/**
+	 * Shuffles the deck
+	 */
 	public void shuffle() {
 		Collections.shuffle(this.cards);
 	}
@@ -15,8 +21,7 @@ public abstract class Deck {
 		Collections.sort(this.cards);
 	}
 
-	
-	/** 
+	/**
 	 * @param numberOfCards
 	 * @return List<Card>
 	 */
@@ -31,8 +36,7 @@ public abstract class Deck {
 		return drawnCards;
 	}
 
-	
-	/** 
+	/**
 	 * @return String
 	 */
 	@Override
@@ -40,8 +44,7 @@ public abstract class Deck {
 		return "Deck=" + cards;
 	}
 
-	
-	/** 
+	/**
 	 * @return int
 	 */
 	public int numberOfRemainingCards() {

@@ -9,8 +9,10 @@ import src.java.deck.DebugDeck;
 import src.java.deck.Deck;
 import src.java.deck.StandardDeck;
 
+/**
+ * Main Class
+ */
 public class Main {
-
 	/**
 	 * @param args
 	 */

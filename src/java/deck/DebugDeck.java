@@ -6,9 +6,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ * A debug File input based deck
+ */
 public class DebugDeck extends Deck {
     /**
      * Constructs a new deck of from a card file
+     * 
      * @param file the file to be read
      * @throws FileNotFoundException if the scanner fails to find the file
      */

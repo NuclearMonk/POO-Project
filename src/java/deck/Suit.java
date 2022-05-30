@@ -1,5 +1,8 @@
 package src.java.deck;
 
+/**
+ * 
+ */
 public enum Suit {
     CLUBS('C'),
     DIAMONDS('D'),
@@ -18,8 +21,7 @@ public enum Suit {
 
     public static Suit shorthandToSuit(char character) {
         for (Suit suit : Suit.values()) {
-            if(suit.shorthand == character)
-            {
+            if (suit.shorthand == character) {
                 return suit;
             }
         }

@@ -1,4 +1,4 @@
-package src.tests.deck;
+package test.deck;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
@@ -8,9 +8,15 @@ import org.junit.Test;
 import src.java.deck.Card;
 import src.java.deck.Suit;
 
+/**
+ * A class fpr holding tests related to card behavior
+ */
 public class CardTests {
 
     @Test
+    /**
+     * A simple test
+     */
     public void aceOfClubsIsAC() {
         assertEquals(new Card(Card.ACE, Suit.CLUBS).toString(), "AC");
     }
