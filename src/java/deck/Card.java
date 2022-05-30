@@ -23,7 +23,7 @@ public class Card implements Comparable<Card> {
     public static final int JACK = 11;
     /** QUEEN Card */
     public static final int QUEEN = 12;
-    /** QUEEN Card */
+    /** KING Card */
     public static final int KING = 13;
 
     /**
