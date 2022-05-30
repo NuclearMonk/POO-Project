@@ -122,8 +122,8 @@ public class Card implements Comparable<Card> {
     }
 
     /**
-     * @param obj
-     * @return boolean
+     * @param obj the object to compare with
+     * @return boolean wether or not the object is the same
      */
     @Override
     public boolean equals(Object obj) {

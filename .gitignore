@@ -4,3 +4,4 @@ POO-Project.jar
 .project
 .vscode/settings.json
 javadoc
+generate-docs.bat
