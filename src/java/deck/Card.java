@@ -6,15 +6,24 @@ package src.java.deck;
 public class Card implements Comparable<Card> {
 
     private static final String STR_IS_INVALID = "Str is Invalid"; // used in multiple places so a constant was created
+    /**REGEX Expression that matches valid card string representations */
     public static final String CARD_REGEX = "[ATJQK2-9][CDHS]";
 
     private final int value; /* The card's face value */
     private final Suit suit; /* The card's suit */
-    /* Constants to make handling weird cards easier */
+
+    /*
+     * Constants to make handling weird cards easier
+     */
+    /** ACE Card */
     public static final int ACE = 1;
+    /** 10 Card */
     public static final int TEN = 10;
+    /** JACK Card */
     public static final int JACK = 11;
+    /** QUEEN Card */
     public static final int QUEEN = 12;
+    /** QUEEN Card */
     public static final int KING = 13;
 
     /**
@@ -171,8 +180,8 @@ public class Card implements Comparable<Card> {
     }
 
     /**
-     * @param otherCard
-     * @return int
+     * @param otherCard the other Card to be compared with
+     * @return int positive if bigger, negative if smaller
      */
     @Override
     public int compareTo(Card otherCard) {

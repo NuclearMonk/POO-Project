@@ -15,11 +15,21 @@ public enum Suit {
         this.shorthand = shorthand;
     }
 
+    /**
+     * 
+     * @return The Shorthand char that represents the Suit
+     */
     public char getShorthand() {
         return shorthand;
     }
 
-    public static Suit shorthandToSuit(char character) {
+    /**
+     * Convert a char to a valid suit
+     * @param character the character to be converted
+     * @return the suit
+     * @throws IllegalArgumentException if the character is not shorthand for a known suit
+     */
+    public static Suit shorthandToSuit(char character){
         for (Suit suit : Suit.values()) {
             if (suit.shorthand == character) {
                 return suit;

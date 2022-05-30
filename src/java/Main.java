@@ -14,7 +14,7 @@ import src.java.deck.StandardDeck;
  */
 public class Main {
 	/**
-	 * @param args
+	 * @param args command line arguments
 	 */
 	public static void main(String[] args) {
 		Deck deck1 = new StandardDeck();
