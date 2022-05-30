@@ -1,12 +1,12 @@
 package src.java.deck;
 
-public class Card implements Comparable<Card>{
+public class Card implements Comparable<Card> {
 
     private static final String STR_IS_INVALID = "Str is Invalid"; // used in multiple places so a constant was created
+    public static final String CARD_REGEX = "[ATJQK2-9][CDHS]";
 
     private final int value; /* The card's face value */
     private final Suit suit; /* The card's suit */
-
     /* Constants to make handling weird cards easier */
     public static final int ACE = 1;
     public static final int TEN = 10;
@@ -106,6 +106,10 @@ public class Card implements Comparable<Card>{
         return value;
     }
 
+    
+    /** 
+     * @return int
+     */
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -115,6 +119,11 @@ public class Card implements Comparable<Card>{
         return result;
     }
 
+    
+    /** 
+     * @param obj
+     * @return boolean
+     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -160,14 +169,21 @@ public class Card implements Comparable<Card>{
         return output + suit.getShorthand();
     }
 
+    
+    /** 
+     * @param otherCard
+     * @return int
+     */
     @Override
     public int compareTo(Card otherCard) {
         int compValue = this.value - otherCard.value;
-        if(compValue==0)return 0;
-        if(this.value == ACE)return 1;
-        if(otherCard.value == ACE)return -1;
+        if (compValue == 0)
+            return 0;
+        if (this.value == ACE)
+            return 1;
+        if (otherCard.value == ACE)
+            return -1;
         return compValue;
     }
-
 
 }
