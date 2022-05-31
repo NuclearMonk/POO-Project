@@ -2,13 +2,14 @@ package src.java;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
-import src.java.deck.Card;
-import src.java.deck.DebugDeck;
-import src.java.deck.Deck;
-import src.java.deck.Hand;
-import src.java.deck.StandardDeck;
+import src.java.poker.card.Card;
+import src.java.poker.deck.DebugDeck;
+import src.java.poker.deck.Deck;
+import src.java.poker.deck.Hand;
+import src.java.poker.deck.StandardDeck;
 
 /**
  * Main Class
@@ -20,11 +21,16 @@ public class Main {
 	public static void main(String[] args) {
 		Deck deck1 = new StandardDeck();
 		deck1.shuffle();
-		Hand hand1 = new Hand(deck1.drawCard(5));
+		Hand hand1 = new Hand(deck1);
 		System.out.println(deck1.numberOfRemainingCards());
-		int[] A = {1,2,3,4};
+		ArrayList<Integer> indexes = new ArrayList<>(0);
+		indexes.add(1);
+		indexes.add(2);
+		indexes.add(3);
+		indexes.add(4);
+
 		System.out.println(hand1.toString());
-		hand1.replaceCards(deck1,A);
+		hand1.replaceCards(deck1,indexes);
 		System.out.println(hand1.toString());
 		System.out.println(deck1.numberOfRemainingCards());
 		

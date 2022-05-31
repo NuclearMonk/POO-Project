@@ -1,4 +1,4 @@
-package src.java.deck;
+package src.java.poker.card;
 
 /**
  * Class for a standard playing card

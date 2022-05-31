@@ -1,10 +1,12 @@
-package src.java.deck;
+package src.java.poker.deck;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Pattern;
+
+import src.java.poker.card.Card;
 
 /**
  * A debug File input based deck

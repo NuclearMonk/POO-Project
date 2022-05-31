@@ -5,8 +5,8 @@ import static org.junit.Assert.assertThrows;
 
 import org.junit.Test;
 
-import src.java.deck.Card;
-import src.java.deck.Suit;
+import src.java.poker.card.Card;
+import src.java.poker.card.Suit;
 /**
  * A class fpr holding tests related to card behavior
  */

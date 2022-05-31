@@ -1,4 +1,7 @@
-package src.java.deck;
+package src.java.poker.deck;
+
+import src.java.poker.card.Card;
+import src.java.poker.card.Suit;
 
 /**
  * A Standard 52 Card Deck
