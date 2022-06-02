@@ -91,6 +91,6 @@ public class Hand {
 	 */
 
 	private static boolean isValidIndex(int index) {
-		return index >= 0 && index < HAND_SIZE;
+		return index >= 0 && index < HAND_SIZE-1;
 	}
 }
