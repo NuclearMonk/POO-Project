@@ -1,4 +1,4 @@
-package src.java.poker.deck;
+package src.java.poker.player;
 
 import java.util.ArrayList; // Import the ArrayList Class
 import java.util.Arrays;
@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import src.java.poker.card.Card; //Import the card class 
+import src.java.poker.deck.Deck;
+import src.java.poker.deck.OutOfCardsException;
 
 /**
  * A Class that is a hand of 5 cards
@@ -49,7 +51,7 @@ public class Hand {
 			throw new IndexOutOfBoundsException("index is out of bounds");
 		if (null == newCard)
 			throw new NullPointerException("newCard is invalid");
-		this.cards[index] = newCard;
+		this.cards[index-1] = newCard;
 	}
 
 	/**
@@ -91,6 +93,6 @@ public class Hand {
 	 */
 
 	private static boolean isValidIndex(int index) {
-		return index >= 0 && index < HAND_SIZE;
+		return index > 0 && index <= HAND_SIZE;
 	}
 }
