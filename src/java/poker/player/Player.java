@@ -15,7 +15,7 @@ public abstract class Player {
         this.balance = balance;
     }
 
-    protected int currentBet;
+    protected int currentBet = 5;
 
     public int getCurrentBet() {
         return currentBet;

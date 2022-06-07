@@ -19,12 +19,13 @@ public class DebugDeck extends Deck {
      * @throws FileNotFoundException if the scanner fails to find the file
      */
     public DebugDeck(File file) throws FileNotFoundException {
+        Pattern pattern = Pattern.compile(Card.CARD_REGEX);
         this.cards = new ArrayList<>();
         Scanner scanner;
         try {
             scanner = new Scanner(file);
-            while (scanner.hasNext(Pattern.compile(Card.CARD_REGEX))) {
-                String token = scanner.next(Pattern.compile(Card.CARD_REGEX));
+            while (scanner.hasNext(pattern)) {
+                String token = scanner.next(pattern);
                 Card card = new Card(token);
                 this.cards.add(card);
             }

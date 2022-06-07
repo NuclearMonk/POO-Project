@@ -84,7 +84,11 @@ public class Hand {
 	 */
 	@Override
 	public String toString() {
-		return "Hand = " + Arrays.toString(this.cards);
+		String output = "";
+		for (Card card : this.cards) {
+			output += card + " ";
+		}
+		return output.trim();
 	}
 	/**
 	 * Private method to check whether the index is valid or not 
@@ -94,5 +98,27 @@ public class Hand {
 
 	private static boolean isValidIndex(int index) {
 		return index > 0 && index <= HAND_SIZE;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(cards);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Hand other = (Hand) obj;
+		if (!Arrays.equals(cards, other.cards))
+			return false;
+		return true;
 	}
 }

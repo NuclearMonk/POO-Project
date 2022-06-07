@@ -1,6 +1,7 @@
 package src.java.poker.app;
 
 import src.java.poker.deck.Deck;
+import src.java.poker.deck.OutOfCardsException;
 import src.java.poker.player.DebugPlayer;
 import src.java.poker.player.Hand;
 import src.java.poker.player.Player;
@@ -35,11 +36,19 @@ public class App {
     }
 
     public void run() {
-        player = new DebugPlayer();
-        for (int i = 0; i < 3; i++) {
-            PlayerAction action = player.getAction();
+        while (true) {
+            PlayerAction action = this.player.getAction();
             /* TODO add checks */
-            action.doAction(this);
+            try {
+                action.doAction(this);
+            } catch (OutOfCardsException e) {
+                System.out.println("Deck is out of cards");
+                break;
+            }
+            catch(NullPointerException e)
+            {
+                break;
+            }
         }
 
         /* TODO add after action game related checks */
