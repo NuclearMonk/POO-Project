@@ -4,3 +4,4 @@
 /DebugDeck.class
 /StandardDeck.class
 /Hand.class
+/OutOfCardsException.class
