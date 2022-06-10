@@ -1,4 +1,4 @@
-package src.java.poker.player;
+package src.java.poker.app.hand;
 
 import java.util.ArrayList; // Import the ArrayList Class
 import java.util.Arrays;
@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import src.java.poker.card.Card; //Import the card class 
+import src.java.poker.card.Suit;
 import src.java.poker.deck.Deck;
 import src.java.poker.deck.OutOfCardsException;
 
@@ -29,10 +30,25 @@ public class Hand {
 	 */
 	public Hand(Deck deck) throws NullPointerException, OutOfCardsException {
 		if (null == deck)
-			throw new NullPointerException("deck is invalid");
+			throw new NullPointerException("deck is null");
 		this.cards = new Card[HAND_SIZE];
 		for (int i = 0; i < cards.length; i++) {
 			cards[i] = deck.draw();
+		}
+	}
+
+	public Hand(String string) throws NullPointerException
+	{
+		if(null== string)
+		{
+			throw new NullPointerException("string is null");
+		}
+		this.cards = new Card[HAND_SIZE];
+		String[] cardStrings = string.split("[ ]");
+		System.out.println(cardStrings.length);
+		if(cardStrings.length != HAND_SIZE)throw new IllegalArgumentException();
+		for (int i = 0; i < cards.length; i++) {
+			cards[i] = new Card(cardStrings[i]);
 		}
 	}
 
@@ -84,11 +100,12 @@ public class Hand {
 	 */
 	@Override
 	public String toString() {
-		String output = "";
+		StringBuilder output = new StringBuilder();
 		for (Card card : this.cards) {
-			output += card + " ";
+			
+			output.append(card + " ");
 		}
-		return output.trim();
+		return output.toString().trim();
 	}
 	/**
 	 * Private method to check whether the index is valid or not 
@@ -100,6 +117,57 @@ public class Hand {
 		return index > 0 && index <= HAND_SIZE;
 	}
 
+	
+	public List<Card> findCards(Integer value)
+	{
+		ArrayList<Card> returnValue = new ArrayList<>();
+		for (Card card : this.cards) {
+			if(card.getValue()== value)
+			{
+				returnValue.add(card);
+			}
+		}
+		return returnValue;
+	}
+
+
+	public List<Card> findCards(Suit suit)
+	{
+		ArrayList<Card> returnValue = new ArrayList<>();
+		for (Card card : this.cards) {
+			if(card.getSuit().equals(suit))
+			{
+				returnValue.add(card);
+			}
+		}
+		return returnValue;
+	}
+
+	public List<Card> findCards(Integer value, Suit suit)
+	{
+		ArrayList<Card> returnValue = new ArrayList<>();
+		for (Card card : this.cards) {
+			if(card.getSuit().equals(suit) && value == card.getValue())
+			{
+				returnValue.add(card);
+			}
+		}
+		return returnValue;
+	}
+
+	public Card getCardByIndex(Integer index)
+	{
+		return cards[index];
+	}
+
+	public List<Card> cardsAsList()
+	{	
+		ArrayList<Card> returnValue = new ArrayList<>();
+		for (Card card : this.cards) {
+			returnValue.add(card);
+		}
+		return returnValue;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

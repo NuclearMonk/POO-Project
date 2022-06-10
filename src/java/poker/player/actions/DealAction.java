@@ -2,7 +2,7 @@ package src.java.poker.player.actions;
 
 
 import src.java.poker.app.App;
-import src.java.poker.player.Hand;
+import src.java.poker.app.hand.Hand;
 
 public class DealAction implements PlayerAction {
 

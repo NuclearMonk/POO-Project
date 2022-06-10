@@ -13,11 +13,9 @@ import src.java.poker.player.actions.PlayerAction;
 import src.java.poker.player.actions.SetBetAmountAction;
 
 public class DebugPlayer extends Player {
-    private File inputFile;
     private Scanner scanner;
 
     public DebugPlayer(File inputFile) {
-        this.inputFile = inputFile;
         try {
             this.scanner = new Scanner(inputFile);
         } catch (FileNotFoundException e) {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import src.java.poker.app.App;
-import src.java.poker.player.Hand;
+import src.java.poker.app.hand.Hand;
 
 public class HoldCardsAction implements PlayerAction {
     private List<Integer> indexes;
@@ -27,5 +27,6 @@ public class HoldCardsAction implements PlayerAction {
         }
         app.getHand().replaceCards(app.getDeck(), swapIndexes);
         System.out.println("player's Hand " + app.getHand());
+        app.checkHandState();
     }
 }

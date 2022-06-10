@@ -1,6 +1,5 @@
 package src.java.poker.player;
 
-import src.java.poker.app.App;
 import src.java.poker.player.actions.PlayerAction;
 
 public abstract class Player {

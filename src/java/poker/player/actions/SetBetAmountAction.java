@@ -1,7 +1,6 @@
 package src.java.poker.player.actions;
 
 import src.java.poker.app.App;
-import src.java.poker.player.Player;
 
 public class SetBetAmountAction implements PlayerAction {
     private Integer amountToSet;
