@@ -2,7 +2,7 @@ package src.java.poker.app;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognizer;
-import src.java.poker.app.hand.recognition.countbased.PairRecognizer;
+import src.java.poker.app.hand.recognition.countbased.TwoOfAKindRecognizer;
 import src.java.poker.deck.Deck;
 import src.java.poker.deck.OutOfCardsException;
 import src.java.poker.player.Player;
@@ -57,11 +57,5 @@ public class App {
 
     public void checkHandState()
     {
-        //TODO add propper checks, this is just a proof of concept
-        HandRecognizer pair = new PairRecognizer();
-        if(pair.recognizeHand(this.hand))
-        {
-            System.out.println("Player Has a Pair"); //TODo TODO this is bad OOP the pair property should prpbably be part of the PAIR recognizer
-        }
     }
 }
