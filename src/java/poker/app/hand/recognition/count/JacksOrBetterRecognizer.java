@@ -1,16 +1,13 @@
-package src.java.poker.app.hand.recognition.countbased;
+package src.java.poker.app.hand.recognition.count;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
 
-public class RangedFourOfAKindRecognizer extends FourOfAKindRecognizer {
-    private int lowValue;
-    private int highValue;
+public class JacksOrBetterRecognizer extends TwoOfAKindRecognizer {
 
-    public RangedFourOfAKindRecognizer(int lowValue, int highValue) {
-        this.lowValue = lowValue;
-        this.highValue = highValue;
+    public JacksOrBetterRecognizer() {
+        super("JACKS OR BETTER", 1);
     }
 
     @Override
@@ -18,9 +15,8 @@ public class RangedFourOfAKindRecognizer extends FourOfAKindRecognizer {
         HandRecognitionResult result = super.recognizeHand(hand);
         if (!result.isResult())
             return result;
-        if (result.getDefiningCard().getValue() < lowValue || result.getDefiningCard().getValue() > highValue)
+        if (result.getDefiningCard().getValue() < Card.JACK && result.getDefiningCard().getValue() != Card.ACE)
             return new HandRecognitionResult(false, null);
         return result;
     }
-
 }

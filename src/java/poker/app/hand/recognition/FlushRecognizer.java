@@ -8,6 +8,10 @@ import src.java.poker.card.Card;
 import src.java.poker.card.Suit;
 
 public class FlushRecognizer extends HandRecognizer {
+    public FlushRecognizer() {
+        super("FLUSH", 7);
+    }
+
     /**
      * Recognizing Where all 5 cards same the same suit
      */

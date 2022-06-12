@@ -1,4 +1,4 @@
-package src.java.poker.app.hand.recognition.countbased;
+package src.java.poker.app.hand.recognition.count;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
@@ -8,10 +8,13 @@ import src.java.poker.card.Card;
 public abstract class OfAKindRecognizer extends HandRecognizer{
     protected int count;
 
-    protected OfAKindRecognizer(int count) {
+
+
+    protected OfAKindRecognizer(String handName, int rewardMultiplier, int count) {
+        super(handName, rewardMultiplier);
         this.count = count;
     }
-
+    
     @Override
     public HandRecognitionResult recognizeHand(Hand hand) {
         Boolean result = false;

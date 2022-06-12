@@ -162,11 +162,7 @@ public class Hand {
 
 	public List<Card> cardsAsList()
 	{	
-		ArrayList<Card> returnValue = new ArrayList<>();
-		for (Card card : this.cards) {
-			returnValue.add(card);
-		}
-		return returnValue;
+		return Arrays.asList(this.cards);
 	}
 	@Override
 	public int hashCode() {
