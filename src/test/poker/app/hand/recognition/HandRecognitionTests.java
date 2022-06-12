@@ -42,6 +42,8 @@ public class HandRecognitionTests {
         assertEquals(false, recognizer.recognizeHand(hand).isResult());
         hand = new Hand("AH AD JS JC JD");
         assertEquals(false, recognizer.recognizeHand(hand).isResult());
+        hand = new Hand("AS AC JH JD KD");
+        assertEquals(false, recognizer.recognizeHand(hand).isResult());
     }
 
     @Test

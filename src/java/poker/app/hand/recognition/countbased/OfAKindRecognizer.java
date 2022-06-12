@@ -20,6 +20,10 @@ public abstract class OfAKindRecognizer extends HandRecognizer{
             Integer handCount = hand.findCards(hand.getCardByIndex(i).getValue()).size();
             if(handCount==this.count)
             {
+                if(null!=definingCard && definingCard.getValue()!= hand.getCardByIndex(i).getValue())
+                {
+                    return new HandRecognitionResult(false, definingCard);
+                }
                 definingCard = hand.getCardByIndex(i); 
                 result = true;
             }
