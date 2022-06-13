@@ -29,18 +29,29 @@ public class App {
 
     private Deck deck;
 
-    private Hand hand;
-
-    public Hand getHand() {
-        return hand;
+    public Deck getDeck() {
+        return deck;
     }
+
+    private Hand hand;
 
     public void setHand(Hand hand) {
         this.hand = hand;
     }
 
-    public Deck getDeck() {
-        return deck;
+    public Hand getHand() {
+        return hand;
+    }
+
+    private int ongoingBetAmount =0;
+    
+
+    public int getOngoingBetAmount() {
+        return ongoingBetAmount;
+    }
+
+    public void setOngoingBetAmount(int ongoingBetAmount) {
+        this.ongoingBetAmount = ongoingBetAmount;
     }
 
     private ArrayList<HandRecognizer> recognizers;
@@ -79,10 +90,10 @@ public class App {
         /* TODO add after action game related checks */
     }
 
-    public void checkHandState() {
+    public void afterRoundProcessing() {
         for (HandRecognizer handRecognizer : recognizers) {
             if (handRecognizer.recognizeHand(this.hand).isResult()) {
-                this.player.creditReward(handRecognizer.getRewardMultiplier() * player.getCurrentBet());
+                this.player.creditReward(handRecognizer.getRewardMultiplier() * ongoingBetAmount);
                 System.out.println("Player Wins with " + handRecognizer.getHandName() + " and his credit is: "
                         + this.player.getBalance());
                 return;
