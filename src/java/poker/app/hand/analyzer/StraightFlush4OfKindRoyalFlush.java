@@ -14,10 +14,10 @@ import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class StraightFlush4OfKindRoyalFlush extends HandAnalyzer implements HandAction {
+public class StraightFlush4OfKindRoyalFlush extends HandRecognizer implements HandAction {
 
 	public StraightFlush4OfKindRoyalFlush() {
-		super("Straight flush, four of a kind, royal flush");
+		super("Straight flush, four of a kind, royal flush", 0);
 	}
 
 	@Override

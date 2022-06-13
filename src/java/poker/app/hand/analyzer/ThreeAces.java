@@ -10,10 +10,10 @@ import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class ThreeAces extends HandAnalyzer implements HandAction {
+public class ThreeAces extends HandRecognizer implements HandAction {
 
 	public ThreeAces() {
-		super("Three of Aces");
+		super("Three of Aces", 0);
 	}
 
 	@Override

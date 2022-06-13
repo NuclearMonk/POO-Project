@@ -6,15 +6,17 @@ import java.util.List;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.FlushRecognizer;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
+import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.app.hand.recognition.multiple.FullHouseRecognizer;
 import src.java.poker.app.hand.recognition.sequence.StraightRecognizer;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class StraightOrFlushFullHouse extends HandAnalyzer implements HandAction {
+public class StraightOrFlushFullHouse extends HandRecognizer implements HandAction {
 
 	public StraightOrFlushFullHouse() {
-		super("Straight, flush, full house");
+		super("Straight, flush, full house", 0);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
