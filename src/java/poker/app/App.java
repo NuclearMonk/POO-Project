@@ -49,6 +49,7 @@ public class App {
     }
 
     public void setOngoingBetAmount(int ongoingBetAmount) {
+        //TODO add a safeguard to not player change bet willy nilly
         this.ongoingBetAmount = ongoingBetAmount;
     }
 
