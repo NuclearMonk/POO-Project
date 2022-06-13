@@ -16,7 +16,7 @@ public abstract class Player {
 
     protected int currentBet = 5;
 
-    public Player(int balance) {
+    protected Player(int balance) {
         this.balance = balance;
     }
 
@@ -28,14 +28,14 @@ public abstract class Player {
         this.currentBet = currentBet;
     }
 
-    public void chargeBetAmount()
+    public void chargeBetAmount(int amount)
     {
-        this.balance -= currentBet;
+        this.balance -= amount;
     }
 
-    public void creditReward(int value)
+    public void creditReward(int amount)
     {
-        this.balance+=value;
+        this.balance+=amount;
     }
 
     public abstract PlayerAction getAction();

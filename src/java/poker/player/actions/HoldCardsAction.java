@@ -27,6 +27,6 @@ public class HoldCardsAction implements PlayerAction {
         }
         app.getHand().replaceCards(app.getDeck(), swapIndexes);
         System.out.println("player's Hand " + app.getHand());
-        app.checkHandState();
+        app.afterRoundProcessing();
     }
 }
