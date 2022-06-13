@@ -16,7 +16,6 @@ import src.java.poker.app.hand.recognition.sequence.RoyalFlushRecognizer;
 import src.java.poker.app.hand.recognition.sequence.StraightFlushRecognizer;
 import src.java.poker.app.hand.recognition.sequence.StraightRecognizer;
 import src.java.poker.deck.Deck;
-import src.java.poker.deck.OutOfCardsException;
 import src.java.poker.player.Player;
 import src.java.poker.player.actions.PlayerAction;
 
@@ -43,8 +42,7 @@ public class App {
         return hand;
     }
 
-    private int ongoingBetAmount =0;
-    
+    private int ongoingBetAmount = 0;
 
     public int getOngoingBetAmount() {
         return ongoingBetAmount;
@@ -74,20 +72,14 @@ public class App {
     }
 
     public void run() {
-        while (true) {
-            PlayerAction action = this.player.getAction();
-            /* TODO add checks */
-            try {
+        PlayerAction action;
+        do {
+            action = this.player.getAction();
+            if(null != action)
+            {
                 action.doAction(this);
-            } catch (OutOfCardsException e) {
-                System.out.println("Deck is out of cards");
-                break;
-            } catch (NullPointerException e) {
-                break;
             }
-        }
-
-        /* TODO add after action game related checks */
+        } while (null!=action);
     }
 
     public void afterRoundProcessing() {

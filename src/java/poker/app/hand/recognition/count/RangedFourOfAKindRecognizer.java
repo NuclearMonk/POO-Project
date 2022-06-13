@@ -2,7 +2,6 @@ package src.java.poker.app.hand.recognition.count;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
-import src.java.poker.card.Card;
 
 public class RangedFourOfAKindRecognizer extends FourOfAKindRecognizer {
     private int lowValue;

@@ -9,12 +9,9 @@ import src.java.poker.app.hand.recognition.FlushRecognizer;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.app.hand.recognition.count.Four24Recognizer;
 import src.java.poker.app.hand.recognition.count.FourAcesRecognizer;
-import src.java.poker.app.hand.recognition.count.FourOfAKindRecognizer;
 import src.java.poker.app.hand.recognition.count.JacksOrBetterRecognizer;
 import src.java.poker.app.hand.recognition.count.ThreeOfARecognizer;
-import src.java.poker.app.hand.recognition.count.TwoOfAKindRecognizer;
 import src.java.poker.app.hand.recognition.multiple.FullHouseRecognizer;
-import src.java.poker.app.hand.recognition.multiple.MultipleMatchRecognizer;
 import src.java.poker.app.hand.recognition.multiple.TwoPairRecognizer;
 import src.java.poker.app.hand.recognition.sequence.RoyalFlushRecognizer;
 import src.java.poker.app.hand.recognition.sequence.StraightFlushRecognizer;
@@ -137,7 +134,7 @@ public class HandRecognitionTests {
     }
 
     @Test
-    public void TwoPairRecognizerTests() {
+    public void twoPairRecognizerTests() {
         HandRecognizer recognizer = new TwoPairRecognizer();
         Hand hand = new Hand("JH JC 2S 2C 4D");
         assertEquals(true, recognizer.recognizeHand(hand).isResult());
@@ -156,7 +153,7 @@ public class HandRecognitionTests {
     }
 
     @Test
-    public void FullHouseRecognizerTests() {
+    public void fullHouseRecognizerTests() {
         HandRecognizer recognizer = new FullHouseRecognizer();
         Hand hand = new Hand("JH JC 2S 2C 4D");
         assertEquals(false, recognizer.recognizeHand(hand).isResult());
@@ -172,7 +169,7 @@ public class HandRecognitionTests {
     }
 
     @Test
-    public void StraightRecognizerTests() {
+    public void straightRecognizerTests() {
         HandRecognizer recognizer = new StraightRecognizer();
         Hand hand = new Hand("JH JC 3S 3C 4D");
         assertEquals(false, recognizer.recognizeHand(hand).isResult());
@@ -195,7 +192,7 @@ public class HandRecognitionTests {
     }
 
     @Test
-    public void StraightFlushRecognizerTests() {
+    public void straightFlushRecognizerTests() {
         HandRecognizer recognizer = new StraightFlushRecognizer();
         Hand hand = new Hand("JH JC 3S 3C 4D");
         assertEquals(false, recognizer.recognizeHand(hand).isResult());
@@ -223,7 +220,7 @@ public class HandRecognitionTests {
         assertEquals(false, recognizer.recognizeHand(hand).isResult());
     }
     @Test
-    public void RoyalFlushRecognizerTests() {
+    public void royalFlushRecognizerTests() {
         HandRecognizer recognizer = new RoyalFlushRecognizer();
         Hand hand = new Hand("3C 4C 5C 6C 7C");
         assertEquals(false, recognizer.recognizeHand(hand).isResult());
