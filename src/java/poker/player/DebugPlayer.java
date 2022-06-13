@@ -15,7 +15,8 @@ import src.java.poker.player.actions.SetBetAmountAction;
 public class DebugPlayer extends Player {
     private Scanner scanner;
 
-    public DebugPlayer(File inputFile) {
+    public DebugPlayer(File inputFile, int balance) {
+        super(balance);
         try {
             this.scanner = new Scanner(inputFile);
         } catch (FileNotFoundException e) {

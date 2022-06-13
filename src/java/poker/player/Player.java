@@ -16,6 +16,10 @@ public abstract class Player {
 
     protected int currentBet = 5;
 
+    public Player(int balance) {
+        this.balance = balance;
+    }
+
     public int getCurrentBet() {
         return currentBet;
     }
@@ -24,6 +28,15 @@ public abstract class Player {
         this.currentBet = currentBet;
     }
 
+    public void chargeBetAmount()
+    {
+        this.balance -= currentBet;
+    }
+
+    public void creditReward(int value)
+    {
+        this.balance+=value;
+    }
 
     public abstract PlayerAction getAction();
 }

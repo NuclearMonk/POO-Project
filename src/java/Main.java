@@ -19,7 +19,7 @@ public class Main {
 		File playerFile = new File("Resources\\ExampleFiles\\cmd-file.txt");
 		App app;
 		try {
-			app = new App(new DebugPlayer(playerFile), new DebugDeck(cardFile));
+			app = new App(new DebugPlayer(playerFile,10000), new DebugDeck(cardFile));
 			app.run();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

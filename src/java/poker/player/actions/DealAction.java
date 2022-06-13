@@ -11,6 +11,7 @@ public class DealAction implements PlayerAction {
         {
             throw new NullPointerException("app can't be null");
         }
+        app.getPlayer().chargeBetAmount();
         app.setHand(new Hand(app.getDeck()));
         System.out.println("player's hand " + app.getHand());
     }

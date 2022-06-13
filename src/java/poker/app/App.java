@@ -2,7 +2,6 @@ package src.java.poker.app;
 
 import java.util.ArrayList;
 
-
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.FlushRecognizer;
 import src.java.poker.app.hand.recognition.HandRecognizer;
@@ -83,6 +82,7 @@ public class App {
     public void checkHandState() {
         for (HandRecognizer handRecognizer : recognizers) {
             if (handRecognizer.recognizeHand(this.hand).isResult()) {
+                this.player.creditReward(handRecognizer.getRewardMultiplier() * player.getCurrentBet());
                 System.out.println("Player Wins with " + handRecognizer.getHandName() + " and his credit is: "
                         + this.player.getBalance());
                 return;
