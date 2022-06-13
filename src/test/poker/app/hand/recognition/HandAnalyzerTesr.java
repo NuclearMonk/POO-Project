@@ -13,7 +13,7 @@ import src.java.poker.app.hand.analyzer.ThreeOfAKindNotAce;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.app.hand.recognition.count.ThreeOfARecognizer;
 
-class HandAnalyzer {
+class HandAnalyzerTesr {
 
 	@Test
 	public void affirmativeStraightFlush4OfKindRoyalFlush() {
@@ -67,4 +67,5 @@ class HandAnalyzer {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
 }
