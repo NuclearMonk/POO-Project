@@ -138,7 +138,7 @@ public class Hand {
 		return returnValue;
 	}
 
-	public List<Integer> getCardSuit(Suit suit) {
+	public List<Integer> getCardIndex(Suit suit) {
 		ArrayList<Integer> returnValue = new ArrayList<>();
 		for (int i = 0; i < Hand.HAND_SIZE; i++) {
 			if (this.cards[i].getSuit() == suit) {

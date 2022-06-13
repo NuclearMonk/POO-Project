@@ -1,11 +1,24 @@
 package src.java.poker.app.hand.recognition.multiple;
 
-public class FullHouseRecognizer extends MultipleMatchRecognizer {
+import java.util.Arrays;
+import java.util.List;
 
-    public FullHouseRecognizer() {
-        super("FULL HOUSE", 10, 2, 3);
-    }
+import src.java.poker.app.hand.Hand;
+import src.java.poker.app.hand.analyzer.HandAction;
+import src.java.poker.player.actions.HoldCardsAction;
+import src.java.poker.player.actions.PlayerAction;
 
+public class FullHouseRecognizer extends MultipleMatchRecognizer implements HandAction {
 
-    
+	public FullHouseRecognizer() {
+		super("FULL HOUSE", 10, 2, 3);
+	}
+
+	@Override
+	public PlayerAction getAdviceAction(Hand hand) {
+
+		List<Integer> indexes = Arrays.asList(0, 1, 2, 3, 4);
+		return new HoldCardsAction(indexes);
+	}
+
 }

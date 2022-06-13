@@ -5,15 +5,16 @@ import java.util.List;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
+import src.java.poker.app.hand.recognition.count.OfAKindRecognizer;
 import src.java.poker.app.hand.recognition.count.ThreeOfARecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class ThreeOfAKindNotAce extends HandRecognizer implements HandAction {
+public class ThreeOfAKindNotAce extends OfAKindRecognizer implements HandAction {
 
 	public ThreeOfAKindNotAce() {
-		super("ThreeOfAKindNotAce", 0);
+		super("Three Of A Kind But Not Ace", 3, 3);
 		}
 
 	@Override
@@ -25,7 +26,7 @@ public class ThreeOfAKindNotAce extends HandRecognizer implements HandAction {
 
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
-		HandRecognitionResult result = new ThreeOfARecognizer().recognizeHand(hand);
+		HandRecognitionResult result = super.recognizeHand(hand);
 		if (result.isResult() && result.getDefiningCard().getValue() != Card.ACE)
 			return result;
 		else

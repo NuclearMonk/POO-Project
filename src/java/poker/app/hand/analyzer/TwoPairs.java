@@ -4,19 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.recognition.HandRecognitionResult;
-import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.app.hand.recognition.multiple.TwoPairRecognizer;
-import src.java.poker.app.hand.recognition.sequence.StraightFlushRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class TwoPairs extends HandRecognizer implements HandAction {
+public class TwoPairs extends TwoPairRecognizer implements HandAction {
 
-	protected TwoPairs() {
-		super("Two Pair", 0);
-	}
 
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
@@ -36,14 +30,6 @@ public class TwoPairs extends HandRecognizer implements HandAction {
 		}
 		indexes.addAll(hand.getCardIndex(highCardValue));
 		return new HoldCardsAction(indexes);
-	}
-
-	@Override
-	public HandRecognitionResult recognizeHand(Hand hand) {
-		HandRecognitionResult result = new TwoPairRecognizer().recognizeHand(hand);
-		if (result.isResult())
-			return result;
-		return new HandRecognitionResult(false, null);
 	}
 
 }

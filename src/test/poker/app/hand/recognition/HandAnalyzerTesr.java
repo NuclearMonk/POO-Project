@@ -6,14 +6,17 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import src.java.poker.app.hand.Hand;
+import src.java.poker.app.hand.analyzer.HighPair;
+import src.java.poker.app.hand.analyzer.LowPair;
 import src.java.poker.app.hand.analyzer.StraightFlush4OfKindRoyalFlush;
 import src.java.poker.app.hand.analyzer.StraightOrFlushFullHouse;
 import src.java.poker.app.hand.analyzer.ThreeAces;
 import src.java.poker.app.hand.analyzer.ThreeOfAKindNotAce;
+import src.java.poker.app.hand.analyzer.TwoPairs;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.app.hand.recognition.count.ThreeOfARecognizer;
 
-class HandAnalyzer {
+class HandAnalyzerTesr {
 
 	@Test
 	public void affirmativeStraightFlush4OfKindRoyalFlush() {
@@ -33,6 +36,7 @@ class HandAnalyzer {
 		hand = new Hand("AH KD 3S AC AS");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 	}
+
 	@Test
 	public void affirmativeThreeAces() {
 		HandRecognizer recognizer = new ThreeAces();
@@ -44,6 +48,7 @@ class HandAnalyzer {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
 	@Test
 	public void affirmativeStraightOrFlushFullHouse() {
 		HandRecognizer recognizer = new StraightOrFlushFullHouse();
@@ -56,6 +61,7 @@ class HandAnalyzer {
 		hand = new Hand("AH KD 3S AC AS");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 	}
+
 	@Test
 	public void affirmativeOfAKindNotAce() {
 		HandRecognizer recognizer = new ThreeOfAKindNotAce();
@@ -67,4 +73,44 @@ class HandAnalyzer {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
+	@Test
+	public void affirmativeTwoPairs() {
+		HandRecognizer recognizer = new TwoPairs();
+		Hand hand = new Hand("AH AH TH TH 5H");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KH KH KH 4H 5H");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KS KH QD QC QS");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+	}
+
+	@Test
+	public void affirmativeHighPairs() {
+		HandRecognizer recognizer = new HighPair();
+		Hand hand = new Hand("AH AH TH QH 5H");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KH KH KH 4H 5H");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("JS JH TD QC JS");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S 5H TD QC JS");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+	}
+	@Test
+	public void affirmativeLowPairs() {
+		HandRecognizer recognizer = new LowPair();
+		Hand hand = new Hand("AH AH TH TH 5H");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KH KH KH 4H 5H");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KS KH TD QC JS");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S 5H TD QC JS");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+
+	}
+
 }
