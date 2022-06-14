@@ -12,9 +12,9 @@ import src.java.poker.app.hand.recognition.LowPair;
 import src.java.poker.app.hand.recognition.ThreeAces;
 import src.java.poker.app.hand.recognition.ThreeOfAKindNotAce;
 import src.java.poker.app.hand.recognition.TwoPairs;
-import src.java.poker.app.hand.recognition.missingcards.FourToFlush;
-import src.java.poker.app.hand.recognition.missingcards.ThreeToFlushNoHighCards;
-import src.java.poker.app.hand.recognition.missingcards.ThreeToFlushTwoHighCards;
+import src.java.poker.app.hand.recognition.missingcards.flush.FourToFlush;
+import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushNoHighCards;
+import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushTwoHighCards;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
 
 

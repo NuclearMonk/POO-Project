@@ -1,4 +1,4 @@
-package src.java.poker.app.hand.recognition.missingcards;
+package src.java.poker.app.hand.recognition.missingcards.flush;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
