@@ -5,13 +5,12 @@ import java.util.Collections;
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.analyzer.HandAction;
 import src.java.poker.card.Card;
 import src.java.poker.card.Suit;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class FlushRecognizer extends HandRecognizer implements HandAction {
+public class FlushRecognizer extends HandRecognizer {
 	public FlushRecognizer() {
 		super("FLUSH", 7);
 	}

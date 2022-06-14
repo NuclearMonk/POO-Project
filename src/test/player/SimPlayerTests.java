@@ -2,21 +2,19 @@ package src.test.player;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.junit.Test;
 
 import src.java.poker.app.App;
 import src.java.poker.app.hand.Hand;
-import src.java.poker.card.Suit;
 import src.java.poker.player.Player;
 import src.java.poker.player.SimulationPlayer;
 import src.java.poker.player.actions.HoldCardsAction;
 
 public class SimPlayerTests {
     @Test
-    public void SimPlayerHardHandTest()
+    public void simPlayerHardHandTest()
     {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);

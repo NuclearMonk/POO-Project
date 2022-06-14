@@ -1,15 +1,14 @@
-package src.java.poker.app.hand.analyzer;
+package src.java.poker.app.hand.recognition;
 
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.count.OfAKindRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class ThreeAces extends OfAKindRecognizer implements HandAction {
+public class ThreeAces extends OfAKindRecognizer {
 
 	public ThreeAces() {
 		super("Three Aces", 3, 3);

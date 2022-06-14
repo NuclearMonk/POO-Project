@@ -1,7 +1,6 @@
 package src.java.poker.app.hand.recognition;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.analyzer.HandAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public abstract class HandRecognizer  implements HandAction{

@@ -1,4 +1,4 @@
-package src.java.poker.app.hand.analyzer.missingCards;
+package src.java.poker.app.hand.recognition.missingcards;
 
 public class ThreeToFlushNoHighCards extends ToFlush {
 

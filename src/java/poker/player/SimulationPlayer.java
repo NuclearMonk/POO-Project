@@ -4,14 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.analyzer.ThreeAces;
-import src.java.poker.app.hand.analyzer.ThreeOfAKindNotAce;
 import src.java.poker.app.hand.recognition.FlushRecognizer;
 import src.java.poker.app.hand.recognition.HandRecognizer;
+import src.java.poker.app.hand.recognition.ThreeAces;
+import src.java.poker.app.hand.recognition.ThreeOfAKindNotAce;
 import src.java.poker.app.hand.recognition.count.Four24Recognizer;
 import src.java.poker.app.hand.recognition.count.Four5KRecognizer;
 import src.java.poker.app.hand.recognition.count.FourAcesRecognizer;
-import src.java.poker.app.hand.recognition.count.FourOfAKindRecognizer;
 import src.java.poker.app.hand.recognition.multiple.FullHouseRecognizer;
 import src.java.poker.app.hand.recognition.sequence.StraightFlushRecognizer;
 import src.java.poker.app.hand.recognition.sequence.StraightRecognizer;

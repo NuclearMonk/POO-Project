@@ -1,23 +1,22 @@
-package src.java.poker.app.hand.analyzer.missingCards;
+package src.java.poker.app.hand.recognition.missingcards;
 
 import java.util.Collections;
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.analyzer.HandAction;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public abstract class ToFlush extends HandRecognizer implements HandAction {
+public abstract class ToFlush extends HandRecognizer {
 
-	protected int toFlush;
+	protected int countToFlush;
 
 	protected ToFlush(String handName, int rewardMultiplier, int toFlush) {
 		super(handName, rewardMultiplier);
-		this.toFlush = toFlush;
+		this.countToFlush = toFlush;
 	}
 
 	@Override
@@ -34,7 +33,7 @@ public abstract class ToFlush extends HandRecognizer implements HandAction {
 
 			Integer handCount = hand.findCards(C.getSuit()).size();
 
-			if (handCount == this.toFlush) {
+			if (handCount == this.countToFlush) {
 				result = true;
 				List<Card> handList = hand.cardsAsList();
 				Collections.sort(handList); // sort the hand from lowest tom highest

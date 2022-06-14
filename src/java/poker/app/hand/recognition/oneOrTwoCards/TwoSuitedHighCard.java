@@ -1,13 +1,9 @@
-package src.java.poker.app.hand.analyzer.oneOrTwoCards;
+package src.java.poker.app.hand.recognition.oneOrTwoCards;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.analyzer.HandAction;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
@@ -15,7 +11,7 @@ import src.java.poker.card.Suit;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class TwoSuitedHighCard extends HandRecognizer implements HandAction {
+public class TwoSuitedHighCard extends HandRecognizer {
 
 	public TwoSuitedHighCard() {
 		super("Two Suited High Card", 0);

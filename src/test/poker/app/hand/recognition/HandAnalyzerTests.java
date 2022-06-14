@@ -2,23 +2,21 @@ package src.test.poker.app.hand.recognition;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Arrays;
-import java.util.List;
 
 import org.junit.Test;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.analyzer.HighPair;
-import src.java.poker.app.hand.analyzer.LowPair;
-import src.java.poker.app.hand.analyzer.ThreeAces;
-import src.java.poker.app.hand.analyzer.ThreeOfAKindNotAce;
-import src.java.poker.app.hand.analyzer.TwoPairs;
-import src.java.poker.app.hand.analyzer.missingCards.FourToFlush;
-import src.java.poker.app.hand.analyzer.missingCards.ThreeToFlushTwoHighCards;
-import src.java.poker.app.hand.analyzer.oneOrTwoCards.TwoSuitedHighCard;
 import src.java.poker.app.hand.recognition.HandRecognizer;
-import src.java.poker.player.actions.HoldCardsAction;
-import src.java.poker.player.actions.PlayerAction;
+import src.java.poker.app.hand.recognition.HighPair;
+import src.java.poker.app.hand.recognition.LowPair;
+import src.java.poker.app.hand.recognition.ThreeAces;
+import src.java.poker.app.hand.recognition.ThreeOfAKindNotAce;
+import src.java.poker.app.hand.recognition.TwoPairs;
+import src.java.poker.app.hand.recognition.missingcards.FourToFlush;
+import src.java.poker.app.hand.recognition.missingcards.ThreeToFlushNoHighCards;
+import src.java.poker.app.hand.recognition.missingcards.ThreeToFlushTwoHighCards;
+import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
+
 
 public class HandAnalyzerTests {
 

@@ -1,4 +1,4 @@
-package src.java.poker.app.hand.analyzer;
+package src.java.poker.app.hand.recognition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,19 +9,17 @@ import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class TwoPairs extends TwoPairRecognizer implements HandAction {
+public class TwoPairs extends TwoPairRecognizer {
 
 
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
-		ArrayList<Integer> indexes = new ArrayList<Integer>();
-		Card DefiningCard = this.recognizeHand(hand).getDefiningCard();
-		int highCardValue = DefiningCard.getValue();
+		ArrayList<Integer> indexes = new ArrayList<>();
+		Card definingCard = this.recognizeHand(hand).getDefiningCard();
+		int highCardValue = definingCard.getValue();
 		List<Card> handAsList = hand.cardsAsList();
 		for (int i = 0; i < Hand.HAND_SIZE; i++) {
-			if (handAsList.get(i).getValue() == highCardValue)
-				continue;
-			else {
+			if (handAsList.get(i).getValue() != highCardValue){
 				int handCount = hand.findCards(hand.getCardByIndex(i).getValue()).size();
 				if (handCount == 2) {
 					indexes.add(i);

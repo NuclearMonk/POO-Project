@@ -4,11 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.analyzer.HandAction;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class FullHouseRecognizer extends MultipleMatchRecognizer implements HandAction {
+public class FullHouseRecognizer extends MultipleMatchRecognizer {
 
 	public FullHouseRecognizer() {
 		super("FULL HOUSE", 10, 2, 3);

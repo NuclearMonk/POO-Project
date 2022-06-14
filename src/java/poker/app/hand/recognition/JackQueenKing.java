@@ -1,15 +1,13 @@
-package src.java.poker.app.hand.analyzer;
+package src.java.poker.app.hand.recognition;
 
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.recognition.HandRecognitionResult;
-import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class JackQueenKing extends HandRecognizer implements HandAction {
+public class JackQueenKing extends HandRecognizer {
 
 	protected JackQueenKing() {
 		super("Jack Queen King", 0);

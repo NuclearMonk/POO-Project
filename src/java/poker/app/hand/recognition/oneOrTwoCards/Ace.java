@@ -1,16 +1,15 @@
-package src.java.poker.app.hand.analyzer.oneOrTwoCards;
+package src.java.poker.app.hand.recognition.oneOrTwoCards;
 
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
-import src.java.poker.app.hand.analyzer.HandAction;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-public class Ace extends HandRecognizer implements HandAction {
+public class Ace extends HandRecognizer {
 
 	protected Ace() {
 		super("ACE", 0);

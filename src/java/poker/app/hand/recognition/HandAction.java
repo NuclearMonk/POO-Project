@@ -1,4 +1,4 @@
-package src.java.poker.app.hand.analyzer;
+package src.java.poker.app.hand.recognition;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.player.actions.PlayerAction;
