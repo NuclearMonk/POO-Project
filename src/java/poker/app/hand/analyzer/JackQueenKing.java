@@ -5,22 +5,31 @@ import java.util.List;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
+import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class JackQueenKing extends HandRecognizer implements HandAction {
 
+	protected JackQueenKing() {
+		super("Jack Queen King", 0);
+	}
+
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
-		int index = hand.getCardIndex(this.recognizeHand(hand).getDefiningCard().getValue(), this.recognizeHand(hand).getDefiningCard().getSuit());
-		
-		return new HoldCardsAction(index);
+		List<Integer> indexes = hand.getCardIndex(this.recognizeHand(hand).getDefiningCard().getValue(),
+				this.recognizeHand(hand).getDefiningCard().getSuit());
+		return new HoldCardsAction(indexes);
 	}
 
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
-		// TODO Auto-generated method stub
-		return null;
+		for (Card C : hand.cardsAsList())
+		{
+			if(C.getValue()>=Card.JACK)
+				return new HandRecognitionResult(true, C); 
+		}
+		return new HandRecognitionResult(false, null);
 	}
 
 }
