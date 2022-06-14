@@ -147,6 +147,15 @@ public class Hand {
 		}
 		return returnValue;
 	}
+	public List<Integer> getCardIndex(Integer value,Suit suit) {
+		ArrayList<Integer> returnValue = new ArrayList<>();
+		for (int i = 0; i < Hand.HAND_SIZE; i++) {
+			if (this.cards[i].getSuit() == suit && this.cards[i].getValue() == value) {
+				returnValue.add(i);
+			}
+		}
+		return returnValue;
+	}
 
 	public List<Card> findCards(Suit suit) {
 		ArrayList<Card> returnValue = new ArrayList<>();

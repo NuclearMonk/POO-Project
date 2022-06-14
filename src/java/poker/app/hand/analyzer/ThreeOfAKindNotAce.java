@@ -4,9 +4,7 @@ import java.util.List;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
-import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.app.hand.recognition.count.OfAKindRecognizer;
-import src.java.poker.app.hand.recognition.count.ThreeOfARecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;

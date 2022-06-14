@@ -15,6 +15,7 @@ import src.java.poker.app.hand.analyzer.ThreeOfAKindNotAce;
 import src.java.poker.app.hand.analyzer.TwoPairs;
 import src.java.poker.app.hand.analyzer.missingCards.FourToFlush;
 import src.java.poker.app.hand.analyzer.missingCards.ThreeToFlushTwoHighCards;
+import src.java.poker.app.hand.analyzer.oneOrTwoCards.TwoSuitedHighCard;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
@@ -102,7 +103,7 @@ public class HandAnalyzerTests {
 	}
 	@Test
 	public void affirmativeThreeToFlushTwoHighCards() {
-		ThreeToFlushTwoHighCards recognizer = new ThreeToFlushTwoHighCards();
+		HandRecognizer recognizer = new ThreeToFlushTwoHighCards();
 		Hand hand = new Hand("KH QH 2H TS 5S");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("KH TH 4H 6H 5S");
@@ -111,5 +112,27 @@ public class HandAnalyzerTests {
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 
 	}
+	@Test
+	public void affirmativeTwoSuitedHighCard() {
+		HandRecognizer recognizer = new TwoSuitedHighCard();
+		Hand hand = new Hand("KH QH 2D TS 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("AH JH 4C 6S 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("AS QC JH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
+	}
+	@Test
+	public void affirmativeThreeToFlushNoHighCards() {
+		HandRecognizer recognizer = new ThreeToFlushNoHighCards();
+		Hand hand = new Hand("AH 4H 2H TS 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("AD JD 4D 6S 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("AS QC JH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+	}
+	
 }
