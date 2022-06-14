@@ -1,8 +1,9 @@
-package src.java.poker.app.hand.analyzer;
+package src.java.poker.app.hand.analyzer.oneOrTwoCards;
 
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
+import src.java.poker.app.hand.analyzer.HandAction;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
