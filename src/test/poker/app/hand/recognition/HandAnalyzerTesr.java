@@ -3,39 +3,24 @@ package src.test.poker.app.hand.recognition;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.analyzer.HighPair;
 import src.java.poker.app.hand.analyzer.LowPair;
-import src.java.poker.app.hand.analyzer.StraightFlush4OfKindRoyalFlush;
-import src.java.poker.app.hand.analyzer.StraightOrFlushFullHouse;
 import src.java.poker.app.hand.analyzer.ThreeAces;
 import src.java.poker.app.hand.analyzer.ThreeOfAKindNotAce;
 import src.java.poker.app.hand.analyzer.TwoPairs;
+import src.java.poker.app.hand.analyzer.missingCards.FourToFlush;
+import src.java.poker.app.hand.analyzer.missingCards.ThreeToFlushTwoHighCards;
 import src.java.poker.app.hand.recognition.HandRecognizer;
-import src.java.poker.app.hand.recognition.count.ThreeOfARecognizer;
+import src.java.poker.player.actions.HoldCardsAction;
+import src.java.poker.player.actions.PlayerAction;
 
 class HandAnalyzerTesr {
-
-	@Test
-	public void affirmativeStraightFlush4OfKindRoyalFlush() {
-		HandRecognizer recognizer = new StraightFlush4OfKindRoyalFlush();
-		Hand hand = new Hand("AH 2H 3H 4H 5H");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AH 2H 3H 4H 5H");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AS KS QS TS JS");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AH KD 3S AC AS");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AH AD AS AC KS");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AH KD QH JH TH");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AH KD 3S AC AS");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-	}
 
 	@Test
 	public void affirmativeThreeAces() {
@@ -47,19 +32,6 @@ class HandAnalyzerTesr {
 		hand = new Hand("AS AH AD AC JS");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
-	}
-
-	@Test
-	public void affirmativeStraightOrFlushFullHouse() {
-		HandRecognizer recognizer = new StraightOrFlushFullHouse();
-		Hand hand = new Hand("AH 2D 3H 4H 5H");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AH AD AS 4H 4S");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("4S KS 3S TS JS");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AH KD 3S AC AS");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 	}
 
 	@Test
@@ -94,21 +66,49 @@ class HandAnalyzerTesr {
 		hand = new Hand("KH KH KH 4H 5H");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("JS JH TD QC JS");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("5S 5H TD QC JS");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
 	@Test
 	public void affirmativeLowPairs() {
 		HandRecognizer recognizer = new LowPair();
-		Hand hand = new Hand("AH AH TH TH 5H");
+		Hand hand = new Hand("AH AH QH TH 5H");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("KH KH KH 4H 5H");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("KS KH TD QC JS");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("5S 5H TD QC JS");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+
+	}
+	
+	@Test
+	public void affirmativeFourToFlush() {
+		HandRecognizer recognizer = new FourToFlush();
+		Hand hand = new Hand("AH AS TH TH 5H");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KH QH JH 4H 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KS QS AS 4H 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KH QS AS 4H 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+
+
+	}
+	@Test
+	public void affirmativeThreeToFlushTwoHighCards() {
+		ThreeToFlushTwoHighCards recognizer = new ThreeToFlushTwoHighCards();
+		Hand hand = new Hand("KH QH 2H TS 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KH TH 4H 6H 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("AH QH 6H 6C 5S");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 
 	}

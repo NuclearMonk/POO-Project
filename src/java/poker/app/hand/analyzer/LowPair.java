@@ -24,7 +24,8 @@ public class LowPair extends TwoOfAKindRecognizer implements HandAction {
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
 		HandRecognitionResult result = super.recognizeHand(hand);
-		if (result.isResult()&& result.getDefiningCard().getValue()<Card.JACK)
+		if (result.isResult() && result.getDefiningCard().getValue() < Card.JACK
+				&& result.getDefiningCard().getValue() != Card.ACE)
 			return result;
 		else
 			return new HandRecognitionResult(false, null);
