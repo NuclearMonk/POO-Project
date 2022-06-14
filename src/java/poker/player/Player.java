@@ -1,5 +1,6 @@
 package src.java.poker.player;
 
+import src.java.poker.app.hand.Hand;
 import src.java.poker.player.actions.PlayerAction;
 
 public abstract class Player {
@@ -36,5 +37,5 @@ public abstract class Player {
         this.balance += amount;
     }
 
-    public abstract PlayerAction getAction();
+    public abstract PlayerAction getAction(Hand hand);
 }

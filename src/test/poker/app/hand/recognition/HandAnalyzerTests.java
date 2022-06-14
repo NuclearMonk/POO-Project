@@ -1,12 +1,11 @@
 package src.test.poker.app.hand.recognition;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.analyzer.HighPair;
@@ -20,7 +19,7 @@ import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
-class HandAnalyzerTesr {
+public class HandAnalyzerTests {
 
 	@Test
 	public void affirmativeThreeAces() {

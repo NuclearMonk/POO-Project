@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import src.java.poker.app.hand.Hand;
 import src.java.poker.player.actions.AdviceAction;
 import src.java.poker.player.actions.CheckBalanceAction;
 import src.java.poker.player.actions.DealAction;
@@ -26,7 +27,7 @@ public class DebugPlayer extends Player {
     }
 
     @Override
-    public PlayerAction getAction() {
+    public PlayerAction getAction(Hand hand) {
 
         if (scanner.hasNext()) {
             String next = scanner.next();
