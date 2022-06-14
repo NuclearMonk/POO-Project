@@ -7,13 +7,11 @@ public class RangedFourOfAKindRecognizer extends FourOfAKindRecognizer {
     private int lowValue;
     private int highValue;
 
-
     public RangedFourOfAKindRecognizer(String handName, int rewardMultiplier, int lowValue, int highValue) {
         super(handName, rewardMultiplier, 4);
         this.lowValue = lowValue;
         this.highValue = highValue;
     }
-
 
     @Override
     public HandRecognitionResult recognizeHand(Hand hand) {

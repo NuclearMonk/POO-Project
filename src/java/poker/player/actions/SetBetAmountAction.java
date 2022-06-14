@@ -4,8 +4,8 @@ import src.java.poker.app.App;
 
 public class SetBetAmountAction implements PlayerAction {
     private Integer amountToSet;
-    private static int MAX_BET = 5;
-    private static int MIN_BET = 1;
+    private static final int MAX_BET = 5;
+    private static final int MIN_BET = 1;
 
     public SetBetAmountAction(Integer amountToSet) {
         this.amountToSet = amountToSet;

@@ -20,13 +20,13 @@ import src.java.poker.player.Player;
 import src.java.poker.player.actions.PlayerAction;
 
 public class App {
-    private Player player;
+    private final Player player;
 
     public Player getPlayer() {
         return player;
     }
 
-    private Deck deck;
+    private final Deck deck;
 
     public Deck getDeck() {
         return deck;
@@ -49,7 +49,6 @@ public class App {
     }
 
     public void setOngoingBetAmount(int ongoingBetAmount) {
-        //TODO add a safeguard to not player change bet willy nilly
         this.ongoingBetAmount = ongoingBetAmount;
     }
 
@@ -76,11 +75,10 @@ public class App {
         PlayerAction action;
         do {
             action = this.player.getAction();
-            if(null != action)
-            {
+            if (null != action) {
                 action.doAction(this);
             }
-        } while (null!=action);
+        } while (null != action);
     }
 
     public void afterRoundProcessing() {
@@ -89,9 +87,11 @@ public class App {
                 this.player.creditReward(handRecognizer.getRewardMultiplier() * ongoingBetAmount);
                 System.out.println("Player Wins with " + handRecognizer.getHandName() + " and his credit is: "
                         + this.player.getBalance());
+                this.deck.shuffle();
                 return;
             }
         }
+        this.deck.shuffle();
         System.out.println("Player Loses and his credit is: " + this.player.getBalance());
     }
 }

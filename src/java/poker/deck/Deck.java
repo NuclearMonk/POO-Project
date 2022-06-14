@@ -15,9 +15,7 @@ public abstract class Deck {
 	/**
 	 * Shuffles the deck, in a random order, seed is generated at runtime
 	 */
-	public void shuffle() {
-		Collections.shuffle(this.cards);
-	}
+	public abstract void shuffle();
 
 	/**
 	 * Shuffles the deck, in a random order, with the provided random generator
@@ -40,7 +38,7 @@ public abstract class Deck {
 	 * @param numberOfCards The number of cards to be drawn
 	 * @return List<Card>
 	 */
-	public List<Card> drawCards(int numberOfCards) throws OutOfCardsException{
+	public List<Card> drawCards(int numberOfCards) throws OutOfCardsException {
 		if (this.numberOfRemainingCards() - numberOfCards < 0)
 			throw new OutOfCardsException("Deck does not have enough cards");
 		ArrayList<Card> drawnCards = new ArrayList<>();

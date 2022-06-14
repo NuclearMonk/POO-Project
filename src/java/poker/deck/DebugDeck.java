@@ -35,4 +35,11 @@ public class DebugDeck extends Deck {
         }
 
     }
+
+    @Override
+    public void shuffle() {
+        // Debug Deck Can not be shuffled,would defeat the entire purpose of the debug
+        // deck
+
+    }
 }

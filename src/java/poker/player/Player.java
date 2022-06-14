@@ -28,14 +28,12 @@ public abstract class Player {
         this.currentBet = currentBet;
     }
 
-    public void chargeBetAmount(int amount)
-    {
+    public void chargeBetAmount(int amount) {
         this.balance -= amount;
     }
 
-    public void creditReward(int amount)
-    {
-        this.balance+=amount;
+    public void creditReward(int amount) {
+        this.balance += amount;
     }
 
     public abstract PlayerAction getAction();

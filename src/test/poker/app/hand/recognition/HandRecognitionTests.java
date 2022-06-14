@@ -21,33 +21,6 @@ import src.java.poker.card.Suit;
 
 public class HandRecognitionTests {
 
-    // @Test
-    // public void affirmativeTwoOfAKindTest() {
-    //     HandRecognizer recognizer = new TwoOfAKindRecognizer();
-    //     Hand hand = new Hand("2H JH 2S TC 9H");
-    //     assertEquals(true, recognizer.recognizeHand(hand).isResult());
-    //     hand = new Hand("2H 2C 3S TC 9H");
-    //     assertEquals(true, recognizer.recognizeHand(hand).isResult());
-    //     hand = new Hand("TS 2C 3S TC 9H");
-    //     assertEquals(true, recognizer.recognizeHand(hand).isResult());
-    //     hand = new Hand("4H KD 3S TC KC");
-    //     assertEquals(true, recognizer.recognizeHand(hand).isResult());
-    // }
-
-    // @Test
-    // public void negativeTwoOfAKindTest() {
-    //     HandRecognizer recognizer = new TwoOfAKindRecognizer();
-    //     Hand hand = new Hand("2H 2C 2S TC 9H");
-    //     assertEquals(false, recognizer.recognizeHand(hand).isResult());
-    //     hand = new Hand("2H AC 3S TC 9H");
-    //     assertEquals(false, recognizer.recognizeHand(hand).isResult());
-    //     hand = new Hand("3S 3C 3H 3D 9H");
-    //     assertEquals(false, recognizer.recognizeHand(hand).isResult());
-    //     hand = new Hand("AH AD JS JC JD");
-    //     assertEquals(false, recognizer.recognizeHand(hand).isResult());
-    //     hand = new Hand("AS AC JH JD KD");
-    //     assertEquals(false, recognizer.recognizeHand(hand).isResult());
-    // }
 
     @Test
     public void affirmativeThreeOfAKindTest() {
@@ -219,6 +192,7 @@ public class HandRecognitionTests {
         hand = new Hand("3H 3C 5S 6C 7D");
         assertEquals(false, recognizer.recognizeHand(hand).isResult());
     }
+
     @Test
     public void royalFlushRecognizerTests() {
         HandRecognizer recognizer = new RoyalFlushRecognizer();

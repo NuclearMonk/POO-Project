@@ -1,5 +1,6 @@
 package src.java.poker.deck;
 
+import java.util.Collections;
 import java.util.List;
 
 import src.java.poker.card.Card;
@@ -26,7 +27,13 @@ public class StandardDeck extends Deck {
     @Override
     public List<Card> drawCards(int numberOfCards) throws OutOfCardsException {
         List<Card> drawnCards = super.drawCards(numberOfCards);
-        cards.addAll(drawnCards);//storing the drawn card at the end of the deck to avoid having to create a new object
+        cards.addAll(drawnCards);// storing the drawn card at the end of the deck to avoid having to create a new
+                                 // object
         return drawnCards;
+    }
+
+    @Override
+    public void shuffle() {
+        Collections.shuffle(this.cards);
     }
 }
