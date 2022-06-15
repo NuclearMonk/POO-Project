@@ -4,16 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
+import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
 
 public abstract class ToStraight extends HandRecognizer {
+    private final int toAStraightCount;
 
-    protected ToStraight(String handName, int rewardMultiplier) {
+    public ToStraight(String handName, int rewardMultiplier, int toAStraightCount) {
         super(handName, rewardMultiplier);
+        this.toAStraightCount = toAStraightCount;
     }
 
-    public static List<Integer> getGaps(Hand hand) {
+    @Override
+    public HandRecognitionResult recognizeHand(Hand hand) {
+        List<Integer> values = getStraightMembers(hand);
+        if (values.size() == toAStraightCount) {
+            return new HandRecognitionResult(true, hand.findCards(values.get(0)).get(0));
+        }
+        return new HandRecognitionResult(false, null);
+    }
+
+    public static List<Integer> getStraightMembers(Hand hand) { // TODO Make This protected, it's public to allow
+                                                                // testing
         int highestToStraightCount = 0;
         ArrayList<Integer> valuesWeHave = new ArrayList<>();
         for (int cardValue = Card.ACE; cardValue <= Card.TEN; cardValue++) {
@@ -28,7 +41,7 @@ public abstract class ToStraight extends HandRecognizer {
                     }
                 }
 
-            } else {
+            } else { /* Special case that checks for cards missing to a TJQKA straight */
                 for (int straightValueOffset = 0; straightValueOffset < 4; straightValueOffset++) {
                     if (!hand.findCards(cardValue + straightValueOffset).isEmpty())// we found a gap
                     {
