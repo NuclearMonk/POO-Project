@@ -26,6 +26,14 @@ public class MissingFlushRecognitionTests {
         assertEquals(Card.JACK, result.get(2).intValue());
         assertEquals(Card.KING, result.get(3).intValue());
 
+        hand = new Hand("9H TH JH KH TC");
+        result = ToStraight.getGaps(hand);
+        assertEquals(4, result.size());
+        assertEquals(9, result.get(0).intValue());
+        assertEquals(Card.TEN, result.get(1).intValue());
+        assertEquals(Card.JACK, result.get(2).intValue());
+        assertEquals(Card.KING, result.get(3).intValue());
+
     }
 
     @Test
