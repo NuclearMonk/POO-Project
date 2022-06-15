@@ -17,6 +17,7 @@ import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushNoHigh
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushOneHighCard;
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushTwoHighCards;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.JTSuited;
+import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
 
@@ -164,6 +165,18 @@ public class HandAnalyzerTests {
 		Hand hand = new Hand("TH JH 2H TS 5S");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("TD JC 4D 6S 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S 4S JH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+	}
+	
+	@Test
+	public void affirmativeKTSuited() {
+		HandRecognizer recognizer = new KTSuited();
+		Hand hand = new Hand("TH KH 2H TS 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("TD KC 4D 6S 5S");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("5S 4S JH 6C 5S");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
