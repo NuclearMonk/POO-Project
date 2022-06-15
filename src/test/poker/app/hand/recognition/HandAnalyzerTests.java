@@ -14,6 +14,7 @@ import src.java.poker.app.hand.recognition.ThreeOfAKindNotAce;
 import src.java.poker.app.hand.recognition.TwoPairs;
 import src.java.poker.app.hand.recognition.missingcards.flush.FourToFlush;
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushNoHighCards;
+import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushOneHighCard;
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushTwoHighCards;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
 
@@ -132,5 +133,15 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
+	@Test
+	public void affirmativeThreeToFlushOneHighCard() {
+		HandRecognizer recognizer = new ThreeToFlushOneHighCard();
+		Hand hand = new Hand("AH 4H 2H TS 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("AD JD 4D 6S 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S 4S JH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+	}
 }
