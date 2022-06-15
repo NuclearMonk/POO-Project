@@ -21,9 +21,17 @@ public abstract class SpecificSuited extends HandRecognizer {
 		this.highCard = highCard;
 		this.lowCard = lowCard;
 	}
+	public int getLowCard() {
+		return lowCard;
+	}
+	public int getHighCard() {
+		return highCard;
+	}
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
-		List<Integer> indexes = hand.getCardIndex(this.recognizeHand(hand).getDefiningCard().getSuit());
+		Suit S = this.recognizeHand(hand).getDefiningCard().getSuit();
+		List<Integer> indexes = hand.getCardIndex(getLowCard(),S);
+		indexes.addAll(hand.getCardIndex(getHighCard(), S));
 		return new HoldCardsAction(indexes);
 	}
 

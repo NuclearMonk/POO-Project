@@ -1,16 +1,18 @@
-package src.java.poker.app.hand.recognition;
+package src.java.poker.app.hand.recognition.oneOrTwoCards;
 
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
+import src.java.poker.app.hand.recognition.HandRecognitionResult;
+import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class JackQueenKing extends HandRecognizer {
 
-	public JackQueenKing() {
-		super("Jack Queen King", 0);
+	protected JackQueenKing() {
+		super("Jack Queen or King", 0);
 	}
 
 	@Override
@@ -22,10 +24,10 @@ public class JackQueenKing extends HandRecognizer {
 
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
-		for (Card C : hand.cardsAsList())
-		{
-			if(C.getValue()>=Card.JACK)
-				return new HandRecognitionResult(true, C); 
+		for (Card C : hand.cardsAsList()) {
+			if (C.getValue() < Card.ACE) {
+				return new HandRecognitionResult(true, C);
+			}
 		}
 		return new HandRecognitionResult(false, null);
 	}
