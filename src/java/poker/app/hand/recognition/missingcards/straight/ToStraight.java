@@ -7,6 +7,8 @@ import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
+import src.java.poker.player.actions.HoldCardsAction;
+import src.java.poker.player.actions.PlayerAction;
 
 public abstract class ToStraight extends HandRecognizer {
     private final int toAStraightCount;
@@ -19,7 +21,7 @@ public abstract class ToStraight extends HandRecognizer {
     @Override
     public HandRecognitionResult recognizeHand(Hand hand) {
         List<Integer> values = getStraightMembers(hand);
-        if (values.size() == toAStraightCount) {
+        if (values.size() >= toAStraightCount) {
             return new HandRecognitionResult(true, hand.findCards(values.get(0)).get(0));
         }
         return new HandRecognitionResult(false, null);
@@ -61,6 +63,16 @@ public abstract class ToStraight extends HandRecognizer {
             }
         }
         return valuesWeHave;
+    }
+
+    @Override
+    public PlayerAction getAdviceAction(Hand hand) {
+        List<Integer> values = getStraightMembers(hand);
+        ArrayList<Integer> indexes = new ArrayList<>();
+        for (Integer value : values) {
+            indexes.add(hand.getCardIndex(value).get(0));
+        }
+        return new HoldCardsAction(indexes);
     }
 
 }

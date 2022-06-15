@@ -8,9 +8,13 @@ import org.junit.Test;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognizer;
+import src.java.poker.app.hand.recognition.missingcards.straight.FourToRoyalFlush;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraight;
+import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraightFlush;
+import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToStraight;
 import src.java.poker.app.hand.recognition.missingcards.straight.ToStraight;
 import src.java.poker.card.Card;
+import src.java.poker.card.Suit;
 
 public class ToStraightRecognitionTests {
 
@@ -27,34 +31,60 @@ public class ToStraightRecognitionTests {
         hand = new Hand("TH JH QH KH 2H");
         assertEquals(true, recognizer.recognizeHand(hand).isResult());
         assertEquals(Card.TEN, recognizer.recognizeHand(hand).getDefiningCard().getValue());
+
+        hand = new Hand("TH JH QH KH AC");
+        assertEquals(true, recognizer.recognizeHand(hand).isResult());
     }
 
     @Test
     public void ThreeToStraightTest() {
+        HandRecognizer recognizer = new ThreeToStraight();
         Hand hand = new Hand("2H 3H 4H 7H 8C");
-        List<Integer> result = ToStraight.getStraightMembers(hand);
-        assertEquals(3, result.size());
-        assertEquals(4, result.get(0).intValue());
-        assertEquals(7, result.get(1).intValue());
-        assertEquals(8, result.get(2).intValue());
+        assertEquals(true, recognizer.recognizeHand(hand).isResult());
+        assertEquals(4, recognizer.recognizeHand(hand).getDefiningCard().getValue());
     }
 
     @Test
-    public void RoyalFlushEdgeCaseTest() {
-        Hand hand = new Hand("AH QH JH KH 2C");
-        List<Integer> result = ToStraight.getStraightMembers(hand);
-        assertEquals(4, result.size());
-        assertEquals(Card.JACK, result.get(0).intValue());
-        assertEquals(Card.QUEEN, result.get(1).intValue());
-        assertEquals(Card.KING, result.get(2).intValue());
-        assertEquals(Card.ACE, result.get(3).intValue());
+    public void fourToStraightFlushTest() {
+        HandRecognizer recognizer = new FourToStraightFlush();
+        Hand hand = new Hand("2C 3H 4H 7H 6H");
+        assertEquals(true, recognizer.recognizeHand(hand).isResult());
+        assertEquals(3, recognizer.recognizeHand(hand).getDefiningCard().getValue());
 
-        hand = new Hand("TH QH JH KH 2C");
-        result = ToStraight.getStraightMembers(hand);
-        assertEquals(4, result.size());
-        assertEquals(Card.TEN, result.get(0).intValue());
-        assertEquals(Card.JACK, result.get(1).intValue());
-        assertEquals(Card.QUEEN, result.get(2).intValue());
-        assertEquals(Card.KING, result.get(3).intValue());
+        hand = new Hand("2H 3H 4H 7H 6H");
+        assertEquals(true, recognizer.recognizeHand(hand).isResult());
+        assertEquals(3, recognizer.recognizeHand(hand).getDefiningCard().getValue());
+        assertEquals(Suit.HEARTS, recognizer.recognizeHand(hand).getDefiningCard().getSuit());
+
+        hand = new Hand("2C 3H 4H 7C 6H");
+        assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+        hand = new Hand("TH JH QH KH 2H");
+        assertEquals(true, recognizer.recognizeHand(hand).isResult());
+        assertEquals(Card.TEN, recognizer.recognizeHand(hand).getDefiningCard().getValue());
+        assertEquals(Suit.HEARTS, recognizer.recognizeHand(hand).getDefiningCard().getSuit());
+
+        hand = new Hand("TH JH QH KH AC");
+        assertEquals(true, recognizer.recognizeHand(hand).isResult());
+        assertEquals(Card.TEN, recognizer.recognizeHand(hand).getDefiningCard().getValue());
+        assertEquals(Suit.HEARTS, recognizer.recognizeHand(hand).getDefiningCard().getSuit());
     }
+
+    @Test
+    public void fourToRoyalFlushTest() {
+        HandRecognizer recognizer = new FourToRoyalFlush();
+        Hand hand = new Hand("TH JH QH KH 2H");
+        assertEquals(true, recognizer.recognizeHand(hand).isResult());
+        assertEquals(Card.TEN, recognizer.recognizeHand(hand).getDefiningCard().getValue());
+        assertEquals(Suit.HEARTS, recognizer.recognizeHand(hand).getDefiningCard().getSuit());
+
+        hand = new Hand("TH JH QH KH AC");
+        assertEquals(true, recognizer.recognizeHand(hand).isResult());
+        assertEquals(Card.TEN, recognizer.recognizeHand(hand).getDefiningCard().getValue());
+        assertEquals(Suit.HEARTS, recognizer.recognizeHand(hand).getDefiningCard().getSuit());
+
+        hand = new Hand("TH JH QH KH AH");
+        assertEquals(false, recognizer.recognizeHand(hand).isResult());
+    }
+
 }

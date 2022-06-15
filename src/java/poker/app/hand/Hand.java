@@ -182,7 +182,7 @@ public class Hand {
 	}
 
 	public List<Card> cardsAsList() {
-		return Arrays.asList(this.cards);
+		return Arrays.asList(this.cards.clone());
 	}
 
 	@Override
