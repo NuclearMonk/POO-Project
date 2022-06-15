@@ -6,3 +6,7 @@
 /LowPair.class
 /TwoSuitedHighCard.class
 /JackQueenKing.class
+/FlushRecognizer.class
+/HandAction.class
+/HandRecognitionResult.class
+/HandRecognizer.class
