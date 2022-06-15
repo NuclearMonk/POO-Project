@@ -182,4 +182,6 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
+	
 }

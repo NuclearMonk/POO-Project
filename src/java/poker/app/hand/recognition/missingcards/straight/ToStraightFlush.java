@@ -29,7 +29,7 @@ public class ToStraightFlush extends ToStraight {
                     suitCount++;
                 }
             }
-            if (suitCount == toAStraightCount) {
+            if (suitCount >= toAStraightCount) {
                 return new HandRecognitionResult(true, superResult.getDefiningCard());
             }
         }
