@@ -11,10 +11,10 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public abstract class ToStraight extends HandRecognizer {
-    private final int toAStraightCount;
+    protected final int toAStraightCount;
 
-    public ToStraight(String handName, int rewardMultiplier, int toAStraightCount) {
-        super(handName, rewardMultiplier);
+    protected ToStraight(int toAStraightCount) {
+        super("TO A STRAIGHT", 0);
         this.toAStraightCount = toAStraightCount;
     }
 

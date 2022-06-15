@@ -43,7 +43,6 @@ public class Hand {
 		}
 		this.cards = new Card[HAND_SIZE];
 		String[] cardStrings = string.split("[ ]");
-		System.out.println(cardStrings.length);
 		if (cardStrings.length != HAND_SIZE)
 			throw new IllegalArgumentException();
 		for (int i = 0; i < cards.length; i++) {

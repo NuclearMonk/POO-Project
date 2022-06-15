@@ -2,7 +2,6 @@ package src.test.poker.app.hand.recognition;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
 
 import org.junit.Test;
 
@@ -12,7 +11,6 @@ import src.java.poker.app.hand.recognition.missingcards.straight.FourToRoyalFlus
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraight;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraightFlush;
 import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToStraight;
-import src.java.poker.app.hand.recognition.missingcards.straight.ToStraight;
 import src.java.poker.card.Card;
 import src.java.poker.card.Suit;
 
