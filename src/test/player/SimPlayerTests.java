@@ -12,6 +12,7 @@ import src.java.poker.app.hand.recognition.ThreeAces;
 import src.java.poker.player.Player;
 import src.java.poker.player.SimulationPlayer;
 import src.java.poker.player.actions.HoldCardsAction;
+import src.java.poker.player.actions.PlayerAction;
 
 public class SimPlayerTests {
 	@Test
@@ -136,8 +137,8 @@ public class SimPlayerTests {
 	public void T14() {
 		Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
-		app.setHand(new Hand("2S 5S 7S 9S 7H"));
-		Integer[] indexes = { 0, 1, 2, 3 };
+		app.setHand(new Hand("2S 5S 7S 7H 9S"));
+		Integer[] indexes = { 0, 1, 2, 4 };
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
 
@@ -145,8 +146,9 @@ public class SimPlayerTests {
 	public void T15() {
 		Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
-		app.setHand(new Hand("KS AS QS JS 7H"));
-		Integer[] indexes = { 0, 1, 2, 3 };
+		app.setHand(new Hand("9S 8S 7S 3D TH"));
+		Integer[] indexes = { 0, 1, 2 };
+		PlayerAction A = app.getPlayer().getAction(app.getHand());
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
 }

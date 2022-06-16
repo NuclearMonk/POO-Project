@@ -217,9 +217,9 @@ public class HandAnalyzerTests {
 	
 	public void affirmativeAKQJUnsuited() {
 		HandRecognizer recognizer = new AKQJUnsuited();
-		Hand hand = new Hand("AH QD KH JS 5S");
+		Hand hand = new Hand("KS AS QS 3S JH");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AH KD KH JS 5S");
+		hand = new Hand("AH KD KH 3S JS");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}	
