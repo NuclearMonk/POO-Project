@@ -1,6 +1,8 @@
 package src.java.poker.player.actions;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import src.java.poker.app.App;
@@ -10,6 +12,7 @@ public class HoldCardsAction implements PlayerAction {
     private List<Integer> indexes;
 
     public HoldCardsAction(List<Integer> indexes) {
+        Collections.sort(indexes);
         this.indexes = indexes;
     }
 

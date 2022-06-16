@@ -17,7 +17,7 @@ public class ToStraightFlush extends ToStraight {
 
     @Override
     public HandRecognitionResult recognizeHand(Hand hand) {
-        List<Integer> values = getStraightMembers(hand);
+        List<Integer> values = getStraightFlushMembers(hand);
         if (values.size() >= toAStraightCount) {
             return new HandRecognitionResult(true, hand.findCards(values.get(0)).get(0));
         }
@@ -26,12 +26,12 @@ public class ToStraightFlush extends ToStraight {
 
     @Override
     public PlayerAction getAdviceAction(Hand hand) {
-        List<Integer> values = getStraightMembers(hand);
+        List<Integer> values = getStraightFlushMembers(hand);
         ArrayList<Integer> indexes = new ArrayList<>();
         indexes.add(0);
         for (Card card : hand.findCards(values.get(0))) {
             for (int i = 1; i < values.size(); i++) {
-                if (hand.findCards(values.get(i), card.getSuit()).size() > 0) {
+                if (!hand.findCards(values.get(i), card.getSuit()).isEmpty()) {
                     indexes.add(i);
                 }
             }
@@ -39,7 +39,7 @@ public class ToStraightFlush extends ToStraight {
         return new HoldCardsAction(indexes);
     }
 
-    public static List<Integer> getStraightMembers(Hand hand) { // TODO Make This protected, it's public to allow
+    private List<Integer> getStraightFlushMembers(Hand hand) { // TODO Make This protected, it's public to allow
                                                                 // testing
         int highestToStraightCount = 0;
         ArrayList<Integer> valuesWeHave = new ArrayList<>();
@@ -69,7 +69,7 @@ public class ToStraightFlush extends ToStraight {
                     runningValues.add(Card.ACE);
                 }
             }
-            if (toStraightCount >= highestToStraightCount && areIndexesAFlush(hand, runningValues)) {
+            if (toStraightCount>0 && toStraightCount >= highestToStraightCount && areIndexesAFlush(hand, runningValues)) {
                 valuesWeHave = runningValues;
                 highestToStraightCount = toStraightCount;
             }
@@ -77,7 +77,7 @@ public class ToStraightFlush extends ToStraight {
         return valuesWeHave;
     }
     
-    private static Boolean areIndexesAFlush(Hand hand, List<Integer> values)
+    private Boolean areIndexesAFlush(Hand hand, List<Integer> values)
     {
         for (Card card : hand.findCards(values.get(0))) {
             int suitCount = 1;
@@ -86,7 +86,7 @@ public class ToStraightFlush extends ToStraight {
                     suitCount++;
                 }
             }
-            if (suitCount == values.size()) {
+            if (suitCount >= toAStraightCount) {
                 return true;
             }
         }

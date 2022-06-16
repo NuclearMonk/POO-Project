@@ -12,7 +12,6 @@ import src.java.poker.app.hand.recognition.JackQueenKing;
 import src.java.poker.app.hand.recognition.LowPair;
 import src.java.poker.app.hand.recognition.ThreeAces;
 import src.java.poker.app.hand.recognition.ThreeOfAKindNotAce;
-import src.java.poker.app.hand.recognition.TwoPairs;
 import src.java.poker.app.hand.recognition.missingcards.flush.FourToFlush;
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushNoHighCards;
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushOneHighCard;
@@ -51,17 +50,6 @@ public class HandAnalyzerTests {
 
 	}
 
-	@Test
-	public void affirmativeTwoPairs() {
-		HandRecognizer recognizer = new TwoPairs();
-		Hand hand = new Hand("AH AH TH TH 5H");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("KH KH KH 4H 5H");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("KS KH QD QC QS");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-
-	}
 
 	@Test
 	public void affirmativeHighPairs() {

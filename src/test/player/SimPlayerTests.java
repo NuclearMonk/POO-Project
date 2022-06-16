@@ -15,7 +15,7 @@ import src.java.poker.player.actions.HoldCardsAction;
 
 public class SimPlayerTests {
     @Test
-    public void One() {
+    public void T1() {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);
         app.setHand(new Hand("KC QC JC TC 9C"));
@@ -24,7 +24,7 @@ public class SimPlayerTests {
     }
 
     @Test
-    public void Two() {
+    public void T2() {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);
         app.setHand(new Hand("AD KD QS JD TD"));
@@ -33,7 +33,7 @@ public class SimPlayerTests {
     }
 
     @Test
-    public void Three()
+    public void T3()
     {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);
@@ -43,7 +43,7 @@ public class SimPlayerTests {
     }
 
     @Test
-    public void Four()
+    public void T4()
     {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);
@@ -54,7 +54,7 @@ public class SimPlayerTests {
     }
 
     @Test
-    public void Five()
+    public void T5()
     {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);
@@ -64,7 +64,7 @@ public class SimPlayerTests {
     }
 
     @Test
-    public void Six()
+    public void T6()
     {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);
@@ -74,7 +74,7 @@ public class SimPlayerTests {
     }
 
     @Test
-    public void Seven()
+    public void T7()
     {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);
@@ -84,7 +84,7 @@ public class SimPlayerTests {
     }
 
     @Test
-    public void Eight()
+    public void T8()
     {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);
@@ -94,11 +94,62 @@ public class SimPlayerTests {
     }
 
     @Test
-    public void Nine()
+    public void T9()
     {
         Player player = new SimulationPlayer(0);
         App app = new App(player, null);
         app.setHand(new Hand("KC QC JC 9C 4D"));
+        Integer[] indexes = {0,1,2,3};
+        assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
+    }
+
+    @Test
+    public void T10()
+    {
+        Player player = new SimulationPlayer(0);
+        App app = new App(player, null);
+        app.setHand(new Hand("AH AS KD KS QS"));
+        Integer[] indexes = {0,1,2,3};
+        assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
+    }
+    
+
+    @Test
+    public void T11()
+    {
+        Player player = new SimulationPlayer(0);
+        App app = new App(player, null);
+        app.setHand(new Hand("JC JD 4D 7D 9D"));
+        Integer[] indexes = {0,1};
+        assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
+    }
+
+    @Test
+    public void T12()
+    {
+        Player player = new SimulationPlayer(0);
+        App app = new App(player, null);
+        app.setHand(new Hand("QS QH JH AH 2C"));
+        Integer[] indexes = {0,1};
+        assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
+    }
+
+    @Test
+    public void T13()
+    {
+        Player player = new SimulationPlayer(0);
+        App app = new App(player, null);
+        app.setHand(new Hand("8C JC QC KC 9H"));
+        Integer[] indexes = {0,1,2,3};
+        assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
+    }
+
+    @Test
+    public void T14()
+    {
+        Player player = new SimulationPlayer(0);
+        App app = new App(player, null);
+        app.setHand(new Hand("2S 5S 7S 9S 7H"));
         Integer[] indexes = {0,1,2,3};
         assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
     }

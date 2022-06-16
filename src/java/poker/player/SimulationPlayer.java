@@ -15,6 +15,7 @@ import src.java.poker.app.hand.recognition.count.FourAcesRecognizer;
 import src.java.poker.app.hand.recognition.missingcards.flush.FourToFlush;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToRoyalFlush;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraightFlush;
+import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToRoyalFlush;
 import src.java.poker.app.hand.recognition.multiple.FullHouseRecognizer;
 import src.java.poker.app.hand.recognition.multiple.TwoPairRecognizer;
 import src.java.poker.app.hand.recognition.sequence.RoyalFlushRecognizer;
@@ -54,8 +55,7 @@ public class SimulationPlayer extends Player {
         /* 9 */
         recognizers.add(new FourToFlush());
         /* 10 */
-        //todo Add 3 to royalFlush Here
-
+        recognizers.add(new ThreeToRoyalFlush());
     }
 
     @Override
