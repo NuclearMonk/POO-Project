@@ -8,6 +8,7 @@ import org.junit.Test;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.app.hand.recognition.HighPair;
+import src.java.poker.app.hand.recognition.JackQueenKing;
 import src.java.poker.app.hand.recognition.LowPair;
 import src.java.poker.app.hand.recognition.ThreeAces;
 import src.java.poker.app.hand.recognition.ThreeOfAKindNotAce;
@@ -17,8 +18,10 @@ import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushNoHigh
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushOneHighCard;
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushTwoHighCards;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.JTSuited;
+import src.java.poker.app.hand.recognition.oneOrTwoCards.KQorKJ;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJSuited;
+import src.java.poker.app.hand.recognition.oneOrTwoCards.QJunsuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
 
 
@@ -182,6 +185,44 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-
 	
+	@Test
+	public void affirmativeJackQueenKing() {
+		HandRecognizer recognizer = new JackQueenKing();
+		Hand hand = new Hand("TH KH 2H TS 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("TD QC 4D 6S 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S 4S JH 6C 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S 4S TH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+	}
+	@Test
+	public void affirmativeKQorKJ() {
+		HandRecognizer recognizer = new KQorKJ();
+		Hand hand = new Hand("KH QD 2H TS 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KD JD 4D 6S 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S 4S JH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S KS TH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+	}
+
+	public void affirmativeQJunsuited() {
+		HandRecognizer recognizer = new QJunsuited();
+		Hand hand = new Hand("KH QD 2H TS 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("KD JD 4D 6S 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S 4S JH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5S KS TH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+	}	
 }
