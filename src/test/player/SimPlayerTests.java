@@ -92,4 +92,14 @@ public class SimPlayerTests {
         Integer[] indexes = {0,1,2,3,4};
         assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
     }
+
+    @Test
+    public void Nine()
+    {
+        Player player = new SimulationPlayer(0);
+        App app = new App(player, null);
+        app.setHand(new Hand("KC QC JC 9C 4D"));
+        Integer[] indexes = {0,1,2,3};
+        assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
+    }
 }
