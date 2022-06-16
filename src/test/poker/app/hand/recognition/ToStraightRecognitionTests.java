@@ -48,7 +48,6 @@ public class ToStraightRecognitionTests {
         Hand hand = new Hand("2H 3H 4H 7H 9C");
         assertEquals(true, recognizer.recognizeHand(hand).isResult());
         assertEquals(3, recognizer.recognizeHand(hand).getDefiningCard().getValue());
-        // TODO fix this text failing,because 2h3h4h should be the recognized straight flush
         hand = new Hand("2H 3H 4H 7D 9C");
         assertEquals(true, recognizer.recognizeHand(hand).isResult());
         assertEquals(2, recognizer.recognizeHand(hand).getDefiningCard().getValue());
