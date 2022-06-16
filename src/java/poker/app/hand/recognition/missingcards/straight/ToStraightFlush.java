@@ -17,21 +17,9 @@ public class ToStraightFlush extends ToStraight {
 
     @Override
     public HandRecognitionResult recognizeHand(Hand hand) {
-        HandRecognitionResult superResult = super.recognizeHand(hand);
-        if (!superResult.isResult()) {
-            return superResult;
-        }
-        List<Integer> members = getStraightMembers(hand);
-        for (Card card : hand.findCards(members.get(0))) {
-            int suitCount = 1;
-            for (int i = 1; i < members.size(); i++) {
-                if (hand.findCards(members.get(i), card.getSuit()).size() > 0) {
-                    suitCount++;
-                }
-            }
-            if (suitCount >= toAStraightCount) {
-                return new HandRecognitionResult(true, superResult.getDefiningCard());
-            }
+        List<Integer> values = getStraightMembers(hand);
+        if (values.size() >= toAStraightCount) {
+            return new HandRecognitionResult(true, hand.findCards(values.get(0)).get(0));
         }
         return new HandRecognitionResult(false, null);
     }
@@ -49,5 +37,59 @@ public class ToStraightFlush extends ToStraight {
             }
         }
         return new HoldCardsAction(indexes);
+    }
+
+    public static List<Integer> getStraightMembers(Hand hand) { // TODO Make This protected, it's public to allow
+                                                                // testing
+        int highestToStraightCount = 0;
+        ArrayList<Integer> valuesWeHave = new ArrayList<>();
+        for (int cardValue = Card.ACE; cardValue <= Card.TEN; cardValue++) {
+            int toStraightCount = 0;
+            ArrayList<Integer> runningValues = new ArrayList<>();
+            if (cardValue != Card.TEN) {
+                for (int straightValueOffset = 0; straightValueOffset < 5; straightValueOffset++) {
+                    if (!hand.findCards(cardValue + straightValueOffset).isEmpty())// we found a gap
+                    {
+                        toStraightCount++;
+                        runningValues.add(cardValue + straightValueOffset);
+                    }
+                }
+
+            } else { /* Special case that checks for cards missing to a TJQKA straight */
+                for (int straightValueOffset = 0; straightValueOffset < 4; straightValueOffset++) {
+                    if (!hand.findCards(cardValue + straightValueOffset).isEmpty())// we found a gap
+                    {
+                        toStraightCount++;
+                        runningValues.add(cardValue + straightValueOffset);
+                    }
+                }
+                if (!hand.findCards(Card.ACE).isEmpty())// we found a gap
+                {
+                    toStraightCount++;
+                    runningValues.add(Card.ACE);
+                }
+            }
+            if (toStraightCount >= highestToStraightCount && areIndexesAFlush(hand, runningValues)) {
+                valuesWeHave = runningValues;
+                highestToStraightCount = toStraightCount;
+            }
+        }
+        return valuesWeHave;
+    }
+    
+    private static Boolean areIndexesAFlush(Hand hand, List<Integer> values)
+    {
+        for (Card card : hand.findCards(values.get(0))) {
+            int suitCount = 1;
+            for (int i = 1; i < values.size(); i++) {
+                if (!hand.findCards(values.get(i), card.getSuit()).isEmpty()) {
+                    suitCount++;
+                }
+            }
+            if (suitCount == values.size()) {
+                return true;
+            }
+        }
+        return false;
     }
 }
