@@ -148,7 +148,6 @@ public class SimPlayerTests {
 		App app = new App(player, null);
 		app.setHand(new Hand("TD JD QC KD 5S"));
 		Integer[] indexes = { 0, 1, 3 };
-		PlayerAction A = app.getPlayer().getAction(app.getHand());
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
 
@@ -158,7 +157,6 @@ public class SimPlayerTests {
         Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
 		app.setHand(new Hand("AC KD QH 3D JH"));
-		PlayerAction A = app.getPlayer().getAction(app.getHand());
 		Integer[] indexes = { 0, 1, 2, 4 };
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 
