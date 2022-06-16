@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognizer;
+import src.java.poker.app.hand.recognition.missingcards.straight.FourToOutsideStraight;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToRoyalFlush;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraight;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraightFlush;
@@ -96,4 +97,16 @@ public class ToStraightRecognitionTests {
         assertEquals(true, recognizer.recognizeHand(hand).isResult());
     }
 
+    @Test
+    public void fourToOutsideStraightTest() {
+        HandRecognizer recognizer = new FourToOutsideStraight();
+        Hand hand = new Hand("2C 3H 4H 5H TH");
+        assertEquals(true, recognizer.recognizeHand(hand).isResult());
+        hand = new Hand("2C 3H 4H 6H TH");
+        assertEquals(false, recognizer.recognizeHand(hand).isResult());
+        hand = new Hand("2C 3H 4H AH TH");
+        assertEquals(false, recognizer.recognizeHand(hand).isResult());
+        hand = new Hand("JC QH KH AH 9H");
+        assertEquals(false, recognizer.recognizeHand(hand).isResult());
+    }
 }
