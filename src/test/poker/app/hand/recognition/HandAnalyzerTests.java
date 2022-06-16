@@ -16,6 +16,7 @@ import src.java.poker.app.hand.recognition.missingcards.flush.FourToFlush;
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushNoHighCards;
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushOneHighCard;
 import src.java.poker.app.hand.recognition.missingcards.flush.ThreeToFlushTwoHighCards;
+import src.java.poker.app.hand.recognition.missingcards.straight.AKQJUnsuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.JTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KQorKJ;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
@@ -210,6 +211,15 @@ public class HandAnalyzerTests {
 		hand = new Hand("5S 4S JH 6C 5S");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("5S KS TH 6C 5S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+
+	}
+	
+	public void affirmativeAKQJUnsuited() {
+		HandRecognizer recognizer = new AKQJUnsuited();
+		Hand hand = new Hand("AH QD KH JS 5S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("AH KD KH JS 5S");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}	
