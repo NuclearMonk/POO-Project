@@ -2,7 +2,6 @@ package src.test.poker.app.hand.recognition;
 
 import static org.junit.Assert.assertEquals;
 
-
 import org.junit.Test;
 
 import src.java.poker.app.hand.Hand;
@@ -23,7 +22,6 @@ import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJunsuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
-
 
 public class HandAnalyzerTests {
 
@@ -50,7 +48,6 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-
 
 	@Test
 	public void affirmativeHighPairs() {
@@ -79,7 +76,7 @@ public class HandAnalyzerTests {
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
+
 	@Test
 	public void affirmativeFourToFlush() {
 		HandRecognizer recognizer = new FourToFlush();
@@ -92,9 +89,8 @@ public class HandAnalyzerTests {
 		hand = new Hand("KH QS AS 4H 5S");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
-
-
 	}
+
 	@Test
 	public void affirmativeThreeToFlushTwoHighCards() {
 		HandRecognizer recognizer = new ThreeToFlushTwoHighCards();
@@ -106,6 +102,7 @@ public class HandAnalyzerTests {
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 
 	}
+
 	@Test
 	public void affirmativeTwoSuitedHighCard() {
 		HandRecognizer recognizer = new TwoSuitedHighCard();
@@ -117,6 +114,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
 	@Test
 	public void affirmativeThreeToFlushNoHighCards() {
 		HandRecognizer recognizer = new ThreeToFlushNoHighCards();
@@ -128,6 +126,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
 	@Test
 	public void affirmativeThreeToFlushOneHighCard() {
 		HandRecognizer recognizer = new ThreeToFlushOneHighCard();
@@ -139,6 +138,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
 	@Test
 	public void affirmativeQJSuited() {
 		HandRecognizer recognizer = new QJSuited();
@@ -150,7 +150,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
+
 	@Test
 	public void affirmativeJTSuited() {
 		HandRecognizer recognizer = new JTSuited();
@@ -162,7 +162,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
+
 	@Test
 	public void affirmativeKTSuited() {
 		HandRecognizer recognizer = new KTSuited();
@@ -174,7 +174,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
+
 	@Test
 	public void affirmativeJackQueenKing() {
 		HandRecognizer recognizer = new JackQueenKing();
@@ -188,6 +188,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
 	@Test
 	public void affirmativeKQorKJ() {
 		HandRecognizer recognizer = new KQorKJ();
@@ -202,25 +203,27 @@ public class HandAnalyzerTests {
 
 	}
 
+	@Test
 	public void affirmativeQJunsuited() {
 		HandRecognizer recognizer = new QJunsuited();
 		Hand hand = new Hand("KH QD 2H TS 5S");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("KD JD 4D 6S 5S");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("5S 4S JH 6C 5S");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("5S KS TH 6C 5S");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
+
+	@Test
 	public void affirmativeAKQJUnsuited() {
 		HandRecognizer recognizer = new AKQJUnsuited();
 		Hand hand = new Hand("KS AS QS 3S JH");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AH KD KH 3S JS");
+		hand = new Hand("AH KD QH 3S JS");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
-	}	
+	}
 }

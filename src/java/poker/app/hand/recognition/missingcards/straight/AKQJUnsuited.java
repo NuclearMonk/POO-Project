@@ -10,7 +10,7 @@ public class AKQJUnsuited extends FourToStraight {
 	public HandRecognitionResult recognizeHand(Hand hand) {
 		HandRecognitionResult straightResult = super.recognizeHand(hand);
 		if (straightResult.isResult())
-			if(straightResult.getDefiningCard().getValue() == Card.ACE)
+			if(straightResult.getDefiningCard().getValue() == Card.JACK)
 				return straightResult;
 		return new HandRecognitionResult(false,null);
 	}
