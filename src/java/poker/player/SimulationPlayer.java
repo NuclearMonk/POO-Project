@@ -15,6 +15,7 @@ import src.java.poker.app.hand.recognition.count.Four5KRecognizer;
 import src.java.poker.app.hand.recognition.count.FourAcesRecognizer;
 import src.java.poker.app.hand.recognition.missingcards.flush.FourToFlush;
 import src.java.poker.app.hand.recognition.missingcards.straight.AKQJUnsuited;
+import src.java.poker.app.hand.recognition.missingcards.straight.FourToOutsideStraight;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToRoyalFlush;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraightFlush;
 import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToRoyalFlush;
@@ -59,6 +60,8 @@ public class SimulationPlayer extends Player {
         /* 10 */
         recognizers.add(new ThreeToRoyalFlush());
         /* 11 */
+        recognizers.add(new FourToOutsideStraight());
+
         /* 12 */
         recognizers.add(new LowPair());
         /* 13 */
