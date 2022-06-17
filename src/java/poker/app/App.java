@@ -74,7 +74,7 @@ public class App {
     public void run() {
         PlayerAction action;
         do {
-            action = this.player.getAction();
+            action = this.player.getAction(this.hand);
             if (null != action) {
                 action.doAction(this);
             }

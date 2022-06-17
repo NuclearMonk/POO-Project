@@ -31,7 +31,6 @@ public abstract class OfAKindRecognizer extends HandRecognizer{
                 result = true;
             }
             else if(handCount>=this.count)return new HandRecognitionResult(false, definingCard);
-            else if(handCount !=1)return new HandRecognitionResult(false, definingCard);
         }
         return new HandRecognitionResult(result, definingCard);
     }
