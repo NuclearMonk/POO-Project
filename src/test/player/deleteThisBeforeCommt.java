@@ -19,11 +19,11 @@ import src.java.poker.player.actions.PlayerAction;
 
 public class deleteThisBeforeCommt {
 	@Test
-	public void T24() {
+	public void T29() {
 		Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
-		/* 37 */app.setHand(new Hand("AC JC 2S 3S 5S"));
-		Integer[] indexes = { 0, 1 };
+		/* 29 */app.setHand(new Hand("KC QH JS 9H 8H"));
+		Integer[] indexes = { 0, 1, 2, 3 };
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
-}
+	}
 }

@@ -42,7 +42,7 @@ public class ThreeToStraightFlushOne extends ToStraightFlush {
 			if (straightMembers.get(i).getValue() > Card.TEN)
 				highCardConter = highCardConter + 1;
 		}
-		if ((highCardConter >= (-1 * gap)) && (!twoThreeFour)) {
+		if ((highCardConter >= (gap)) && (!twoThreeFour)) {
 			return superResult;
 		} else {
 			return new HandRecognitionResult(false, null);
