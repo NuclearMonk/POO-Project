@@ -11,7 +11,7 @@ import src.java.poker.player.actions.PlayerAction;
 
 public class Ace extends HandRecognizer {
 
-	protected Ace() {
+	public Ace() {
 		super("ACE", 0);
 	}
 

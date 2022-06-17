@@ -2,9 +2,9 @@ package src.java.poker.app.hand.recognition.oneOrTwoCards;
 
 import src.java.poker.card.Card;
 
-public class QJunsuited extends SpecificUnsuited {
+public class QJUnsuited extends SpecificUnsuited {
 
-	public QJunsuited() {
+	public QJUnsuited() {
 		super("QJ unsuited", Card.JACK, Card.QUEEN);
 	}
 

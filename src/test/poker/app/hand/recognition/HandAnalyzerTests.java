@@ -26,7 +26,7 @@ import src.java.poker.app.hand.recognition.oneOrTwoCards.JTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KQorKJ;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJSuited;
-import src.java.poker.app.hand.recognition.oneOrTwoCards.QJunsuited;
+import src.java.poker.app.hand.recognition.oneOrTwoCards.QJUnsuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
 
 public class HandAnalyzerTests {
@@ -211,7 +211,7 @@ public class HandAnalyzerTests {
 
 	@Test
 	public void affirmativeQJunsuited() {
-		HandRecognizer recognizer = new QJunsuited();
+		HandRecognizer recognizer = new QJUnsuited();
 		Hand hand = new Hand("KH QD 2H TS 5S");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("KD JD 4D 6S 5S");

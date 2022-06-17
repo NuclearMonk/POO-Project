@@ -14,12 +14,12 @@ public class KQJUnsuited extends ThreeToStraight {
 		if (superResult.isResult()) {
 			List<Integer> values = getStraightMembers(hand);
 			for (int i = 0; i < 3; i++) {
-				if (i < Card.JACK)
+				if (values.get(i) < Card.JACK)
 					return new HandRecognitionResult(false, null);
 			}
 			return superResult;
 		}
-		return new HandRecognitionResult(false, null);;
+		return new HandRecognitionResult(false, null);
 	}
 
 }
