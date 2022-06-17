@@ -16,10 +16,7 @@ import src.java.poker.player.actions.HoldCardsAction;
 public class SimPlayerTests {
 	@Test
 	public void T1() {
-		Player player = new SimulationPlayer(0);
-		App app = new App(player, null);
-		app.setHand(new Hand("KC QC JC TC 9C"));
-		Integer[] indexes = { 0, 1, 2, 3, 4 };
+		Player player = new SimulationPlayer(0);App app = new App(player, null);app.setHand(new Hand("KC QC JC TC 9C"));Integer[] indexes = { 0, 1, 2, 3, 4 };
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
 
