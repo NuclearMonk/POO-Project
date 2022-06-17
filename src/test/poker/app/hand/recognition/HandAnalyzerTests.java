@@ -23,7 +23,7 @@ import src.java.poker.app.hand.recognition.missingcards.straight.FourToInsideStr
 import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToStraightFlushOne;
 import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToStraightFlushTwo;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.JTSuited;
-import src.java.poker.app.hand.recognition.oneOrTwoCards.KQorKJ;
+import src.java.poker.app.hand.recognition.oneOrTwoCards.KQ;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJUnsuited;
@@ -198,7 +198,7 @@ public class HandAnalyzerTests {
 
 	@Test
 	public void affirmativeKQorKJ() {
-		HandRecognizer recognizer = new KQorKJ();
+		HandRecognizer recognizer = new KQ();
 		Hand hand = new Hand("KH QD 2H TS 5S");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("KD JD 4D 6S 5S");

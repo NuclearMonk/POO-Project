@@ -1,5 +1,6 @@
 package src.java.poker.app.hand.recognition.oneOrTwoCards;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import src.java.poker.app.hand.Hand;
@@ -37,7 +38,7 @@ public abstract class SpecificUnsuited extends HandRecognizer {
 			if (C.getValue() == this.highCard) {
 				highCardFound = true;
 			}
-			else if (C.getValue() >= this.lowCard) {
+			else if (C.getValue() == this.lowCard) {
 				lowCardFound = true;
 				definingCard = C;
 
@@ -52,10 +53,11 @@ public abstract class SpecificUnsuited extends HandRecognizer {
 
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
-		Suit S = this.recognizeHand(hand).getDefiningCard().getSuit();
-		List<Integer> indexes = hand.getCardIndex(getLowCard(), S);
-		indexes.addAll(hand.getCardIndex(getHighCard(), S));
+		List<Integer> indexes = new ArrayList<>();
+		indexes.addAll(hand.getCardIndex(lowCard));
+		indexes.addAll(hand.getCardIndex(highCard));
 		return new HoldCardsAction(indexes);
+
 	}
 
 }

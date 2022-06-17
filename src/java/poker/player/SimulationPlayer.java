@@ -35,7 +35,8 @@ import src.java.poker.app.hand.recognition.multiple.FullHouseRecognizer;
 import src.java.poker.app.hand.recognition.multiple.TwoPairRecognizer;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.Ace;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.JTSuited;
-import src.java.poker.app.hand.recognition.oneOrTwoCards.KQorKJ;
+import src.java.poker.app.hand.recognition.oneOrTwoCards.KJ;
+import src.java.poker.app.hand.recognition.oneOrTwoCards.KQ;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJUnsuited;
@@ -115,7 +116,9 @@ public class SimulationPlayer extends Player {
         /* 27 */
         recognizers.add(new ThreeToStraightFlushThree()); 
         /* 28 */
-        recognizers.add(new KQorKJ());  
+        recognizers.add(new KQ());  
+        recognizers.add(new KJ());  
+
         /* 29 */
         recognizers.add(new Ace());  
         /* 30 */
