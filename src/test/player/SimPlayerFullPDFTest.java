@@ -64,7 +64,6 @@ public class SimPlayerFullPDFTest {
 		Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
 		/* 6 */ app.setHand(new Hand("5S 6S 7S 8S JS"));
-		PlayerAction A = app.getPlayer().getAction(app.getHand());
 		Integer[] indexes = { 0, 1, 2, 3, 4 };
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
@@ -227,6 +226,8 @@ public class SimPlayerFullPDFTest {
 		Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
 		/* 24 */app.setHand(new Hand("2H QS JS 9D 8S"));
+		PlayerAction A = app.getPlayer().getAction(app.getHand());
+		//2H JS 9D!!!!!!!!!!! TODO fix this!
 		Integer[] indexes = { 1, 2, 4 };
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
@@ -254,6 +255,8 @@ public class SimPlayerFullPDFTest {
 		Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
 		/* 27 */app.setHand(new Hand("AH KC QC TD 6C"));
+		PlayerAction A = app.getPlayer().getAction(app.getHand());
+		
 		Integer[] indexes = { 0, 1, 2, 3 };
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
