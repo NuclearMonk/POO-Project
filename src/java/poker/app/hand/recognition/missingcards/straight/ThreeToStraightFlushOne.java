@@ -17,12 +17,12 @@ public class ThreeToStraightFlushOne extends ToStraightFlush {
 		HandRecognitionResult superResult = super.recognizeHand(hand);
 		if (!superResult.isResult())
 			return new HandRecognitionResult(false, null);
-		List<Integer> straightMembers = this.getStraightFlushMembers(hand);
-		if (straightMembers.get(0) == Card.ACE) {
+		List<Card> straightMembers = this.getStraightFlushMembers(hand);
+		if (straightMembers.get(0).getValue() == Card.ACE) {
 			return new HandRecognitionResult(false, null);
 		}
-		if (straightMembers.get(2) == Card.ACE) {
-			if (straightMembers.get(0) >= Card.TEN && straightMembers.get(1) >= Card.TEN)
+		if (straightMembers.get(2).getValue() == Card.ACE) {
+			if (straightMembers.get(0).getValue() >= Card.TEN && straightMembers.get(1).getValue() >= Card.TEN)
 				return superResult;
 			else
 				return new HandRecognitionResult(false, null);
@@ -32,14 +32,14 @@ public class ThreeToStraightFlushOne extends ToStraightFlush {
 		boolean twoThreeFour = true;
 		for (int i = 1; i < straightMembers.size(); i++) {
 
-			if (straightMembers.get(i) - straightMembers.get(i - 1) != 1)
-				gap = gap + (straightMembers.get(i) - straightMembers.get(i - 1) - 1);
+			if (straightMembers.get(i).getValue() - straightMembers.get(i - 1).getValue() != 1)
+				gap = gap + (straightMembers.get(i).getValue() - straightMembers.get(i - 1).getValue() - 1);
 
 		}
 		for (int i = 0; i < straightMembers.size(); i++) {
-			if (straightMembers.get(i) != i + 2)
+			if (straightMembers.get(i).getValue() != i + 2)
 				twoThreeFour = false;
-			if (straightMembers.get(i) > Card.TEN)
+			if (straightMembers.get(i).getValue() > Card.TEN)
 				highCardConter = highCardConter + 1;
 		}
 		if ((highCardConter >= (-1 * gap)) && (!twoThreeFour)) {

@@ -56,4 +56,9 @@ public class HoldCardsAction implements PlayerAction {
             return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Hold" + indexes;
+    }
 }

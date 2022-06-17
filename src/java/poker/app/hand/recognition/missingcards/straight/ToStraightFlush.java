@@ -6,90 +6,65 @@ import java.util.List;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
+import src.java.poker.card.Suit;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class ToStraightFlush extends ToStraight {
-    
+
     public ToStraightFlush(int toAStraightCount) {
         super(toAStraightCount);
     }
 
     @Override
     public HandRecognitionResult recognizeHand(Hand hand) {
-        List<Integer> values = getStraightFlushMembers(hand);
-        if (values.size() >= toAStraightCount) {
-            return new HandRecognitionResult(true, hand.findCards(values.get(0)).get(0));
+        List<Card> cards = getStraightFlushMembers(hand);
+        if (cards.size() >= toAStraightCount) {
+            return new HandRecognitionResult(true, cards.get(0));
         }
         return new HandRecognitionResult(false, null);
     }
 
     @Override
     public PlayerAction getAdviceAction(Hand hand) {
-        List<Integer> values = getStraightFlushMembers(hand);
+        List<Card> cards = getStraightFlushMembers(hand);
         ArrayList<Integer> indexes = new ArrayList<>();
-        indexes.add(0);
-        for (Card card : hand.findCards(values.get(0))) {
-            for (int i = 1; i < values.size(); i++) {
-                if (!hand.findCards(values.get(i), card.getSuit()).isEmpty()) {
-                    indexes.add(i);
-                }
-            }
+        for (Card card : cards) {
+            indexes.add(hand.getCardIndex(card.getValue(), card.getSuit()).get(0));
         }
         return new HoldCardsAction(indexes);
     }
 
-    protected List<Integer> getStraightFlushMembers(Hand hand) { // TODO Make This protected, it's public to allow
-                                                                // testing
-        int highestToStraightCount = 0;
-        ArrayList<Integer> valuesWeHave = new ArrayList<>();
-        for (int cardValue = Card.ACE; cardValue <= Card.TEN; cardValue++) {
-            int toStraightCount = 0;
-            ArrayList<Integer> runningValues = new ArrayList<>();
-            if (cardValue != Card.TEN) {
-                for (int straightValueOffset = 0; straightValueOffset < 5; straightValueOffset++) {
-                    if (!hand.findCards(cardValue + straightValueOffset).isEmpty())// we found a gap
-                    {
-                        toStraightCount++;
-                        runningValues.add(cardValue + straightValueOffset);
+    protected List<Card> getStraightFlushMembers(Hand hand) {
+        List<Card> finalList = new ArrayList<Card>();
+        for (Suit suit : Suit.values()) {
+            for (int value = 0; value < Card.TEN; value++) {
+                ArrayList<Card> currentCandidate = new ArrayList<>();
+                for (int i = 0; i < 5; i++) {
+                    List<Card> r = hand.findCards(value + i, suit);
+                    if (!r.isEmpty()) {
+                        currentCandidate.addAll(r);
                     }
                 }
-
-            } else { /* Special case that checks for cards missing to a TJQKA straight */
-                for (int straightValueOffset = 0; straightValueOffset < 4; straightValueOffset++) {
-                    if (!hand.findCards(cardValue + straightValueOffset).isEmpty())// we found a gap
-                    {
-                        toStraightCount++;
-                        runningValues.add(cardValue + straightValueOffset);
-                    }
-                }
-                if (!hand.findCards(Card.ACE).isEmpty())// we found a gap
-                {
-                    toStraightCount++;
-                    runningValues.add(Card.ACE);
+                if (currentCandidate.size() >= toAStraightCount) {
+                    finalList = currentCandidate;
                 }
             }
-            if (toStraightCount>0 && toStraightCount >= highestToStraightCount && areIndexesAFlush(hand, runningValues)) {
-                valuesWeHave = runningValues;
-                highestToStraightCount = toStraightCount;
+            ArrayList<Card> currentCandidate = new ArrayList<>();
+            for (int i = 0; i < 4; i++) {
+                List<Card> r = hand.findCards(Card.TEN + i, suit);
+                if (!r.isEmpty()) {
+                    currentCandidate.addAll(r);
+                }
+            }
+            List<Card> r = hand.findCards(Card.ACE, suit);
+            if (!r.isEmpty()) {
+                currentCandidate.addAll(r);
+            }
+            if (currentCandidate.size() >= toAStraightCount) {
+                finalList = currentCandidate;
             }
         }
-        return valuesWeHave;
-    }
-    
-    private Boolean areIndexesAFlush(Hand hand, List<Integer> values)
-    {
-        for (Card card : hand.findCards(values.get(0))) {
-            int suitCount = 1;
-            for (int i = 1; i < values.size(); i++) {
-                if (!hand.findCards(values.get(i), card.getSuit()).isEmpty()) {
-                    suitCount++;
-                }
-            }
-            if (suitCount >= toAStraightCount) {
-                return true;
-            }
-        }
-        return false;
+        return finalList;
     }
 }

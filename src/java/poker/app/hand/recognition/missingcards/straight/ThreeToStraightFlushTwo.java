@@ -18,12 +18,12 @@ public class ThreeToStraightFlushTwo extends ToStraightFlush {
 		boolean twoThreeFour  = true;
 		if (!superResult.isResult())
 			return new HandRecognitionResult(false, null);
-		List<Integer> straightMembers = this.getStraightFlushMembers(hand);
+		List<Card> straightMembers = this.getStraightFlushMembers(hand);
 		for (int i = 0; i < straightMembers.size(); i++)
 		{
-			if (straightMembers.get(i) != i+2)
+			if (straightMembers.get(i).getValue() != i+2)
 				twoThreeFour = false;
-			if (straightMembers.get(i) > Card.TEN || straightMembers.get(i) == Card.ACE)
+			if (straightMembers.get(i).getValue() > Card.TEN || straightMembers.get(i).getValue() == Card.ACE)
 				return superResult;
 		}
 		if (twoThreeFour)
