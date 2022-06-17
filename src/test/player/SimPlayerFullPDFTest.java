@@ -74,7 +74,7 @@ public class SimPlayerFullPDFTest {
 		Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
 		/* 7 */ app.setHand(new Hand("3D 4H 5H 6H 7H"));
-		Integer[] indexes = { 0, 1, 2, 4, 5 };
+		Integer[] indexes = { 0, 1, 2, 3 , 4};
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
 
@@ -83,7 +83,7 @@ public class SimPlayerFullPDFTest {
 		Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
 		/* 8 */ app.setHand(new Hand("AC KD QD JD TS"));
-		Integer[] indexes = { 0, 1, 2, 4, 5 };
+		Integer[] indexes = { 0, 1, 2, 3, 4};
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
 
