@@ -11,6 +11,7 @@ import src.java.poker.app.hand.Hand;
 import src.java.poker.player.Player;
 import src.java.poker.player.SimulationPlayer;
 import src.java.poker.player.actions.HoldCardsAction;
+import src.java.poker.player.actions.PlayerAction;
 
 public class SimPlayerFullPDFTest {
 	@Test
@@ -63,7 +64,8 @@ public class SimPlayerFullPDFTest {
 		Player player = new SimulationPlayer(0);
 		App app = new App(player, null);
 		/* 6 */ app.setHand(new Hand("5S 6S 7S 8S JS"));
-		Integer[] indexes = { 0, 1, 2, 4, 5 };
+		PlayerAction A = app.getPlayer().getAction(app.getHand());
+		Integer[] indexes = { 0, 1, 2, 3, 4 };
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}
 
