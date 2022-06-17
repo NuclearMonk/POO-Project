@@ -39,7 +39,7 @@ public class ToStraightFlush extends ToStraight {
         return new HoldCardsAction(indexes);
     }
 
-    private List<Integer> getStraightFlushMembers(Hand hand) { // TODO Make This protected, it's public to allow
+    protected List<Integer> getStraightFlushMembers(Hand hand) { // TODO Make This protected, it's public to allow
                                                                 // testing
         int highestToStraightCount = 0;
         ArrayList<Integer> valuesWeHave = new ArrayList<>();

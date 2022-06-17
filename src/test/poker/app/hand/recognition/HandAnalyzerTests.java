@@ -20,6 +20,8 @@ import src.java.poker.app.hand.recognition.missingcards.straight.FourToInsideStr
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToInsideStraightWithOneHighCards;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToInsideStraightWithThreeHighCards;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToInsideStraightWithTwoHighCards;
+import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToStraightFlushOne;
+import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToStraightFlushTwo;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.JTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KQorKJ;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
@@ -230,8 +232,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
-	
+
 	@Test
 	public void affirmativeFourToInsideStraightWithNoHighCards() {
 		HandRecognizer recognizer = new FourToInsideStraightWithNoHighCards();
@@ -241,7 +242,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
+
 	@Test
 	public void affirmativeFourToInsideStraightWithOneHighCards() {
 		HandRecognizer recognizer = new FourToInsideStraightWithOneHighCards();
@@ -251,7 +252,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
+
 	@Test
 	public void affirmativeFourToInsideStraightWithTwoHighCards() {
 		HandRecognizer recognizer = new FourToInsideStraightWithTwoHighCards();
@@ -261,7 +262,7 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
-	
+
 	@Test
 	public void affirmativeFourToInsideStraightWithThreeHighCards() {
 		HandRecognizer recognizer = new FourToInsideStraightWithThreeHighCards();
@@ -271,4 +272,37 @@ public class HandAnalyzerTests {
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 
 	}
+
+	@Test
+	public void affirmativeOfThreeToStraightFlushOne() {
+		HandRecognizer recognizer = new ThreeToStraightFlushOne();
+		Hand hand = new Hand("AH 3H 5H 9D 7S");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("2H 3H 4H 9D TS");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("7D 8D 9D KC 2S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("8D JD QD KC JS");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("8D JD TD 9H JS");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("AD JD TD 6C 9S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+	}
+	
+	@Test
+	public void affirmativeOfThreeToStraightFlushTwo() {
+		HandRecognizer recognizer = new ThreeToStraightFlushTwo();
+		Hand hand = new Hand("2H 3H 4H 5D 6D");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("AH 3H 4H 9D TS");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("JD TD 8D KC 2S");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("5D 6D 8D KC JS");
+		assertEquals(false, recognizer.recognizeHand(hand).isResult());
+		hand = new Hand("8D 9D QD KC JS");
+		assertEquals(true, recognizer.recognizeHand(hand).isResult());
+	}
+	
 }
