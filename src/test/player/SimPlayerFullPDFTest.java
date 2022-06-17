@@ -227,7 +227,7 @@ public class SimPlayerFullPDFTest {
 		App app = new App(player, null);
 		/* 24 */app.setHand(new Hand("2H QS JS 9D 8S"));
 		PlayerAction A = app.getPlayer().getAction(app.getHand());
-		//2H JS 9D!!!!!!!!!!! TODO fix this!
+		//Recognize the class fail to return right indexes TODO
 		Integer[] indexes = { 1, 2, 4 };
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), app.getPlayer().getAction(app.getHand()));
 	}

@@ -21,21 +21,20 @@ public abstract class FourToInsideStraightWithHighCards extends FourToStraight {
 
 		if (fourToStraight.isResult()) {
 			List<Integer> straightMembers = getStraightMembers(hand);
-
-			if (straightMembers.contains(Card.ACE))
-				return new HandRecognitionResult(false, null);
+			if(!straightMembers.contains(Card.ACE)) {
 			for (int i = 1; i < straightMembers.size(); i++) {
 				if (straightMembers.get(i - 1) - straightMembers.get(i) == -1) {
 					break;
 				} else if (i == straightMembers.size() - 1)
 					return new HandRecognitionResult(false, null);
 			}
+			}
 			if (this.numberOfHighCards == 0)
 				return fourToStraight;
 			else {
 				int counter = 0;
 				for (int i = 1; i < straightMembers.size(); i++) {
-					if (straightMembers.get(i) > Card.TEN) {
+					if (straightMembers.get(i) > Card.TEN || straightMembers.get(i) == Card.ACE) {
 						counter = counter + 1;
 					}
 				}
