@@ -28,6 +28,7 @@ import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJUnsuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
+import src.java.poker.player.actions.PlayerAction;
 
 public class HandAnalyzerTests {
 
@@ -256,7 +257,7 @@ public class HandAnalyzerTests {
 	@Test
 	public void affirmativeFourToInsideStraightWithTwoHighCards() {
 		HandRecognizer recognizer = new FourToInsideStraightWithTwoHighCards();
-		Hand hand = new Hand("JC TS 9H QS JH");
+		Hand hand = new Hand("JC TS 8H QS JH");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("JC TS 9H 8S JH");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
@@ -266,7 +267,7 @@ public class HandAnalyzerTests {
 	@Test
 	public void affirmativeFourToInsideStraightWithThreeHighCards() {
 		HandRecognizer recognizer = new FourToInsideStraightWithThreeHighCards();
-		Hand hand = new Hand("JC TS KH QS JH");
+		Hand hand = new Hand("AH KC QC TD 6C");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("JC TS 9H 8S JH");
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
@@ -286,7 +287,7 @@ public class HandAnalyzerTests {
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("8D JD TD 9H JS");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("AD JD TD 6C 9S");
+		hand = new Hand("2H QS JS 9D 8S");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 	}
 	
@@ -299,7 +300,8 @@ public class HandAnalyzerTests {
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("JD TD 8D KC 2S");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("5D 6D 8D KC JS");
+		hand = new Hand("5D 6D 8D KC 9S");
+		PlayerAction A = recognizer.getAdviceAction(hand);
 		assertEquals(false, recognizer.recognizeHand(hand).isResult());
 		hand = new Hand("8D 9D QD KC JS");
 		assertEquals(true, recognizer.recognizeHand(hand).isResult());
