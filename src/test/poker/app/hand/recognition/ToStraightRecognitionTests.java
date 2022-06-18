@@ -43,16 +43,6 @@ public class ToStraightRecognitionTests {
         assertEquals(4, recognizer.recognizeHand(hand).getDefiningCard().getValue());
     }
 
-    @Test
-    public void ThreeToStraightFlushTest() {
-        HandRecognizer recognizer = new ThreeToStraightFlush();
-        Hand hand = new Hand("2H 3H 4H 7H 9C");
-        assertEquals(true, recognizer.recognizeHand(hand).isResult());
-        assertEquals(3, recognizer.recognizeHand(hand).getDefiningCard().getValue());
-        hand = new Hand("2H 3H 4H 7D 9C");
-        assertEquals(true, recognizer.recognizeHand(hand).isResult());
-        assertEquals(2, recognizer.recognizeHand(hand).getDefiningCard().getValue());
-    }
 
     @Test
     public void fourToStraightFlushTest() {
