@@ -17,8 +17,7 @@ public class HoldCardsAction implements PlayerAction {
 
     @Override
     public void doAction(App app) {
-        if(app == null)
-        {
+        if (app == null) {
             throw new NullPointerException("app can't be null");
         }
         ArrayList<Integer> swapIndexes = new ArrayList<>();
@@ -59,6 +58,12 @@ public class HoldCardsAction implements PlayerAction {
 
     @Override
     public String toString() {
-        return "Hold" + indexes;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("hold");
+        for (Integer index : this.indexes) {
+            stringBuilder.append(" ");
+            stringBuilder.append(index+1);
+        }
+        return stringBuilder.toString();
     }
 }
