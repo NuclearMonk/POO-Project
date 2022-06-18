@@ -66,7 +66,7 @@ public class App {
     }
     /**
      * 
-     * @param ongoing Bet Amount 
+     * @param ongoing Bet Amount to be set as the current bet
      */
 
     public void setOngoingBetAmount(int ongoingBetAmount) {
@@ -74,7 +74,11 @@ public class App {
     }
 
     private ArrayList<HandRecognizer> recognizers;
-
+/**
+ * An constructor for the App
+ * @param player
+ * @param deck
+ */
     public App(Player player, Deck deck) {
         this.player = player;
         this.deck = deck;
