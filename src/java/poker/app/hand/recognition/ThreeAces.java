@@ -9,17 +9,32 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class ThreeAces extends OfAKindRecognizer {
+	/*
+	 * Public Constructor of the class that set handName to "Three Aces" and
+	 * rewardsMultiplayer to 1
+	 */
 
 	public ThreeAces() {
 		super("Three Aces", 3, 3);
 	}
 
+	/**
+	 * 
+	 * @param Hand to give the action according to
+	 * @return PlayerAction to hold the Cards that match the class criterion
+	 * 
+	 */
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
 		List<Integer> indexes = hand.getCardIndex(Card.ACE);
 		return new HoldCardsAction(indexes);
 	}
-
+	/**
+	 * Recognizing Where the hand has Three Ace
+	 * 
+	 * @param Hand to be checked
+	 * @return HandRecognitionResult
+	 */
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
 

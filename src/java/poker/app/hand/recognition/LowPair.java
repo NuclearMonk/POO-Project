@@ -9,10 +9,19 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class LowPair extends TwoOfAKindRecognizer {
+	/*
+	 * Public Constructor of the class that set handName to "Low Pair" and
+	 * rewardsMultiplayer to 0
+	 */
 
 	public LowPair() {
-		super("Low Pair", 1);
+		super("Low Pair", 0);
 	}
+
+	/**
+	 * @param Hand to give the action according to
+	 * @return PlayerAction to hold the Cards that match the class criterion
+	 */
 
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
@@ -20,6 +29,12 @@ public class LowPair extends TwoOfAKindRecognizer {
 		return new HoldCardsAction(indexes);
 	}
 
+	/**
+	 * Recognizing Where all the hand has low Pair
+	 * 
+	 * @param Hand to be checked
+	 * @return HandRecognitionResult
+	 */
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
 		HandRecognitionResult result = super.recognizeHand(hand);

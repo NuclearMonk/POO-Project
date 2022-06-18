@@ -95,7 +95,9 @@ public class App {
         recognizers.add(new TwoPairRecognizer());
         recognizers.add(new JacksOrBetterRecognizer());
     }
-
+/**
+ *  to start playing
+ */
     public void run() {
         PlayerAction action;
         do {
@@ -105,7 +107,9 @@ public class App {
             }
         } while (null != action);
     }
-
+/**
+ * Check the hand of the player and determine if he wins or not, change his balance and call the deck.shuffle()
+ */
     public void afterRoundProcessing() {
         for (HandRecognizer handRecognizer : recognizers) {
             if (handRecognizer.recognizeHand(this.hand).isResult()) {

@@ -1,9 +1,13 @@
 package src.java.poker.app.hand.recognition.count;
 
-public class ThreeOfARecognizer extends OfAKindRecognizer{
+public class ThreeOfARecognizer extends OfAKindRecognizer {
+	/**
+	 * public Constructor that sets handName to "THREE OF A KIND", rewardMultiplier
+	 * to 3 and count to 3
+	 * 
+	 */
+	public ThreeOfARecognizer() {
+		super("THREE OF A KIND", 3, 3);
+	}
 
-    public ThreeOfARecognizer() {
-        super("THREE OF A KIND", 3, 3);
-    }
-    
 }

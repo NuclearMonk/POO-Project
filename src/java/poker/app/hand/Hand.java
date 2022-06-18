@@ -10,10 +10,6 @@ import src.java.poker.card.Suit;
 import src.java.poker.deck.Deck;
 import src.java.poker.deck.OutOfCardsException;
 
-/**
- * A Class that is a hand of 5 cards
- */
-
 public class Hand {
 	/**
 	 * Hand size is final equal to 5
@@ -24,7 +20,7 @@ public class Hand {
 	/**
 	 * Public Constructor of a hand from a Deck
 	 * 
-	 * @param deck
+	 * @param deck to draw cards from
 	 * @throws NullPointerException
 	 * @throws OutOfCardsException
 	 */
@@ -37,6 +33,12 @@ public class Hand {
 		}
 	}
 
+	/**
+	 * Public Constructor of a hand from a String
+	 * 
+	 * @param string
+	 * @throws NullPointerException
+	 */
 	public Hand(String string) throws NullPointerException {
 		if (null == string) {
 			throw new NullPointerException("string is null");
@@ -82,8 +84,8 @@ public class Hand {
 	/**
 	 * Method to replace cards using list of their indexes, and a list of cards
 	 * 
-	 * @param indexes
-	 * @param cards
+	 * @param indexes of the cards to be replaced
+	 * @param cards   to replace cards with
 	 */
 	private void replaceCards(List<Integer> indexes, List<Card> cards) {
 		Iterator<Integer> indexIterator = indexes.iterator();
@@ -113,10 +115,21 @@ public class Hand {
 	 * @return
 	 */
 
+	/**
+	 * Check if an index is valid
+	 * 
+	 * @param index to be check
+	 * @return boolean
+	 */
 	private static boolean isValidIndex(int index) {
 		return index > 0 && index <= HAND_SIZE;
 	}
 
+	/**
+	 *
+	 * @param value to search for in a hand
+	 * @return List<Card> that matches the value
+	 */
 	public List<Card> findCards(Integer value) {
 		ArrayList<Card> returnValue = new ArrayList<>();
 		for (Card card : this.cards) {
@@ -126,6 +139,13 @@ public class Hand {
 		}
 		return returnValue;
 	}
+
+	/**
+	 * 
+	 * @param value the Value to be looked for in hand
+	 * @return List<Integer> of the indexes of the cards that matches the value
+	 *         giving by the value Parameter
+	 */
 
 	public List<Integer> getCardIndex(Integer value) {
 		ArrayList<Integer> returnValue = new ArrayList<>();
@@ -137,6 +157,12 @@ public class Hand {
 		return returnValue;
 	}
 
+	/**
+	 * 
+	 * @param suit the suit to be looked for in the hand
+	 * @return List<Integer>of the indexes of the cards that matches the Suit giving
+	 *         by the suit parameter
+	 */
 	public List<Integer> getCardIndex(Suit suit) {
 		ArrayList<Integer> returnValue = new ArrayList<>();
 		for (int i = 0; i < Hand.HAND_SIZE; i++) {
@@ -146,7 +172,15 @@ public class Hand {
 		}
 		return returnValue;
 	}
-	public List<Integer> getCardIndex(Integer value,Suit suit) {
+
+	/**
+	 * 
+	 * @param value of the card to be searched for
+	 * @param suit  the suit to be looked for in the hand
+	 * @returnList<Integer> of the indexes of the cards that matches the giving
+	 *                      parameters
+	 */
+	public List<Integer> getCardIndex(Integer value, Suit suit) {
 		ArrayList<Integer> returnValue = new ArrayList<>();
 		for (int i = 0; i < Hand.HAND_SIZE; i++) {
 			if (this.cards[i].getSuit() == suit && this.cards[i].getValue() == value) {
@@ -155,6 +189,12 @@ public class Hand {
 		}
 		return returnValue;
 	}
+
+	/**
+	 * 
+	 * @param suit to be looked for in the hand
+	 * @return List<Card> of the matching cards that matches the giving parameters
+	 */
 
 	public List<Card> findCards(Suit suit) {
 		ArrayList<Card> returnValue = new ArrayList<>();
@@ -166,6 +206,12 @@ public class Hand {
 		return returnValue;
 	}
 
+	/**
+	 * 
+	 * @param value of the card to be searched for
+	 * @param suit  of the card to be searched for
+	 * @return List<Card> of the matching cards that matches the giving parameters
+	 */
 	public List<Card> findCards(Integer value, Suit suit) {
 		ArrayList<Card> returnValue = new ArrayList<>();
 		for (Card card : this.cards) {
@@ -176,14 +222,27 @@ public class Hand {
 		return returnValue;
 	}
 
+	/**
+	 * 
+	 * @param index of the Card inside the hand
+	 * @return Card that has the index
+	 */
+
 	public Card getCardByIndex(Integer index) {
 		return cards[index];
 	}
 
+	/**
+	 * 
+	 * @return List<Card> of the hand
+	 */
 	public List<Card> cardsAsList() {
 		return Arrays.asList(this.cards.clone());
 	}
 
+	/**
+	 * @return hash code value for the object.
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -192,6 +251,11 @@ public class Hand {
 		return result;
 	}
 
+	/**
+	 * Indicates whether some other object is "equal to" this one.\
+	 * 
+	 * @return boolean
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

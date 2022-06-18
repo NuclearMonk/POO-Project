@@ -11,12 +11,19 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class FlushRecognizer extends HandRecognizer {
+	/**
+	 * Public Constructor of the class that set handName to "FLUSH" and
+	 * rewardsMultiplayer to 7
+	 */
 	public FlushRecognizer() {
 		super("FLUSH", 7);
 	}
 
 	/**
 	 * Recognizing Where all 5 cards same the same suit
+	 * 
+	 * @param Hand to be checked
+	 * @return HandRecognitionResult
 	 */
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
@@ -33,6 +40,10 @@ public class FlushRecognizer extends HandRecognizer {
 		return new HandRecognitionResult(true, definingCard); // output the result
 	}
 
+	/**
+	 * @param Hand to give the action according to 
+	 * @return PlayerAction to hold the Cards that match the class criterion
+	 */
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
 
