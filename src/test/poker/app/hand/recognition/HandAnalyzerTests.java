@@ -196,33 +196,6 @@ public class HandAnalyzerTests {
 
 	}
 
-	@Test
-	public void affirmativeKQorKJ() {
-		HandRecognizer recognizer = new KQ();
-		Hand hand = new Hand("KH QD 2H TS 5S");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("KD JD 4D 6S 5S");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("5S 4S JH 6C 5S");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("5S KS TH 6C 5S");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-
-	}
-
-	@Test
-	public void affirmativeQJunsuited() {
-		HandRecognizer recognizer = new QJUnsuited();
-		Hand hand = new Hand("KH QD 2H TS 5S");
-		assertEquals(true, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("KD JD 4D 6S 5S");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("5S 4S JH 6C 5S");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-		hand = new Hand("5S KS TH 6C 5S");
-		assertEquals(false, recognizer.recognizeHand(hand).isResult());
-
-	}
 
 	@Test
 	public void affirmativeAKQJUnsuited() {
