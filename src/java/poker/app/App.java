@@ -18,35 +18,56 @@ import src.java.poker.app.hand.recognition.sequence.StraightRecognizer;
 import src.java.poker.deck.Deck;
 import src.java.poker.player.Player;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ */
 public class App {
     private final Player player;
+    /**
+     * 
+     * @return player which has been defined inside the App
+     */
 
     public Player getPlayer() {
         return player;
     }
 
     private final Deck deck;
-
+/**
+ * 
+ * @return deck which has been defined inside the App
+ */
     public Deck getDeck() {
         return deck;
     }
 
     private Hand hand;
-
+/**
+ * 
+ * @param Hand the current player is playing
+ */
     public void setHand(Hand hand) {
         this.hand = hand;
     }
-
+/**
+ *  
+ * @return Hand 
+ */
     public Hand getHand() {
         return hand;
     }
 
     private int ongoingBetAmount = 0;
-
+/**
+ * 
+ * @return ongoing Bet Amount that the player is betting
+ */
     public int getOngoingBetAmount() {
         return ongoingBetAmount;
     }
+    /**
+     * 
+     * @param ongoing Bet Amount 
+     */
 
     public void setOngoingBetAmount(int ongoingBetAmount) {
         this.ongoingBetAmount = ongoingBetAmount;
