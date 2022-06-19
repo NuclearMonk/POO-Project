@@ -10,6 +10,10 @@ import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
+/**
+ * Specific two card recognizer regardless of the suit
+ *
+ */
 public abstract class SpecificUnsuited extends HandRecognizer {
 	final int highCard;
 	final int lowCard;
@@ -17,9 +21,9 @@ public abstract class SpecificUnsuited extends HandRecognizer {
 	/**
 	 * protected constructor
 	 * 
-	 * @param handName
-	 * @param lowCard
-	 * @param highCard
+	 * @param handName which will be given to the hand
+	 * @param lowCard  specify the low value to look for
+	 * @param highCard specify the high value to look for
 	 */
 	protected SpecificUnsuited(String handName, int lowCard, int highCard) {
 		super(handName, 0);
@@ -28,6 +32,7 @@ public abstract class SpecificUnsuited extends HandRecognizer {
 	}
 
 	/**
+	 * getter of the high card
 	 * 
 	 * @return high Card
 	 */
@@ -36,6 +41,7 @@ public abstract class SpecificUnsuited extends HandRecognizer {
 	}
 
 	/**
+	 * getter of the low card
 	 * 
 	 * @return low Card
 	 */

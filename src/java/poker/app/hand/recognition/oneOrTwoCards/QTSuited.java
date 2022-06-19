@@ -2,6 +2,11 @@ package src.java.poker.app.hand.recognition.oneOrTwoCards;
 
 import src.java.poker.card.Card;
 
+/**
+ * Same suit Queen and ten recognizer
+ * 
+ *
+ */
 public class QTSuited extends SpecificSuited {
 	/**
 	 * Public Constructor of the class that set handName to "QTSuited"

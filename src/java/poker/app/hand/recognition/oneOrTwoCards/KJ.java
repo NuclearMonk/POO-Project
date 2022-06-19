@@ -1,7 +1,11 @@
 package src.java.poker.app.hand.recognition.oneOrTwoCards;
 
 import src.java.poker.card.Card;
-
+/**
+ * 
+ * Jack and King recognizer regardless of the suit
+ *
+ */
 public class KJ extends SpecificUnsuited {
 	/**
 	 * Public Constructor of the class that set handName to "KJ unsuited" and

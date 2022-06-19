@@ -7,7 +7,11 @@ import src.java.poker.app.hand.Hand;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ * 
+ * 
+ * Two Pair Recognizer
+ */
 public class TwoPairRecognizer extends MultipleMatchRecognizer {
 	/**
 	 * public constructor that sets handName to "TWO PAIR", multipleReward to 1 and

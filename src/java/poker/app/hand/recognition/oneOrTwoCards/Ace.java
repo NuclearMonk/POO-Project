@@ -8,7 +8,11 @@ import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ * 
+ * Ace recognizer regardless of the suit
+ *
+ */
 public class Ace extends HandRecognizer {
 	/**
 	 * public constructor set handName to "ACE" and rewardsMultiplayer to 0

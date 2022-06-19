@@ -10,7 +10,11 @@ import src.java.poker.card.Card;
 import src.java.poker.card.Suit;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ * 
+ * Same suit two high cards recognizer
+ *
+ */
 public class TwoSuitedHighCard extends HandRecognizer {
 	/**
 	 * public Constructor that sets handName to "Two Suited High Card" and the
@@ -21,7 +25,7 @@ public class TwoSuitedHighCard extends HandRecognizer {
 	}
 
 	/**
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold the Cards that match the class criterion
 	 */
 	@Override
@@ -32,7 +36,7 @@ public class TwoSuitedHighCard extends HandRecognizer {
 
 	/**
 	 * Recognize if there are two high cards with the same suite inside the hand
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

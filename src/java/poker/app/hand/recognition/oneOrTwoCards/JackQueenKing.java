@@ -9,6 +9,11 @@ import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
+/**
+ * 
+ * Jack, Queen or King recognizer regardless of the suit
+ *
+ */
 public class JackQueenKing extends HandRecognizer {
 	/**
 	 * Protected Constructor that set handName to "Jack Queen or King" and
@@ -19,7 +24,7 @@ public class JackQueenKing extends HandRecognizer {
 	}
 
 	/**
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold the Cards that match the class criterion
 	 */
 
@@ -33,7 +38,7 @@ public class JackQueenKing extends HandRecognizer {
 	/**
 	 * Recognizing Where the hand has Jack, Queen or King
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

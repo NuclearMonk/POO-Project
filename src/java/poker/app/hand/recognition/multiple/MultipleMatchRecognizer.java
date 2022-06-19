@@ -4,7 +4,11 @@ import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
-
+/**
+ * 
+ * Abstract class for Multiple Match Recognizer
+ *
+ */
 public abstract class MultipleMatchRecognizer extends HandRecognizer {
 	private final int lowCount;
 	private final int highCount;
@@ -12,10 +16,10 @@ public abstract class MultipleMatchRecognizer extends HandRecognizer {
 	/**
 	 * protected Constructor
 	 * 
-	 * @param String handName,
-	 * @param int    rewardMultiplier
-	 * @param int    lowCount
-	 * @param int    highCount
+	 * @param handName to give for the 
+	 * @param rewardMultiplier which is equal to the amount the bet will be multiply by
+	 * @param lowCount the time of the first intended value to be repeated
+	 * @param highCount the time of the second intended value to be repeated
 	 * 
 	 */
 	protected MultipleMatchRecognizer(String handName, int rewardMultiplier, int lowCount, int highCount) {
