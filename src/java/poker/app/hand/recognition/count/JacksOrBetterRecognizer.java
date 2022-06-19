@@ -3,9 +3,13 @@ package src.java.poker.app.hand.recognition.count;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
-
+/**
+ * 
+ * Recognize if hand has a Pair of Jacks or better
+ *
+ */
 public class JacksOrBetterRecognizer extends TwoOfAKindRecognizer {
-	/*
+	/**
 	 * public Constructor of the class that set the handName to "JACKS OR BETTER"
 	 * and rewardMultiplayer to 1
 	 */

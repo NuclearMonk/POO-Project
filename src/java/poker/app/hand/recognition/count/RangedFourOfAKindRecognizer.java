@@ -3,6 +3,11 @@ package src.java.poker.app.hand.recognition.count;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 
+/**
+ * 
+ * Recognizing Where there a number of matched value cards with values between
+ * two values that is equal to the count Attribute
+ */
 public class RangedFourOfAKindRecognizer extends FourOfAKindRecognizer {
 	private int lowValue;
 	private int highValue;
@@ -21,8 +26,8 @@ public class RangedFourOfAKindRecognizer extends FourOfAKindRecognizer {
 	}
 
 	/**
-	 * Recognizing Where there a number of matched value cards that is equal to the
-	 * count Attribute
+	 * Recognizing Where there a number of matched value cards with values between
+	 * two values that is equal to the count Attribute
 	 * 
 	 * @return HandRecognitionResult
 	 * @param hand to check

@@ -1,10 +1,18 @@
 package src.java.poker.app.hand.recognition.count;
 
+import java.util.List;
+
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
+import src.java.poker.player.actions.HoldCardsAction;
+import src.java.poker.player.actions.PlayerAction;
 
+/**
+ * Recognizing Where there a number of matched value cards that is equal to the
+ * count Attribute
+ */
 public abstract class OfAKindRecognizer extends HandRecognizer {
 	protected int count;
 
@@ -43,5 +51,11 @@ public abstract class OfAKindRecognizer extends HandRecognizer {
 				return new HandRecognitionResult(false, definingCard);
 		}
 		return new HandRecognitionResult(result, definingCard);
+	}
+	@Override
+	public PlayerAction getAdviceAction(Hand hand) {
+		int value = this.recognizeHand(hand).getDefiningCard().getValue();
+		List<Integer> indexes = hand.getCardIndex(value);
+		return new HoldCardsAction(indexes);
 	}
 }

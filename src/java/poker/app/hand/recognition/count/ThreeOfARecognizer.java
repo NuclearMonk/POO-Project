@@ -1,5 +1,10 @@
 package src.java.poker.app.hand.recognition.count;
 
+/**
+ * 
+ * To Recognize if hand has three of similar value cards
+ *
+ */
 public class ThreeOfARecognizer extends OfAKindRecognizer {
 	/**
 	 * public Constructor that sets handName to "THREE OF A KIND", rewardMultiplier
