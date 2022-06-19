@@ -6,13 +6,9 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import src.java.poker.app.App;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.player.Brain;
-import src.java.poker.player.Player;
-import src.java.poker.player.SimulationPlayer;
 import src.java.poker.player.actions.HoldCardsAction;
-import src.java.poker.player.actions.PlayerAction;
 
 public class BrainFullPDFTest {
 	@Test

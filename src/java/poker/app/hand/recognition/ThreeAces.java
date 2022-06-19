@@ -9,7 +9,7 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class ThreeAces extends OfAKindRecognizer {
-	/*
+	/**
 	 * Public Constructor of the class that set handName to "Three Aces" and
 	 * rewardsMultiplayer to 1
 	 */

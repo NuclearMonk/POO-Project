@@ -10,7 +10,10 @@ public enum Suit {
     SPADES('S');
 
     private final char shorthand;
-
+/**
+ * private constructor 
+ * @param shorthand
+ */
     private Suit(char shorthand) {
         this.shorthand = shorthand;
     }

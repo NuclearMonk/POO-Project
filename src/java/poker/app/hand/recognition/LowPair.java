@@ -9,7 +9,7 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class LowPair extends TwoOfAKindRecognizer {
-	/*
+	/**
 	 * Public Constructor of the class that set handName to "Low Pair" and
 	 * rewardsMultiplayer to 0
 	 */
