@@ -5,6 +5,12 @@ import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
 
 public class AKQJUnsuited extends FourToStraight {
+	/**
+	 * Recognizing Where there is Ace,King, Queen and Jack in the hand
+	 * 
+	 * @param Hand to be checked
+	 * @return HandRecognitionResult
+	 */
 
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {

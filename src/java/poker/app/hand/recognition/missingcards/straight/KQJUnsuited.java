@@ -7,7 +7,12 @@ import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
 
 public class KQJUnsuited extends ThreeToStraight {
-
+	/**
+	 * recognize if the hand has King, Queen and Jack
+	 * 
+	 * @param Hand to be checked
+	 * @return HandRecognitionResult
+	 */
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
 		HandRecognitionResult superResult = super.recognizeHand(hand);
