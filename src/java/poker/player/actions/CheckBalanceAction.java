@@ -5,7 +5,7 @@ import src.java.poker.app.App;
 public class CheckBalanceAction implements PlayerAction {
 	/**
 	 * Check the balance of the player 
-	 * @param App
+	 * @param app
 	 */
 	public void doAction(App app) {
 		if (app == null) {

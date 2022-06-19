@@ -12,7 +12,7 @@ public class ThreeToRoyalFlush extends ThreeToStraightFlush{
 	/**
 	 * recognize if the hand has a Royal flush that misses two cards
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
     @Override

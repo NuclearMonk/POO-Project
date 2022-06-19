@@ -36,7 +36,7 @@ public abstract class Deck {
 
 	/**
 	 * @param numberOfCards The number of cards to be drawn
-	 * @return List<Card>
+	 * @return List of Card
 	 */
 	public List<Card> drawCards(int numberOfCards) throws OutOfCardsException {
 		if (this.numberOfRemainingCards() - numberOfCards < 0)

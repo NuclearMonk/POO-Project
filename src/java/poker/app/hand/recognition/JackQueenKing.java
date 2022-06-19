@@ -22,7 +22,7 @@ public class JackQueenKing extends HandRecognizer {
 	}
 
 	/**
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold the Cards that match the class criterion
 	 */
 	@Override

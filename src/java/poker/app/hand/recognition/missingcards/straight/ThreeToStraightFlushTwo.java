@@ -22,7 +22,7 @@ public class ThreeToStraightFlushTwo extends ToStraightFlush {
 	 * recognize if the hand has straight flush that misses two cards and it is a
 	 * Type 2
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

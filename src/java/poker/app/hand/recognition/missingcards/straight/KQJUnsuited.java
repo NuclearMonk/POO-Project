@@ -15,7 +15,7 @@ public class KQJUnsuited extends ThreeToStraight {
 	/**
 	 * recognize if the hand has King, Queen and Jack
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

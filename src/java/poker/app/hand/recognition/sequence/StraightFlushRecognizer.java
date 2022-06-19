@@ -3,7 +3,11 @@ package src.java.poker.app.hand.recognition.sequence;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.FlushRecognizer;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
-
+/**
+ * 
+ * Straight Flush Recognizer
+ *
+ */
 public class StraightFlushRecognizer extends StraightRecognizer {
 
 	protected static final FlushRecognizer recognizer = new FlushRecognizer();
@@ -17,8 +21,8 @@ public class StraightFlushRecognizer extends StraightRecognizer {
 	}
 	/**
 	 * protected constructor
-	 * @param handName
-	 * @param rewardMultiplier
+	 * @param handName to give for the hand
+	 * @param rewardMultiplier equal to the factor that the bet is multiplay by
 	 */
 
 	protected StraightFlushRecognizer(String handName, int rewardMultiplier) {
@@ -26,7 +30,7 @@ public class StraightFlushRecognizer extends StraightRecognizer {
 	}
 	/**
 	 * recognize if the hand has "STRAIGHT FLUSH"
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 

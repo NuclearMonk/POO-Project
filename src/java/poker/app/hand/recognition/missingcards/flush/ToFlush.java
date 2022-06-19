@@ -10,6 +10,11 @@ import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
+/**
+ * 
+ * Abstract ToFlsuh recognizer
+ *
+ */
 public abstract class ToFlush extends HandRecognizer {
 
 	protected int countToFlush;
@@ -27,7 +32,7 @@ public abstract class ToFlush extends HandRecognizer {
 	}
 
 	/**
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold cards that matches the class criterion
 	 */
 
@@ -41,7 +46,7 @@ public abstract class ToFlush extends HandRecognizer {
 	 * Recognizing Where there is a number of cards with the same suit and it equals
 	 * to countToFlush
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

@@ -36,7 +36,7 @@ public class ThreeOfAKindNotAce extends OfAKindRecognizer {
 	/**
 	 * Recognizing Where the hand has Three matching cards but not Aces
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

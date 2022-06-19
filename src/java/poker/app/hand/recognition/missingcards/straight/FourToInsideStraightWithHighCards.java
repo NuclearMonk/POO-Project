@@ -28,7 +28,7 @@ public abstract class FourToInsideStraightWithHighCards extends FourToStraight {
 	 * not be completed with any other card, and it has a number of high cards that
 	 * matches numberOfHighCards
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 

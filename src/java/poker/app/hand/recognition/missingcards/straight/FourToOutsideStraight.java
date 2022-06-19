@@ -20,7 +20,7 @@ public class FourToOutsideStraight extends FourToStraight {
 	 * Recognizing Where there is a straight in the hand that misses a card and can
 	 * be completed with a card from either side 
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

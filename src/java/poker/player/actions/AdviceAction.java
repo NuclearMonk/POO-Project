@@ -10,7 +10,7 @@ public class AdviceAction implements PlayerAction {
 	/**
 	 * Based on the hand it will print what the player should do according to the
 	 * strategy which defines the Simulation player
-	 * @param App
+	 * @param app
 	 */
 	@Override
 	public void doAction(App app) {

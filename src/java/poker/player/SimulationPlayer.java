@@ -4,7 +4,11 @@ import src.java.poker.app.hand.Hand;
 import src.java.poker.player.actions.DealAction;
 import src.java.poker.player.actions.PlayerAction;
 import src.java.poker.player.actions.StatsAction;
-
+/**
+ * Simulation player
+ * 
+ *
+ */
 public class SimulationPlayer extends Player {
 
     private Boolean shouldDeal = true;

@@ -3,7 +3,11 @@ package src.java.poker.app.hand.recognition.sequence;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
-
+/**
+ * 
+ * Royal Flush Recognizer
+ *
+ */
 public class RoyalFlushRecognizer extends StraightFlushRecognizer {
 	/**
 	 * public constructor that sets the handName to "ROYAL FLUSH" and
@@ -16,7 +20,7 @@ public class RoyalFlushRecognizer extends StraightFlushRecognizer {
 	/**
 	 * Recognize if the hand has a Royal flush
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

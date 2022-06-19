@@ -31,7 +31,7 @@ public abstract class ToStraight extends HandRecognizer {
 	 * Recognize if the hand has a number of Straight cards equal to
 	 * toAStraightCount
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override
@@ -86,7 +86,7 @@ public abstract class ToStraight extends HandRecognizer {
 	}
 
 	/**
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold cards that matches the class criterion
 	 */
 

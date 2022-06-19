@@ -3,7 +3,11 @@ package src.java.poker.app.hand.recognition.missingcards.flush;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
-
+/**
+ * 
+ * Three To Flush with One High Card recognizer
+ *
+ */
 public class ThreeToFlushOneHighCard extends ToFlush {
 	/**
 	 * Public Constructor of the class that set handName to "Three to flush with one
@@ -17,7 +21,7 @@ public class ThreeToFlushOneHighCard extends ToFlush {
 	 * Recognizing Where there are 3 cards with the same suit and one of them is
 	 * High card
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override
