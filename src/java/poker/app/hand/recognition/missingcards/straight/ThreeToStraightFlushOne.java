@@ -7,11 +7,20 @@ import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
 
 public class ThreeToStraightFlushOne extends ToStraightFlush {
-
+	/**
+	 * public constructor that set countToStraightFlush to 3
+	 */
 	public ThreeToStraightFlushOne() {
 		super(3);
 	}
 
+	/**
+	 * recognize if the hand has straight flush that misses two cards and it is a
+	 * Type 1
+	 * 
+	 * @param Hand to be checked
+	 * @return HandRecognitionResult
+	 */
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
 		HandRecognitionResult superResult = super.recognizeHand(hand);

@@ -48,6 +48,11 @@ public abstract class Deck {
 		return drawnCards;
 	}
 
+	/**
+	 * 
+	 * @return one card
+	 * @throws OutOfCardsException
+	 */
 	protected Card draw() throws OutOfCardsException {
 		if (numberOfRemainingCards() <= 0)
 			throw new OutOfCardsException("Deck does not have enough cards");

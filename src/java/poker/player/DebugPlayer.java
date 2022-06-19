@@ -16,7 +16,11 @@ import src.java.poker.player.actions.StatsAction;
 
 public class DebugPlayer extends Player {
     private Scanner scanner;
-
+/**
+ * 
+ * @param inputFile with the instructions
+ * @param balance to start the game with
+ */
     public DebugPlayer(File inputFile, int balance) {
         super(balance);
         try {
@@ -26,7 +30,11 @@ public class DebugPlayer extends Player {
             e.printStackTrace();
         }
     }
-
+/**
+ * 
+ * @param Hand to give the action to
+ * @return PlayerAction 
+ */
     @Override
     public PlayerAction getAction(Hand hand) {
 

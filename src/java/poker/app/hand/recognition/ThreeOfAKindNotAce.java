@@ -7,10 +7,13 @@ import src.java.poker.app.hand.recognition.count.OfAKindRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ * Recognize if hand has Three Of A Kind but Not Ace
+ *
+ */
 public class ThreeOfAKindNotAce extends OfAKindRecognizer {
-	/*
-	 * Public Constructor of the class that set handName to "Three Aces" and
+	/**
+	 * Public Constructor of the class that set handName to "Three Of A Kind But Not Ace" and
 	 * rewardsMultiplayer to 3
 	 */
 	public ThreeOfAKindNotAce() {
@@ -19,7 +22,7 @@ public class ThreeOfAKindNotAce extends OfAKindRecognizer {
 
 	/**
 	 * 
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold the Cards that match the class criterion
 	 * 
 	 */

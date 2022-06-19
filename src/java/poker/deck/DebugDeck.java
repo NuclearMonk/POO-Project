@@ -12,34 +12,38 @@ import src.java.poker.card.Card;
  * A debug File input based deck
  */
 public class DebugDeck extends Deck {
-    /**
-     * Constructs a new deck of from a card file
-     * 
-     * @param file the file to be read
-     * @throws FileNotFoundException if the scanner fails to find the file
-     */
-    public DebugDeck(File file) throws FileNotFoundException {
-        Pattern pattern = Pattern.compile(Card.CARD_REGEX);
-        this.cards = new ArrayList<>();
-        Scanner scanner;
-        try {
-            scanner = new Scanner(file);
-            while (scanner.hasNext(pattern)) {
-                String token = scanner.next(pattern);
-                Card card = new Card(token);
-                this.cards.add(card);
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            throw new FileNotFoundException("file doesn't exist");
-        }
+	/**
+	 * Constructs a new deck of from a card file
+	 * 
+	 * @param file the file to be read
+	 * @throws FileNotFoundException if the scanner fails to find the file
+	 */
+	public DebugDeck(File file) throws FileNotFoundException {
+		Pattern pattern = Pattern.compile(Card.CARD_REGEX);
+		this.cards = new ArrayList<>();
+		Scanner scanner;
+		try {
+			scanner = new Scanner(file);
+			while (scanner.hasNext(pattern)) {
+				String token = scanner.next(pattern);
+				Card card = new Card(token);
+				this.cards.add(card);
+			}
+			scanner.close();
+		} catch (FileNotFoundException e) {
+			throw new FileNotFoundException("file doesn't exist");
+		}
 
-    }
+	}
 
-    @Override
-    public void shuffle() {
-        // Debug Deck Can not be shuffled,would defeat the entire purpose of the debug
-        // deck
+	/**
+	 * This method does nothing because Debug Deck Can not be shuffled, it would defeat
+	 * the entire purpose of the debug deck
+	 */
+	@Override
+	public void shuffle() {
+		// Debug Deck Can not be shuffled,would defeat the entire purpose of the debug
+		// deck
 
-    }
+	}
 }

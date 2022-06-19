@@ -1,5 +1,7 @@
 package src.java.poker.app.hand.recognition;
-
+/**
+ * interface  for HandAction
+ */
 import src.java.poker.app.hand.Hand;
 import src.java.poker.player.actions.PlayerAction;
 

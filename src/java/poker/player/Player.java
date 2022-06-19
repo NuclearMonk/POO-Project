@@ -5,37 +5,67 @@ import src.java.poker.player.actions.PlayerAction;
 
 public abstract class Player {
 
-    protected int balance;
+	protected int balance;
 
-    public int getBalance() {
-        return balance;
-    }
+	/**
+	 * 
+	 * @return balance
+	 */
+	public int getBalance() {
+		return balance;
+	}
 
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
+	/**
+	 * 
+	 * @param balance
+	 */
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
 
-    protected int currentBet = 5;
+	protected int currentBet = 5;
 
-    protected Player(int balance) {
-        this.balance = balance;
-    }
+	/**
+	 * protected constructor
+	 * 
+	 * @param balance
+	 */
+	protected Player(int balance) {
+		this.balance = balance;
+	}
 
-    public int getCurrentBet() {
-        return currentBet;
-    }
+	/**
+	 * 
+	 * @return current Bet
+	 */
 
-    public void setCurrentBet(int currentBet) {
-        this.currentBet = currentBet;
-    }
-
-    public void chargeBetAmount(int amount) {
-        this.balance -= amount;
-    }
-
-    public void creditReward(int amount) {
-        this.balance += amount;
-    }
-
-    public abstract PlayerAction getAction(Hand hand);
+	public int getCurrentBet() {
+		return currentBet;
+	}
+/**
+ * 
+ * @param currentBet
+ */
+	public void setCurrentBet(int currentBet) {
+		this.currentBet = currentBet;
+	}
+/**
+ * @param amount to take from balance 
+ */
+	public void chargeBetAmount(int amount) {
+		this.balance -= amount;
+	}
+/**
+ * 
+ * @param amount to add to the balance
+ */
+	public void creditReward(int amount) {
+		this.balance += amount;
+	}
+/**
+ * Abstract Method
+ * @param hand
+ * @return PlayerAction
+ */
+	public abstract PlayerAction getAction(Hand hand);
 }

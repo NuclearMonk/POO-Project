@@ -13,28 +13,59 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public abstract class SpecificSuited extends HandRecognizer {
-	final int  lowCard;
+	final int lowCard;
 	final int highCard;
 
-	protected SpecificSuited(String handName,int highCard, int lowCard) {
-		super(handName,0);
+	/**
+	 * protected constructor
+	 * 
+	 * @param handName
+	 * @param highCard
+	 * @param lowCard
+	 */
+	protected SpecificSuited(String handName, int highCard, int lowCard) {
+		super(handName, 0);
 		this.highCard = highCard;
 		this.lowCard = lowCard;
 	}
+
+	/**
+	 * 
+	 * @return low Card
+	 */
 	public int getLowCard() {
 		return lowCard;
 	}
+
+	/**
+	 * 
+	 * @return high Card
+	 */
 	public int getHighCard() {
 		return highCard;
 	}
+
+	/**
+	 * 
+	 * 
+	 * @param Hand to give the action according to
+	 * @return PlayerAction to hold the Cards that match the class criterion
+	 */
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
 		Suit S = this.recognizeHand(hand).getDefiningCard().getSuit();
-		List<Integer> indexes = hand.getCardIndex(getLowCard(),S);
+		List<Integer> indexes = hand.getCardIndex(getLowCard(), S);
 		indexes.addAll(hand.getCardIndex(getHighCard(), S));
 		return new HoldCardsAction(indexes);
 	}
 
+	/**
+	 * Recognizing Where there are specific cards defined by highCard and lowCard
+	 * attributes and that they have the same suite
+	 * 
+	 * @param Hand to be checked
+	 * @return HandRecognitionResult
+	 */
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
 		ArrayList<Suit> highCardSuit = new ArrayList<Suit>();
@@ -51,6 +82,5 @@ public abstract class SpecificSuited extends HandRecognizer {
 		return new HandRecognitionResult(false, null);
 
 	}
-
 
 }

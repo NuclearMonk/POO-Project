@@ -49,74 +49,78 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class Brain {
-    private List<HandRecognizer> recognizers;
+	private List<HandRecognizer> recognizers;
 
-    public Brain() {
-        this.recognizers = new ArrayList<>();
-        /* 1 */
-        recognizers.add(new RoyalFlushRecognizer());
-        recognizers.add(new FourAcesRecognizer());
-        recognizers.add(new Four24Recognizer());
-        recognizers.add(new Four5KRecognizer());
-        recognizers.add(new StraightFlushRecognizer());
-        /* 2 */
-        recognizers.add(new FourToRoyalFlush());
-        /* 3 */
-        recognizers.add(new ThreeAces());
-        /* 4 */
-        recognizers.add(new StraightRecognizer());
-        recognizers.add(new FlushRecognizer());
-        recognizers.add(new FullHouseRecognizer());
-        /* 5 */
-        recognizers.add(new ThreeOfAKindNotAce());
-        /* 6 */
-        recognizers.add(new FourToStraightFlush());
-        /* 7 */
-        recognizers.add(new TwoPairRecognizer());
-        /* 8 */
-        recognizers.add(new HighPair());
-        /* 9 */
-        recognizers.add(new FourToFlush());
-        /* 10 */
-        recognizers.add(new ThreeToRoyalFlush());
-        /* 11 */
-        recognizers.add(new FourToOutsideStraight());
+	/**
+	 * public Constructor for the brain that make a List of recognizers in a
+	 * Priority order from highest to lowest
+	 */
+	public Brain() {
+		this.recognizers = new ArrayList<>();
+		/* 1 */
+		recognizers.add(new RoyalFlushRecognizer());
+		recognizers.add(new FourAcesRecognizer());
+		recognizers.add(new Four24Recognizer());
+		recognizers.add(new Four5KRecognizer());
+		recognizers.add(new StraightFlushRecognizer());
+		/* 2 */
+		recognizers.add(new FourToRoyalFlush());
+		/* 3 */
+		recognizers.add(new ThreeAces());
+		/* 4 */
+		recognizers.add(new StraightRecognizer());
+		recognizers.add(new FlushRecognizer());
+		recognizers.add(new FullHouseRecognizer());
+		/* 5 */
+		recognizers.add(new ThreeOfAKindNotAce());
+		/* 6 */
+		recognizers.add(new FourToStraightFlush());
+		/* 7 */
+		recognizers.add(new TwoPairRecognizer());
+		/* 8 */
+		recognizers.add(new HighPair());
+		/* 9 */
+		recognizers.add(new FourToFlush());
+		/* 10 */
+		recognizers.add(new ThreeToRoyalFlush());
+		/* 11 */
+		recognizers.add(new FourToOutsideStraight());
 
-        /* 12 */
-        recognizers.add(new LowPair());
-        /* 13 */
-        recognizers.add(new AKQJUnsuited());
-        /* 14 */
-        recognizers.add(new ThreeToStraightFlushOne());
-        /* 15 */
-        recognizers.add(new FourToInsideStraightWithThreeHighCards());        
-        /* 16 */
-        recognizers.add(new QJSuited()); 
-        /* 17 */
-        recognizers.add(new ThreeToFlushTwoHighCards()); 
-        /* 18 */
-        recognizers.add(new TwoSuitedHighCard());         
-        /* 19 */
-        recognizers.add(new FourToInsideStraightWithTwoHighCards()); 
-        /* 20 */
-        recognizers.add(new ThreeToStraightFlushTwo());    
-        /* 21 */
-        recognizers.add(new FourToInsideStraightWithOneHighCards());
-        /* 22 */
-        recognizers.add(new KQJUnsuited());
-        /* 23 */
-        recognizers.add(new JTSuited());
-        /* 24 */
-        recognizers.add(new QJUnsuited());        
-        /* 25 */
-        recognizers.add(new ThreeToFlushOneHighCard());        
-        /* 26 */
-        recognizers.add(new QTSuited());   
-        /* 27 */
-        recognizers.add(new ThreeToStraightFlushThree()); 
-        /* 28 */
-        recognizers.add(new KQ());  
-        recognizers.add(new KJ());  
+		/* 12 */
+		recognizers.add(new LowPair());
+		/* 13 */
+		recognizers.add(new AKQJUnsuited());
+		/* 14 */
+		recognizers.add(new ThreeToStraightFlushOne());
+		/* 15 */
+		recognizers.add(new FourToInsideStraightWithThreeHighCards());
+		/* 16 */
+		recognizers.add(new QJSuited());
+		/* 17 */
+		recognizers.add(new ThreeToFlushTwoHighCards());
+		/* 18 */
+		recognizers.add(new TwoSuitedHighCard());
+		/* 19 */
+		recognizers.add(new FourToInsideStraightWithTwoHighCards());
+		/* 20 */
+		recognizers.add(new ThreeToStraightFlushTwo());
+		/* 21 */
+		recognizers.add(new FourToInsideStraightWithOneHighCards());
+		/* 22 */
+		recognizers.add(new KQJUnsuited());
+		/* 23 */
+		recognizers.add(new JTSuited());
+		/* 24 */
+		recognizers.add(new QJUnsuited());
+		/* 25 */
+		recognizers.add(new ThreeToFlushOneHighCard());
+		/* 26 */
+		recognizers.add(new QTSuited());
+		/* 27 */
+		recognizers.add(new ThreeToStraightFlushThree());
+		/* 28 */
+		recognizers.add(new KQ());
+		recognizers.add(new KJ());
 
         /* 29 */
         recognizers.add(new Ace());  

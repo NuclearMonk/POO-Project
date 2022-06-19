@@ -22,6 +22,7 @@ import src.java.poker.player.Player;
 import src.java.poker.player.actions.PlayerAction;
 
 /**
+ * main app class with Player, Deck and Hand attribute
  */
 public class App {
     private final Player player;
@@ -46,36 +47,33 @@ public class App {
     }
 
     private Hand hand;
-
-    /**
-     * 
-     * @param Hand the current player is playing
-     */
+/**
+ * 
+ * @param hand the current player is playing
+ */
     public void setHand(Hand hand) {
         this.hand = hand;
     }
-
-    /**
-     * 
-     * @return Hand
-     */
+/**
+ *  
+ * @return hand 
+ */
     public Hand getHand() {
         return hand;
     }
 
     private int ongoingBetAmount = 0;
-
-    /**
-     * 
-     * @return ongoing Bet Amount that the player is betting
-     */
+/**
+ * 
+ * @return ongoingBetAmount that the player is betting
+ */
     public int getOngoingBetAmount() {
         return ongoingBetAmount;
     }
 
     /**
      * 
-     * @param ongoing Bet Amount to be set as the current bet
+     * @param ongoingBetAmount to be set as the current bet
      */
 
     public void setOngoingBetAmount(int ongoingBetAmount) {

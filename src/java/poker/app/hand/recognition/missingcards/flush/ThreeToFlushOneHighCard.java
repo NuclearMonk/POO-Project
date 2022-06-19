@@ -5,11 +5,20 @@ import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
 
 public class ThreeToFlushOneHighCard extends ToFlush {
-
+	/*
+	 * Public Constructor of the class that set handName to "Three to flush with one High Card"  and
+	 * rewardsMultiplayer to 0 and count to 3
+	 */
 	public ThreeToFlushOneHighCard() {
 		super("Three to flush with one High Card", 0, 3);
 	}
 
+	/**
+	 * Recognizing Where there are 3 cards with the same suit and one of them is High card
+	 * 
+	 * @param Hand to be checked
+	 * @return HandRecognitionResult
+	 */
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
 		HandRecognitionResult result = super.recognizeHand(hand);

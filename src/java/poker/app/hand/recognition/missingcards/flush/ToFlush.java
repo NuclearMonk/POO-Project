@@ -14,10 +14,21 @@ public abstract class ToFlush extends HandRecognizer {
 
 	protected int countToFlush;
 
+	/**
+	 * Public Constructor
+	 * 
+	 * @param handName
+	 * @param rewardMultiplier
+	 * @param toFlush          which is the number of cards with the same suite
+	 */
 	protected ToFlush(String handName, int rewardMultiplier, int toFlush) {
 		super(handName, rewardMultiplier);
 		this.countToFlush = toFlush;
 	}
+	/**
+	 * @param Hand to give the action according to 
+	 * @return PlayerAction to hold cards that matches the class criterion
+	 */
 
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
@@ -25,6 +36,13 @@ public abstract class ToFlush extends HandRecognizer {
 		return new HoldCardsAction(indexes);
 	}
 
+	/**
+	 * Recognizing Where there is a number of cards with the same suit and it equals
+	 * to countToFlush
+	 * 
+	 * @param Hand to be checked
+	 * @return HandRecognitionResult
+	 */
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
 		Boolean result = false;

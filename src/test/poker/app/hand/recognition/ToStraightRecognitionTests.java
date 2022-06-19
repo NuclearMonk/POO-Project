@@ -11,7 +11,6 @@ import src.java.poker.app.hand.recognition.missingcards.straight.FourToRoyalFlus
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraight;
 import src.java.poker.app.hand.recognition.missingcards.straight.FourToStraightFlush;
 import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToStraight;
-import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToStraightFlush;
 import src.java.poker.card.Card;
 import src.java.poker.card.Suit;
 

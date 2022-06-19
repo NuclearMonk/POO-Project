@@ -10,6 +10,10 @@ import src.java.poker.card.Suit;
 import src.java.poker.deck.Deck;
 import src.java.poker.deck.OutOfCardsException;
 
+/**
+ * To keep the hand of the player
+ *
+ */
 public class Hand {
 	/**
 	 * Hand size is final equal to 5
@@ -27,7 +31,7 @@ public class Hand {
 	public Hand(Deck deck) throws NullPointerException, OutOfCardsException {
 		if (null == deck)
 			throw new NullPointerException("deck is null");
-		this.cards =  deck.drawCards(HAND_SIZE).toArray(new Card[0]);
+		this.cards = deck.drawCards(HAND_SIZE).toArray(new Card[0]);
 	}
 
 	/**
@@ -93,7 +97,7 @@ public class Hand {
 	}
 
 	/**
-	 * @return String
+	 * @return string
 	 */
 	@Override
 	public String toString() {
@@ -104,13 +108,6 @@ public class Hand {
 		}
 		return output.toString().trim();
 	}
-
-	/**
-	 * Private method to check whether the index is valid or not
-	 * 
-	 * @param index
-	 * @return
-	 */
 
 	/**
 	 * Check if an index is valid
@@ -125,7 +122,7 @@ public class Hand {
 	/**
 	 *
 	 * @param value to search for in a hand
-	 * @return List<Card> that matches the value
+	 * @return returnValue List<Card> that matches the value
 	 */
 	public List<Card> findCards(Integer value) {
 		ArrayList<Card> returnValue = new ArrayList<>();
@@ -140,8 +137,8 @@ public class Hand {
 	/**
 	 * 
 	 * @param value the Value to be looked for in hand
-	 * @return List<Integer> of the indexes of the cards that matches the value
-	 *         giving by the value Parameter
+	 * @return returnValue List<Integer> of the indexes of the cards that matches
+	 *         the value giving by the value Parameter
 	 */
 
 	public List<Integer> getCardIndex(Integer value) {
@@ -157,8 +154,8 @@ public class Hand {
 	/**
 	 * 
 	 * @param suit the suit to be looked for in the hand
-	 * @return List<Integer>of the indexes of the cards that matches the Suit giving
-	 *         by the suit parameter
+	 * @return returnValue List<Integer>of the indexes of the cards that matches the
+	 *         Suit giving by the suit parameter
 	 */
 	public List<Integer> getCardIndex(Suit suit) {
 		ArrayList<Integer> returnValue = new ArrayList<>();
@@ -174,8 +171,8 @@ public class Hand {
 	 * 
 	 * @param value of the card to be searched for
 	 * @param suit  the suit to be looked for in the hand
-	 * @returnList<Integer> of the indexes of the cards that matches the giving
-	 *                      parameters
+	 * @return returnValue List<Integer> of the indexes of the cards that matches
+	 *         the giving parameters
 	 */
 	public List<Integer> getCardIndex(Integer value, Suit suit) {
 		ArrayList<Integer> returnValue = new ArrayList<>();
@@ -190,7 +187,8 @@ public class Hand {
 	/**
 	 * 
 	 * @param suit to be looked for in the hand
-	 * @return List<Card> of the matching cards that matches the giving parameters
+	 * @return returnValue List<Card> of the matching cards that matches the giving
+	 *         parameters
 	 */
 
 	public List<Card> findCards(Suit suit) {
@@ -207,7 +205,8 @@ public class Hand {
 	 * 
 	 * @param value of the card to be searched for
 	 * @param suit  of the card to be searched for
-	 * @return List<Card> of the matching cards that matches the giving parameters
+	 * @return returnValue List<Card> of the matching cards that matches the giving
+	 *         parameters
 	 */
 	public List<Card> findCards(Integer value, Suit suit) {
 		ArrayList<Card> returnValue = new ArrayList<>();
@@ -222,7 +221,7 @@ public class Hand {
 	/**
 	 * 
 	 * @param index of the Card inside the hand
-	 * @return Card that has the index
+	 * @return card that has the index
 	 */
 
 	public Card getCardByIndex(Integer index) {
