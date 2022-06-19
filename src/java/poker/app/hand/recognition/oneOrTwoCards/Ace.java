@@ -30,7 +30,7 @@ public class Ace extends HandRecognizer {
 	/**
 	 * Recognize if the hand has an Ace
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

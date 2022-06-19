@@ -10,6 +10,10 @@ import src.java.poker.card.Suit;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
+/**
+ * Class to Check if hand is a flush
+ *
+ */
 public class FlushRecognizer extends HandRecognizer {
 	/**
 	 * Public Constructor of the class that set handName to "FLUSH" and
@@ -22,7 +26,7 @@ public class FlushRecognizer extends HandRecognizer {
 	/**
 	 * Recognizing Where all 5 cards same the same suit
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override
@@ -41,7 +45,7 @@ public class FlushRecognizer extends HandRecognizer {
 	}
 
 	/**
-	 * @param Hand to give the action according to 
+	 * @param hand to give the action according to 
 	 * @return PlayerAction to hold the Cards that match the class criterion
 	 */
 	@Override

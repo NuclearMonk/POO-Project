@@ -1,7 +1,10 @@
 package src.java.poker.app.hand.recognition;
 
 import src.java.poker.card.Card;
-
+/**
+ * Class to keep the result for hand recognition process
+ *
+ */
 public class HandRecognitionResult {
 	private final boolean result;
 	private final Card definingCard;
@@ -27,14 +30,14 @@ public class HandRecognitionResult {
 
 	/**
 	 * 
-	 * @return definingCard
+	 * @return definingCard which define the hand
 	 */
 	public Card getDefiningCard() {
 		return definingCard;
 	}
 
 	/**
-	 * @return hash code value for the object.
+	 * @return result hash code value for the object.
 	 */
 	@Override
 	public int hashCode() {

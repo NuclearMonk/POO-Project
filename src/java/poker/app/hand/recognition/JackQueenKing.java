@@ -6,7 +6,11 @@ import src.java.poker.app.hand.Hand;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ *
+ * To recognize if the hand has Jack, Queen or King
+ *
+ */
 public class JackQueenKing extends HandRecognizer {
 	/**
 	 * Public Constructor that set handName to "Jack Queen King" and

@@ -8,6 +8,11 @@ import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
+/**
+ * 
+ * To recognize ThreeAces
+ *
+ */
 public class ThreeAces extends OfAKindRecognizer {
 	/**
 	 * Public Constructor of the class that set handName to "Three Aces" and
@@ -20,7 +25,7 @@ public class ThreeAces extends OfAKindRecognizer {
 
 	/**
 	 * 
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold the Cards that match the class criterion
 	 * 
 	 */
@@ -29,10 +34,11 @@ public class ThreeAces extends OfAKindRecognizer {
 		List<Integer> indexes = hand.getCardIndex(Card.ACE);
 		return new HoldCardsAction(indexes);
 	}
+
 	/**
 	 * Recognizing Where the hand has Three Ace
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override
