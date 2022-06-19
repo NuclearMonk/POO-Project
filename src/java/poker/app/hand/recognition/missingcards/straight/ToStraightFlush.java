@@ -9,7 +9,11 @@ import src.java.poker.card.Card;
 import src.java.poker.card.Suit;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ * 
+ * To Straight Flush recognizer
+ *
+ */
 public class ToStraightFlush extends ToStraight {
 	/**
 	 * public constructor
@@ -25,7 +29,7 @@ public class ToStraightFlush extends ToStraight {
 	 * Recognize if the hand has a number of Straight cards with same suites
 	 * (Straight Flush) equal to toAStraightCount
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override
@@ -54,7 +58,7 @@ public class ToStraightFlush extends ToStraight {
 
 	/**
 	 * 
-	 * @param hand
+	 * @param hand to get its straight members
 	 * @return List<Card> that forms a Straight Flush inside a hand
 	 */
 	protected List<Card> getStraightFlushMembers(Hand hand) {

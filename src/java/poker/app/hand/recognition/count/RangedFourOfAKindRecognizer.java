@@ -15,9 +15,8 @@ public class RangedFourOfAKindRecognizer extends FourOfAKindRecognizer {
 	/**
 	 * public Constructor that set count to 4
 	 * 
-	 * @param handName
-	 * @param rewardMultiplier
-	 * @param count
+	 * @param handName         to be given to the hand
+	 * @param rewardMultiplier equal to the factor that the bet is multiplay by
 	 */
 	public RangedFourOfAKindRecognizer(String handName, int rewardMultiplier, int lowValue, int highValue) {
 		super(handName, rewardMultiplier, 4);

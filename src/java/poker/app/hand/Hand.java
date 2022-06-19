@@ -25,7 +25,7 @@ public class Hand {
 	 * Public Constructor of a hand from a Deck
 	 * 
 	 * @param deck to draw cards from
-	 * @throws NullPointerException
+	 * @throws NullPointerException when deck is null
 	 * @throws OutOfCardsException
 	 */
 	public Hand(Deck deck) throws NullPointerException, OutOfCardsException {
@@ -37,8 +37,9 @@ public class Hand {
 	/**
 	 * Public Constructor of a hand from a String
 	 * 
-	 * @param string
-	 * @throws NullPointerException
+	 * @param string represents the hand should be in the form of Value then Suit
+	 *               for each card
+	 * @throws NullPointerException when string is null
 	 */
 	public Hand(String string) throws NullPointerException {
 		if (null == string) {
@@ -58,8 +59,8 @@ public class Hand {
 	 * 
 	 * @param index   of cards need to be replace
 	 * @param newCard the card to be replaced with
-	 * @throws IndexOutOfBoundsException
-	 * @throws NullPointerException
+	 * @throws IndexOutOfBoundsException when index is not valid
+	 * @throws NullPointerException when newCard is null
 	 */
 
 	public void replaceCards(int index, Card newCard) {

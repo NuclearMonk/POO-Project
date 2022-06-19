@@ -5,7 +5,11 @@ import java.util.List;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
-
+/**
+ * 
+ * Four To Outside Straight recognizer
+ *
+ */
 public class FourToOutsideStraight extends FourToStraight {
 	/**
 	 * Public Constructor

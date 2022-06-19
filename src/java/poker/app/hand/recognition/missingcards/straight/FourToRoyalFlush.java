@@ -4,6 +4,11 @@ import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
 
+/**
+ * 
+ * Four To Royal Flush recognizer
+ *  
+ */
 public class FourToRoyalFlush extends FourToStraightFlush {
 	/**
 	 * Recognizing Where there is a Royal Flush in the hand that misses one card

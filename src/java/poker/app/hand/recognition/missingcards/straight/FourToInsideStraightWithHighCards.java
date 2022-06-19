@@ -6,13 +6,17 @@ import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
 
+/**
+ * Abstract class to check if hand has four to inside stright with high cards
+ *
+ */
 public abstract class FourToInsideStraightWithHighCards extends FourToStraight {
 	protected final int numberOfHighCards;
 
 	/**
 	 * protected Constructor
 	 * 
-	 * @param numberOfHighCards
+	 * @param numberOfHighCards that we would like to compare to
 	 */
 	protected FourToInsideStraightWithHighCards(int numberOfHighCards) {
 		super();

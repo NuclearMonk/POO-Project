@@ -13,8 +13,8 @@ public abstract class HandRecognizer implements HandAction {
 	/**
 	 * Protected Constructor for the abstract class
 	 * 
-	 * @param handName
-	 * @param rewardMultiplier
+	 * @param handName to be given to the hand
+	 * @param rewardMultiplier equal to the factor that the bet is multiplay by
 	 */
 	protected HandRecognizer(String handName, int rewardMultiplier) {
 		this.handName = handName;
@@ -22,7 +22,7 @@ public abstract class HandRecognizer implements HandAction {
 	}
 
 	/**
-	 * 
+	 * getter for the rewardMultiplier
 	 * @return rewardMultiplier
 	 */
 	public int getRewardMultiplier() {
@@ -30,14 +30,14 @@ public abstract class HandRecognizer implements HandAction {
 	}
 
 	/**
-	 * 
-	 * @param hand
+	 * Abstract method
+	 * @param hand to deal with
 	 * @return HandRecognitionResult
 	 */
 	public abstract HandRecognitionResult recognizeHand(Hand hand);
 
 	/**
-	 * 
+	 * getter for the handName
 	 * @return handName
 	 */
 	public String getHandName() {

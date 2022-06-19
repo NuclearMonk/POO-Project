@@ -9,11 +9,18 @@ import src.java.poker.deck.DebugDeck;
 import src.java.poker.deck.StandardDeck;
 import src.java.poker.player.DebugPlayer;
 import src.java.poker.player.SimulationPlayer;
-
+/**
+ * App factory to handle command line
+ *
+ */
 public class AppFactory {
     private AppFactory() {
     }
-
+/**
+ * 
+ * @param args the command
+ * @return App
+ */
     public static App createApp(String[] args) {
         if (args.length != 4) {
             return null;

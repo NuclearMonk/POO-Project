@@ -7,7 +7,11 @@ import src.java.poker.app.hand.recognition.count.TwoOfAKindRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ * 
+ * Recognizer of any Low Pair in a hand
+ *
+ */
 public class LowPair extends TwoOfAKindRecognizer {
 	/**
 	 * Public Constructor of the class that set handName to "Low Pair" and

@@ -9,7 +9,11 @@ import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ * 
+ * abstract to Straight recognizer
+ *
+ */
 public abstract class ToStraight extends HandRecognizer {
 	protected final int toAStraightCount;
 

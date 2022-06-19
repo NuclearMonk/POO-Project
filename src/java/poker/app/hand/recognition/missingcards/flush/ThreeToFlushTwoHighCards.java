@@ -5,7 +5,7 @@ import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
 
 public class ThreeToFlushTwoHighCards extends ToFlush {
-	/*
+	/**
 	 * Public Constructor of the class that set handName to "Three to flush with one High Card"  and
 	 * rewardsMultiplayer to 0 and count to 3
 	 */

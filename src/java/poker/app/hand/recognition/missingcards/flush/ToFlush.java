@@ -17,16 +17,17 @@ public abstract class ToFlush extends HandRecognizer {
 	/**
 	 * Public Constructor
 	 * 
-	 * @param handName
-	 * @param rewardMultiplier
+	 * @param handName         to be given to the hand
+	 * @param rewardMultiplier equal to the factor that the bet is multiply by
 	 * @param toFlush          which is the number of cards with the same suite
 	 */
 	protected ToFlush(String handName, int rewardMultiplier, int toFlush) {
 		super(handName, rewardMultiplier);
 		this.countToFlush = toFlush;
 	}
+
 	/**
-	 * @param Hand to give the action according to 
+	 * @param Hand to give the action according to
 	 * @return PlayerAction to hold cards that matches the class criterion
 	 */
 
