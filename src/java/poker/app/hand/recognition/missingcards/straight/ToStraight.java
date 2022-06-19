@@ -48,8 +48,7 @@ public abstract class ToStraight extends HandRecognizer {
 	 * @param Hand to be checked
 	 * @return List<Integer> of the cards' values that make the straight
 	 */
-	public static List<Integer> getStraightMembers(Hand hand) { // TODO Make This protected, it's public to allow
-																// testing
+	protected static List<Integer> getStraightMembers(Hand hand) {
 		int highestToStraightCount = 0;
 		ArrayList<Integer> valuesWeHave = new ArrayList<>();
 		for (int cardValue = Card.ACE; cardValue <= Card.TEN; cardValue++) {

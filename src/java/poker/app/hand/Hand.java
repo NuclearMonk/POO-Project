@@ -69,7 +69,7 @@ public class Hand {
 			throw new IndexOutOfBoundsException("index is out of bounds");
 		if (null == newCard)
 			throw new NullPointerException("newCard is invalid");
-		this.cards[index - 1] = newCard;
+		this.cards[index] = newCard;
 	}
 
 	/**
@@ -117,7 +117,7 @@ public class Hand {
 	 * @return boolean
 	 */
 	private static boolean isValidIndex(int index) {
-		return index > 0 && index <= HAND_SIZE;
+		return index >= 0 && index < HAND_SIZE;
 	}
 
 	/**

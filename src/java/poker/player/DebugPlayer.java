@@ -26,8 +26,7 @@ public class DebugPlayer extends Player {
         try {
             this.scanner = new Scanner(inputFile);
         } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            System.out.println("player input file does not exist");
         }
     }
 /**
