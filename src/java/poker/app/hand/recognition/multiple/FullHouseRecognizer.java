@@ -8,11 +8,18 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class FullHouseRecognizer extends MultipleMatchRecognizer {
-
+	/**
+	 * public Constructor set handName to "FULL HOUSE", rewardMultiplyer to 10,
+	 * highCount to 3 and lowCount 2
+	 */
 	public FullHouseRecognizer() {
 		super("FULL HOUSE", 10, 2, 3);
 	}
 
+	/**
+	 * @param Hand to give the action according to
+	 * @return PlayerAction to hold cards that matches the class criterion
+	 */
 	@Override
 	public PlayerAction getAdviceAction(Hand hand) {
 
