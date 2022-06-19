@@ -68,7 +68,6 @@ public class Hand {
 			throw new IndexOutOfBoundsException("index is out of bounds");
 		if (null == newCard)
 			throw new NullPointerException("newCard is invalid");
-		System.out.println("Replaced Cards at position "+index);
 		this.cards[index] = newCard;
 	}
 

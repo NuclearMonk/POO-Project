@@ -26,11 +26,6 @@ public class StandardDeck extends Deck {
 	}
 
     @Override
-    public List<Card> drawCards(int numberOfCards) throws OutOfCardsException {
-        return super.drawCards(numberOfCards);
-    }
-
-    @Override
     public void shuffle() {
         Collections.shuffle(this.cards);
     }

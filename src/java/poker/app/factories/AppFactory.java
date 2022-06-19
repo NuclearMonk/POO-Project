@@ -2,7 +2,6 @@ package src.java.poker.app.factories;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 
 import src.java.poker.app.App;
 import src.java.poker.deck.DebugDeck;
@@ -31,7 +30,6 @@ public class AppFactory {
                     Integer.parseInt(args[3])), new StandardDeck());
 
         }
-        // TODO add simulation player
         return null;
     }
 }

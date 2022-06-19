@@ -12,7 +12,6 @@ public class CheckBalanceAction implements PlayerAction {
 			throw new NullPointerException("app can't be null");
 		}
 		System.out.println("player's credit is " + app.getPlayer().getBalance());
-
 	}
 
 }
