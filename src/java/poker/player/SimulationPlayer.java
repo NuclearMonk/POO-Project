@@ -30,7 +30,6 @@ public class SimulationPlayer extends Player {
     public PlayerAction getAction(Hand hand) {
         if(numberOfDeals <0)
         {
-            System.out.println("WTF");
             return null;
         }
         else if(numberOfDeals ==0)

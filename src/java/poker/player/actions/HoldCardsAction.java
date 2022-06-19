@@ -31,13 +31,16 @@ public class HoldCardsAction implements PlayerAction {
 			throw new NullPointerException("app can't be null");
 		}
 		ArrayList<Integer> swapIndexes = new ArrayList<>();
-		for (int i = 1; i <= Hand.HAND_SIZE; i++) {
+        System.out.println(indexes);
+		for (int i = 0; i < Hand.HAND_SIZE; i++) {
 			if (!indexes.contains(i)) {
 				swapIndexes.add(i);
 			}
 		}
+        System.out.println(swapIndexes);
 		app.getHand().replaceCards(app.getDeck(), swapIndexes);
-		System.out.println("player's Hand " + app.getHand());
+        System.out.println(this);
+		System.out.println(">player's Hand " + app.getHand());
 		app.afterRoundProcessing();
 	}
 
