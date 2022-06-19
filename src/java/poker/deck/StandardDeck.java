@@ -27,14 +27,18 @@ public class StandardDeck extends Deck {
 
     @Override
     public List<Card> drawCards(int numberOfCards) throws OutOfCardsException {
-        List<Card> drawnCards = super.drawCards(numberOfCards);
-        this.cards.addAll(drawnCards);// storing the drawn card at the end of the deck to avoid having to create a new
-                                 // object
-        return drawnCards;
+        return super.drawCards(numberOfCards);
     }
 
     @Override
     public void shuffle() {
         Collections.shuffle(this.cards);
+    }
+
+    @Override
+    protected Card draw() throws OutOfCardsException {
+        Card card = super.draw();
+        cards.add(card);
+        return card;
     }
 }

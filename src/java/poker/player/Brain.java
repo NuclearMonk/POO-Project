@@ -45,6 +45,7 @@ import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
 import src.java.poker.app.hand.recognition.sequence.RoyalFlushRecognizer;
 import src.java.poker.app.hand.recognition.sequence.StraightFlushRecognizer;
 import src.java.poker.app.hand.recognition.sequence.StraightRecognizer;
+import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
 public class Brain {
@@ -135,6 +136,6 @@ public class Brain {
                 return handRecognizer.getAdviceAction(hand);
             }
         }
-        return null;
+        return new HoldCardsAction(new ArrayList<>());
     }
 }

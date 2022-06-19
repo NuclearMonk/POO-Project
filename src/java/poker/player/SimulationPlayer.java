@@ -3,6 +3,7 @@ package src.java.poker.player;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.player.actions.DealAction;
 import src.java.poker.player.actions.PlayerAction;
+import src.java.poker.player.actions.StatsAction;
 
 public class SimulationPlayer extends Player {
 
@@ -18,9 +19,15 @@ public class SimulationPlayer extends Player {
 
     @Override
     public PlayerAction getAction(Hand hand) {
-        if(numberOfDeals ==0)
+        if(numberOfDeals <0)
         {
+            System.out.println("WTF");
             return null;
+        }
+        else if(numberOfDeals ==0)
+        {
+            numberOfDeals--;
+            return new StatsAction();
         }
         if (shouldDeal) {
             numberOfDeals--;

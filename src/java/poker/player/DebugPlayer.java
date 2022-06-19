@@ -12,6 +12,7 @@ import src.java.poker.player.actions.DealAction;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 import src.java.poker.player.actions.SetBetAmountAction;
+import src.java.poker.player.actions.StatsAction;
 
 public class DebugPlayer extends Player {
     private Scanner scanner;
@@ -50,6 +51,8 @@ public class DebugPlayer extends Player {
                 return new CheckBalanceAction();
             } else if (next.equals("a")) {
                 return new AdviceAction();
+            } else if (next.equals("s")) {
+                return new StatsAction();
             } else {
                 System.out.println("Unknown Command");
             }

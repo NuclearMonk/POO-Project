@@ -12,6 +12,7 @@ public class DealAction implements PlayerAction {
         app.setOngoingBetAmount(app.getPlayer().getCurrentBet());
         app.getPlayer().chargeBetAmount(app.getOngoingBetAmount());
         app.setHand(new Hand(app.getDeck()));
+        app.setHandCount(app.getHandCount()+1);
         System.out.println("player's hand " + app.getHand());
     }
 
