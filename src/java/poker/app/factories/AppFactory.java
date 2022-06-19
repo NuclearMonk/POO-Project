@@ -6,25 +6,30 @@ import java.util.Arrays;
 
 import src.java.poker.app.App;
 import src.java.poker.deck.DebugDeck;
+import src.java.poker.deck.StandardDeck;
 import src.java.poker.player.DebugPlayer;
+import src.java.poker.player.SimulationPlayer;
 
 public class AppFactory {
     private AppFactory() {
     }
 
     public static App createApp(String[] args) {
-        System.out.println(Arrays.toString(args));// TODO remove this debug print
-        if (args.length != 3) {
+        if (args.length != 4) {
             return null;
         }
         if (args[0].equals("-d")) {
-            File playerFile = new File(args[1]);
-            File cardFile = new File(args[2]);
+            File playerFile = new File(args[2]);
+            File cardFile = new File(args[3]);
             try {
-                return new App(new DebugPlayer(playerFile, 10000), new DebugDeck(cardFile));
+                return new App(new DebugPlayer(playerFile, Integer.parseInt(args[1])), new DebugDeck(cardFile));
             } catch (FileNotFoundException e) {
                 return null;
             }
+        } else if (args[0].equals("-s")) {
+            return new App(new SimulationPlayer(Integer.parseInt(args[1]), Integer.parseInt(args[2]),
+                    Integer.parseInt(args[3])), new StandardDeck());
+
         }
         // TODO add simulation player
         return null;

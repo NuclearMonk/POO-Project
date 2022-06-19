@@ -48,7 +48,7 @@ public abstract class Deck {
 		return drawnCards;
 	}
 
-	public Card draw() throws OutOfCardsException {
+	protected Card draw() throws OutOfCardsException {
 		if (numberOfRemainingCards() <= 0)
 			throw new OutOfCardsException("Deck does not have enough cards");
 		return this.cards.remove(0);

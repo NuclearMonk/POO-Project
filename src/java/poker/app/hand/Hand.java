@@ -27,10 +27,7 @@ public class Hand {
 	public Hand(Deck deck) throws NullPointerException, OutOfCardsException {
 		if (null == deck)
 			throw new NullPointerException("deck is null");
-		this.cards = new Card[HAND_SIZE];
-		for (int i = 0; i < cards.length; i++) {
-			cards[i] = deck.draw();
-		}
+		this.cards =  deck.drawCards(HAND_SIZE).toArray(new Card[0]);
 	}
 
 	/**
