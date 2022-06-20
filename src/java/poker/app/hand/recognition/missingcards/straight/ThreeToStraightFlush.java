@@ -8,7 +8,7 @@ public abstract class ThreeToStraightFlush extends ToStraightFlush {
 	/**
 	 * public constructor that set countToStraightFlush to 3
 	 */
-	public ThreeToStraightFlush() {
+	protected ThreeToStraightFlush() {
 		super(3);
 	}
 }

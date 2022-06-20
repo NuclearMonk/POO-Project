@@ -1,9 +1,12 @@
 package src.java.poker.app.hand.recognition.multiple;
 
+import java.util.List;
+
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
+
 /**
  * 
  * Abstract class for Multiple Match Recognizer
@@ -16,10 +19,11 @@ public abstract class MultipleMatchRecognizer extends HandRecognizer {
 	/**
 	 * protected Constructor
 	 * 
-	 * @param handName to give for the 
-	 * @param rewardMultiplier which is equal to the amount the bet will be multiply by
-	 * @param lowCount the time of the first intended value to be repeated
-	 * @param highCount the time of the second intended value to be repeated
+	 * @param handName         to give for the
+	 * @param rewardMultiplier which is equal to the amount the bet will be multiply
+	 *                         by
+	 * @param lowCount         the time of the first intended value to be repeated
+	 * @param highCount        the time of the second intended value to be repeated
 	 * 
 	 */
 	protected MultipleMatchRecognizer(String handName, int rewardMultiplier, int lowCount, int highCount) {
@@ -35,36 +39,31 @@ public abstract class MultipleMatchRecognizer extends HandRecognizer {
 
 	@Override
 	public HandRecognitionResult recognizeHand(Hand hand) {
-		Boolean result = false;
-		Card highCard = null;
 		Card lowCard = null;
-		for (int i = 0; i < Hand.HAND_SIZE; i++) {
-			int handCount = hand.findCards(hand.getCardByIndex(i).getValue()).size();
-			if (null != lowCard)// ww already have a low card
-			{
-				if (this.highCount == handCount) {
-					highCard = hand.getCardByIndex(i);
+		Card highCard = null;
+
+		for (int i = Card.ACE; i <= Card.KING; i++) {
+			List<Card> cards = hand.findCards(i);
+			if (cards.size() == lowCount && cards.size() == highCount) {
+				if (lowCard == null) {
+					lowCard = cards.get(0);
+				} else {
+					highCard = cards.get(0);
 				}
-			} else // we don't have a low card
-			{
-				if (this.lowCount == handCount) // and this card fits our low count
-				{
-					lowCard = hand.getCardByIndex(i);
-				} else if (this.highCount == handCount) // and the card fits our high count
-				{
-					highCard = hand.getCardByIndex(i);
-				}
+			} else if (cards.size() == lowCount) {
+				lowCard = cards.get(0);
+			} else if (cards.size() == highCount) {
+				highCard = cards.get(0);
 			}
 		}
-		result = highCard != null && lowCard != null && highCard.getValue() != lowCard.getValue();
-		if (lowCount == highCount && result) {
-			if (highCard.compareTo(lowCard) > 0) {
-				return new HandRecognitionResult(result, highCard);
-			} else {
-				return new HandRecognitionResult(result, lowCard);
+
+		if (lowCard != null && highCard != null && lowCard.getValue() != highCard.getValue()) {
+			if (lowCard.getValue() == Card.ACE) {
+				return new HandRecognitionResult(true, lowCard);
 			}
+			return new HandRecognitionResult(true, highCard);
 		}
-		return new HandRecognitionResult(result, highCard);
+		return new HandRecognitionResult(false, null);
 	}
 
 }

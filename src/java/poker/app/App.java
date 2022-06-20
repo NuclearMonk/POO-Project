@@ -211,6 +211,7 @@ public class App {
 			if (handRecognizer.recognizeHand(this.hand).isResult()) {
 				StatsManager.increaseOccurrences(handRecognizer);
 				int amount = handRecognizer.getRewardMultiplier() * ongoingBetAmount;
+				System.out.println("AAA:"+ amount);
 				sumOfGains += amount;
 				this.player.creditReward(amount);
 				System.out.println("Player Wins with " + handRecognizer.getHandName() + " and his credit is: "

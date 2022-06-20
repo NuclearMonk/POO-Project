@@ -660,10 +660,10 @@ public class BrainFullPDFTest {
 	}
 
 	@Test
-	public void CrashTeste() {
+	public void DebugTest() {
 		Brain brain = new Brain();
-		/* 81 */Hand hand = new Hand("TC 9C 9H 9S 9D");
-		Integer[] indexes = {1,2,3,4};
+		/* 81 */Hand hand = new Hand("7C 5D KH KS 7D");
+		Integer[] indexes = {0,2,3,4};
 		assertEquals(new HoldCardsAction(Arrays.asList(indexes)), brain.getAction(hand));
 	}
 }

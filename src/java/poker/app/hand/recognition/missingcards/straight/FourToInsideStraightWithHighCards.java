@@ -7,7 +7,7 @@ import src.java.poker.app.hand.recognition.HandRecognitionResult;
 import src.java.poker.card.Card;
 
 /**
- * Abstract class to check if hand has four to inside stright with high cards
+ * Abstract class to check if hand has four to inside straight with high cards
  *
  */
 public abstract class FourToInsideStraightWithHighCards extends FourToStraight {

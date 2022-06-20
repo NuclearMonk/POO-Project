@@ -26,7 +26,6 @@ import src.java.poker.app.hand.recognition.oneOrTwoCards.JTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.KTSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.QJSuited;
 import src.java.poker.app.hand.recognition.oneOrTwoCards.TwoSuitedHighCard;
-import src.java.poker.player.actions.PlayerAction;
 
 public class HandAnalyzerTests {
 

@@ -11,10 +11,10 @@ import src.java.poker.app.hand.recognition.count.Four24Recognizer;
 import src.java.poker.app.hand.recognition.count.FourAcesRecognizer;
 import src.java.poker.app.hand.recognition.count.JacksOrBetterRecognizer;
 import src.java.poker.app.hand.recognition.count.ThreeOfARecognizer;
+import src.java.poker.app.hand.recognition.missingcards.straight.ThreeToStraightFlushOne;
 import src.java.poker.app.hand.recognition.multiple.FullHouseRecognizer;
 import src.java.poker.app.hand.recognition.multiple.TwoPairRecognizer;
 import src.java.poker.app.hand.recognition.sequence.RoyalFlushRecognizer;
-import src.java.poker.app.hand.recognition.sequence.StraightFlushRecognizer;
 import src.java.poker.app.hand.recognition.sequence.StraightRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.card.Suit;
@@ -164,31 +164,9 @@ public class HandRecognitionTests {
 
     @Test
     public void straightFlushRecognizerTests() {
-        HandRecognizer recognizer = new StraightFlushRecognizer();
-        Hand hand = new Hand("JH JC 3S 3C 4D");
-        assertEquals(false, recognizer.recognizeHand(hand).isResult());
-        hand = new Hand("3H 4C 5S 6C 7D");
-        assertEquals(false, recognizer.recognizeHand(hand).isResult());
-        hand = new Hand("3C 4C 5C 6C 7C");
+        HandRecognizer recognizer = new ThreeToStraightFlushOne();
+        Hand hand = new Hand("7C 6D 7D 8D 3S");
         assertEquals(true, recognizer.recognizeHand(hand).isResult());
-        hand = new Hand("3S 4S 5S AS 2S");
-        assertEquals(true, recognizer.recognizeHand(hand).isResult());
-        assertEquals(5, recognizer.recognizeHand(hand).getDefiningCard().getValue());
-        hand = new Hand("3H 4C 5S AC 2D");
-        assertEquals(false, recognizer.recognizeHand(hand).isResult());
-        hand = new Hand("JH QC KS KC AD");
-        assertEquals(false, recognizer.recognizeHand(hand).isResult());
-        hand = new Hand("JD QD KD TD AD");
-        assertEquals(true, recognizer.recognizeHand(hand).isResult());
-        assertEquals(Card.ACE, recognizer.recognizeHand(hand).getDefiningCard().getValue());
-        hand = new Hand("JH QC KS TC AD");
-        assertEquals(false, recognizer.recognizeHand(hand).isResult());
-        hand = new Hand("3H 4C 5S 6C 6D");
-        assertEquals(false, recognizer.recognizeHand(hand).isResult());
-        hand = new Hand("3H 4C 8S 6C 7D");
-        assertEquals(false, recognizer.recognizeHand(hand).isResult());
-        hand = new Hand("3H 3C 5S 6C 7D");
-        assertEquals(false, recognizer.recognizeHand(hand).isResult());
     }
 
     @Test

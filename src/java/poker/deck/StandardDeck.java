@@ -1,7 +1,6 @@
 package src.java.poker.deck;
 
 import java.util.Collections;
-import java.util.List;
 
 import src.java.poker.card.Card;
 import src.java.poker.card.Suit;

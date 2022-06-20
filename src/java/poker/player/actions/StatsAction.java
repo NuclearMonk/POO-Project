@@ -25,6 +25,9 @@ public class StatsAction implements PlayerAction {
         System.out.println(LINE);
         System.out.println("Total "+app.getHandCount());
         System.out.println(LINE);
+        System.out.println(app.getSumOfBets());
+        System.out.println(app.getSumOfGains());
+        System.out.println(LINE);
         System.out.println("Credit " + app.getPlayer().getBalance()+ "(" +(app.getSumOfGains().floatValue()/app.getSumOfBets()) *100 + "%)");
         
     }

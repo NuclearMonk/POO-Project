@@ -42,30 +42,35 @@ public abstract class Player {
 	public int getCurrentBet() {
 		return currentBet;
 	}
-/**
- * 
- * @param currentBet
- */
+
+	/**
+	 * 
+	 * @param currentBet
+	 */
 	public void setCurrentBet(int currentBet) {
 		this.currentBet = currentBet;
 	}
-/**
- * @param amount to take from balance 
- */
+
+	/**
+	 * @param amount to take from balance
+	 */
 	public void chargeBetAmount(int amount) {
 		this.balance -= amount;
 	}
-/**
- * 
- * @param amount to add to the balance
- */
+
+	/**
+	 * 
+	 * @param amount to add to the balance
+	 */
 	public void creditReward(int amount) {
 		this.balance += amount;
 	}
-/**
- * Abstract Method
- * @param hand
- * @return PlayerAction
- */
+
+	/**
+	 * Abstract Method
+	 * 
+	 * @param hand
+	 * @return PlayerAction
+	 */
 	public abstract PlayerAction getAction(Hand hand);
 }
