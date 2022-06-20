@@ -55,7 +55,7 @@ public class DebugPlayer extends Player {
             } else if (next.equals("h")) {
                 ArrayList<Integer> indexes = new ArrayList<>(5);
                 while (scanner.hasNextInt()) {
-                    indexes.add(scanner.nextInt());
+                    indexes.add(scanner.nextInt()-1);
                 }
                 return new HoldCardsAction(indexes);
             } else if (next.equals("$")) {
