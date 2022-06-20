@@ -17,9 +17,12 @@ public class RangedFourOfAKindRecognizer extends FourOfAKindRecognizer {
 	 * 
 	 * @param handName         to be given to the hand
 	 * @param rewardMultiplier equal to the factor that the bet is multiplay by
+	 * @param lowValue  	   the low value of the range, inclusive
+	 * @param highValue  	   the high value of the range, inclusive
+	 * 
 	 */
 	public RangedFourOfAKindRecognizer(String handName, int rewardMultiplier, int lowValue, int highValue) {
-		super(handName, rewardMultiplier, 4);
+		super(handName, rewardMultiplier);
 		this.lowValue = lowValue;
 		this.highValue = highValue;
 	}

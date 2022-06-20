@@ -53,4 +53,9 @@ public abstract class HandRecognizer implements HandAction {
 		return null;
 	}
 
+	public Integer getFullPayReward()
+	{
+		return 5*rewardMultiplier;
+	}
+
 }

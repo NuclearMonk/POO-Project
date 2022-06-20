@@ -22,7 +22,7 @@ public abstract class Player {
 
 	/**
 	 * 
-	 * @param balance 
+	 * @param balance the players initial balance
 	 */
 	public void setBalance(int balance) {
 		this.balance = balance;
@@ -33,7 +33,7 @@ public abstract class Player {
 	/**
 	 * protected constructor
 	 * 
-	 * @param balance
+	 * @param balance the player's initial balance
 	 */
 	protected Player(int balance) {
 		this.balance = balance;
@@ -50,7 +50,7 @@ public abstract class Player {
 
 	/**
 	 * 
-	 * @param currentBet
+	 * @param currentBet the current betting amount
 	 */
 	public void setCurrentBet(int currentBet) {
 		this.currentBet = currentBet;
@@ -74,7 +74,7 @@ public abstract class Player {
 	/**
 	 * Abstract Method
 	 * 
-	 * @param hand
+	 * @param hand the hand state the player player will be reacting to
 	 * @return PlayerAction
 	 */
 	public abstract PlayerAction getAction(Hand hand);

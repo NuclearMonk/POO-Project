@@ -20,7 +20,7 @@ public abstract class ToStraight extends HandRecognizer {
 	/**
 	 * Protected constructor
 	 * 
-	 * @param toAStraightCount
+	 * @param toAStraightCount the number of members of the straight that we have
 	 */
 	protected ToStraight(int toAStraightCount) {
 		super("TO A STRAIGHT", 0);
@@ -45,7 +45,7 @@ public abstract class ToStraight extends HandRecognizer {
 
 	/**
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return List<Integer> of the cards' values that make the straight
 	 */
 	protected static List<Integer> getStraightMembers(Hand hand) {

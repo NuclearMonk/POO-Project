@@ -8,10 +8,10 @@ public abstract class FourOfAKindRecognizer extends OfAKindRecognizer{
 
 	/**
 	 * protected Constructor of the class that set the count to 4
-	 * @param handName
-	 * @param rewardMultiplier
+	 * @param handName the name of the hand 
+	 * @param rewardMultiplier the multiplier for successfully achieving the hand 
 	 */
-    protected FourOfAKindRecognizer(String handName, int rewardMultiplier, int count) {
+    protected FourOfAKindRecognizer(String handName, int rewardMultiplier) {
         super(handName, rewardMultiplier, 4);
     }
     

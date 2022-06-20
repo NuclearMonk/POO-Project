@@ -10,6 +10,9 @@ import src.java.poker.card.Card;
  * A Class that holds a deck of cards
  */
 public abstract class Deck {
+	/**
+	 * The cards in the deck
+	 */
 	protected ArrayList<Card> cards = new ArrayList<>();
 
 	/**
@@ -51,7 +54,7 @@ public abstract class Deck {
 	/**
 	 * 
 	 * @return one card
-	 * @throws OutOfCardsException
+	 * @throws OutOfCardsException if the deck is out of cards
 	 */
 	protected Card draw() throws OutOfCardsException {
 		if (numberOfRemainingCards() <= 0)

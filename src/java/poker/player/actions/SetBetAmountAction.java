@@ -24,11 +24,17 @@ public class SetBetAmountAction implements PlayerAction {
 
 	public void doAction(App app) {
 		if (amountToSet < MIN_BET || amountToSet > MAX_BET) {
-			System.out.println("b: illegal amount");
+			if(app.getStream()!=null)
+			{
+				app.getStream().println("b: illegal amount");
+			}
 		} else {
 			app.getPlayer().setCurrentBet(amountToSet);
-			String output = "The player is currently betting " + app.getPlayer().getCurrentBet();
-			System.out.println(output);
+			if(app.getStream()!=null)
+			{
+				String output = "The player is currently betting " + app.getPlayer().getCurrentBet();
+				app.getStream().println(output);
+			}
 		}
 
 	}

@@ -28,13 +28,13 @@ public class AppFactory {
             File playerFile = new File(args[2]);
             File cardFile = new File(args[3]);
             try {
-                return new App(new DebugPlayer(playerFile, Integer.parseInt(args[1])), new DebugDeck(cardFile));
+                return new App(new DebugPlayer(playerFile, Integer.parseInt(args[1])), new DebugDeck(cardFile),System.out);
             } catch (FileNotFoundException e) {
                 return null;
             }
         } else if (args[0].equals("-s")) {
             return new App(new SimulationPlayer(Integer.parseInt(args[1]), Integer.parseInt(args[2]),
-                    Integer.parseInt(args[3])), new StandardDeck());
+                    Integer.parseInt(args[3])), new StandardDeck(),null);
 
         }
         return null;

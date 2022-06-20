@@ -37,7 +37,7 @@ public class SimulationPlayer extends Player {
     public PlayerAction getAction(Hand hand) {
         if (numberOfDeals < -1) {
             return null;
-        } else if (numberOfDeals < 0) {
+        } else if (numberOfDeals <= 0) {
             numberOfDeals--;
             return new StatsAction();
         }

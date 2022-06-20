@@ -5,6 +5,9 @@ package src.java.poker.app.hand.recognition;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.player.actions.PlayerAction;
 
+/**
+ * interface for returning advice on what to do with a given poker hand
+ */
 public interface HandAction {
 	/**
 	 * 

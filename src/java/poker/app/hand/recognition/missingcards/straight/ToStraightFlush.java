@@ -18,7 +18,7 @@ public class ToStraightFlush extends ToStraight {
 	/**
 	 * public constructor
 	 * 
-	 * @param toAStraightCount
+	 * @param toAStraightCount the number of cards that match the pattern for a successful match
 	 */
 
 	public ToStraightFlush(int toAStraightCount) {

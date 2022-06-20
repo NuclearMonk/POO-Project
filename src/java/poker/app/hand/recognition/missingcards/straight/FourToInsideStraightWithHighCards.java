@@ -11,6 +11,9 @@ import src.java.poker.card.Card;
  *
  */
 public abstract class FourToInsideStraightWithHighCards extends FourToStraight {
+	/**
+	 * the number of high cards needed for a successful match
+	 */
 	protected final int numberOfHighCards;
 
 	/**

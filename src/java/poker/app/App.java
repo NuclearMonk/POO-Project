@@ -1,7 +1,7 @@
 package src.java.poker.app;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import src.java.poker.app.hand.Hand;
 import src.java.poker.app.hand.recognition.FlushRecognizer;
@@ -26,6 +26,15 @@ import src.java.poker.player.actions.PlayerAction;
  */
 public class App {
 	private final Player player;
+	private final PrintStream stream;
+
+	/**
+	 * 
+	 * @return the output stream, may be null to mute the output logs
+	 */
+	public PrintStream getStream() {
+		return stream;
+	}
 
 	/**
 	 * 
@@ -87,10 +96,6 @@ public class App {
 
 	private ArrayList<HandRecognizer> recognizers;
 
-	public List<HandRecognizer> getRecognizers() {
-		return recognizers;
-	}
-
 	private Integer handCount = 0;
 	private Integer sumOfGains = 0;
 	private Integer sumOfBets = 0;
@@ -113,7 +118,7 @@ public class App {
 
 	/**
 	 * 
-	 * @param handCount
+	 * @param handCount the number of hands that have been played
 	 */
 	public void setHandCount(Integer handCount) {
 		this.handCount = handCount;
@@ -132,10 +137,12 @@ public class App {
 	 * 
 	 * @param player who will play
 	 * @param deck   which will be used to deal cards
+	 * @param stream output stream of logs, set to null to mute optional outputs
 	 */
-	public App(Player player, Deck deck) {
+	public App(Player player, Deck deck, PrintStream stream) {
 		this.player = player;
 		this.deck = deck;
+		this.stream = stream;
 		recognizers = new ArrayList<>();
 		StatsManager.addStatsItem(9, "Royal Flush");
 		HandRecognizer hr = new RoyalFlushRecognizer();
@@ -210,17 +217,28 @@ public class App {
 		for (HandRecognizer handRecognizer : recognizers) {
 			if (handRecognizer.recognizeHand(this.hand).isResult()) {
 				StatsManager.increaseOccurrences(handRecognizer);
-				int amount = handRecognizer.getRewardMultiplier() * ongoingBetAmount;
-				System.out.println("AAA:"+ amount);
-				sumOfGains += amount;
-				this.player.creditReward(amount);
-				System.out.println("Player Wins with " + handRecognizer.getHandName() + " and his credit is: "
-						+ this.player.getBalance());
+				if (ongoingBetAmount == 5) {
+					int amount = handRecognizer.getFullPayReward();
+					sumOfGains += amount;
+					this.player.creditReward(amount);
+				} else {
+					int amount = handRecognizer.getRewardMultiplier() * ongoingBetAmount;
+					sumOfGains += amount;
+					this.player.creditReward(amount);
+				}
+				if(stream!=null)
+				{
+					stream.println("Player Wins with " + handRecognizer.getHandName() + " and his credit is: "
+							+ this.player.getBalance());
+				}
 				this.deck.shuffle();
 				return;
 			}
 		}
 		this.deck.shuffle();
-		System.out.println("Player Loses and his credit is: " + this.player.getBalance());
+		if(stream!=null)
+		{
+			stream.println("Player Loses and his credit is: " + this.player.getBalance());
+		}
 	}
 }

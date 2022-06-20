@@ -19,9 +19,9 @@ public abstract class OfAKindRecognizer extends HandRecognizer {
 	/**
 	 * protected Constructor
 	 * 
-	 * @param handName
-	 * @param rewardMultiplier
-	 * @param count
+	 * @param handName the string name of the hand
+	 * @param rewardMultiplier the reward multiplier to apply to the bet if the player gets this hand
+	 * @param count the number of cards of a kind the recognizer matches
 	 */
 	protected OfAKindRecognizer(String handName, int rewardMultiplier, int count) {
 		super(handName, rewardMultiplier);

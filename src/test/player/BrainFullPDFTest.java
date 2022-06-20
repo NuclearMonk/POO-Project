@@ -10,6 +10,9 @@ import src.java.poker.app.hand.Hand;
 import src.java.poker.player.Brain;
 import src.java.poker.player.actions.HoldCardsAction;
 
+/**	
+ * Tests for all difficult hands in the pdf
+ */
 public class BrainFullPDFTest {
 	@Test
 	public void T1() {

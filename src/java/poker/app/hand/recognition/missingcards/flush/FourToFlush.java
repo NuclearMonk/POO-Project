@@ -1,5 +1,8 @@
 package src.java.poker.app.hand.recognition.missingcards.flush;
 
+/**
+ * A recognizer that matches when the hand contains has 4 cards with a  matching suit
+ */
 public class FourToFlush extends ToFlush {
 
 	/**

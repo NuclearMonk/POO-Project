@@ -26,7 +26,7 @@ public class Hand {
 	 * 
 	 * @param deck to draw cards from
 	 * @throws NullPointerException when deck is null
-	 * @throws OutOfCardsException
+	 * @throws OutOfCardsException if the deck is out of cards
 	 */
 	public Hand(Deck deck) throws NullPointerException, OutOfCardsException {
 		if (null == deck)

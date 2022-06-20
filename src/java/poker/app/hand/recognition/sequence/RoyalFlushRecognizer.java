@@ -34,4 +34,10 @@ public class RoyalFlushRecognizer extends StraightFlushRecognizer {
 		return new HandRecognitionResult(false, null);
 	}
 
+	@Override
+	public Integer getFullPayReward() {
+		return 4000;
+	}
+
+
 }
