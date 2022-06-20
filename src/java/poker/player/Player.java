@@ -3,6 +3,11 @@ package src.java.poker.player;
 import src.java.poker.app.hand.Hand;
 import src.java.poker.player.actions.PlayerAction;
 
+/**
+ * Abstract player
+ * 
+ *
+ */
 public abstract class Player {
 
 	protected int balance;
@@ -17,7 +22,7 @@ public abstract class Player {
 
 	/**
 	 * 
-	 * @param balance
+	 * @param balance 
 	 */
 	public void setBalance(int balance) {
 		this.balance = balance;

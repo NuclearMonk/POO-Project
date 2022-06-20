@@ -10,7 +10,11 @@ import src.java.poker.app.hand.recognition.HandRecognizer;
 import src.java.poker.card.Card;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
-
+/**
+ * 
+ * Straight Recognizer
+ *
+ */
 public class StraightRecognizer extends HandRecognizer {
 	/**
 	 * public constructor that set handName to "STRAIGHT" and rewardMultiplier
@@ -29,7 +33,7 @@ public class StraightRecognizer extends HandRecognizer {
 	}
 	/**
 	 * recognize if the hand has "STRAIGHT"
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 

@@ -1,5 +1,9 @@
 package src.java.poker.app.hand.recognition.count;
-
+/**
+ * 
+ *  Two Of A Kind Recognizer
+ *
+ */
 public class TwoOfAKindRecognizer extends OfAKindRecognizer {
 	/**
 	 * public Constructor of the Class that set count to 2

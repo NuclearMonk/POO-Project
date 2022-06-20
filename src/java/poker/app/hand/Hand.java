@@ -123,7 +123,7 @@ public class Hand {
 	/**
 	 *
 	 * @param value to search for in a hand
-	 * @return returnValue List<Card> that matches the value
+	 * @return returnValue List of Card that matches the value
 	 */
 	public List<Card> findCards(Integer value) {
 		ArrayList<Card> returnValue = new ArrayList<>();
@@ -138,7 +138,7 @@ public class Hand {
 	/**
 	 * 
 	 * @param value the Value to be looked for in hand
-	 * @return returnValue List<Integer> of the indexes of the cards that matches
+	 * @return returnValue List of Integer of the indexes of the cards that matches
 	 *         the value giving by the value Parameter
 	 */
 
@@ -155,7 +155,7 @@ public class Hand {
 	/**
 	 * 
 	 * @param suit the suit to be looked for in the hand
-	 * @return returnValue List<Integer>of the indexes of the cards that matches the
+	 * @return returnValue List of Integer of the indexes of the cards that matches the
 	 *         Suit giving by the suit parameter
 	 */
 	public List<Integer> getCardIndex(Suit suit) {
@@ -172,7 +172,7 @@ public class Hand {
 	 * 
 	 * @param value of the card to be searched for
 	 * @param suit  the suit to be looked for in the hand
-	 * @return returnValue List<Integer> of the indexes of the cards that matches
+	 * @return returnValue List of Integer of the indexes of the cards that matches
 	 *         the giving parameters
 	 */
 	public List<Integer> getCardIndex(Integer value, Suit suit) {
@@ -188,7 +188,7 @@ public class Hand {
 	/**
 	 * 
 	 * @param suit to be looked for in the hand
-	 * @return returnValue List<Card> of the matching cards that matches the giving
+	 * @return returnValue List of Card of the matching cards that matches the giving
 	 *         parameters
 	 */
 
@@ -206,7 +206,7 @@ public class Hand {
 	 * 
 	 * @param value of the card to be searched for
 	 * @param suit  of the card to be searched for
-	 * @return returnValue List<Card> of the matching cards that matches the giving
+	 * @return returnValue List of Card of the matching cards that matches the giving
 	 *         parameters
 	 */
 	public List<Card> findCards(Integer value, Suit suit) {
@@ -231,7 +231,7 @@ public class Hand {
 
 	/**
 	 * 
-	 * @return List<Card> of the hand
+	 * @return List of Card of the hand
 	 */
 	public List<Card> cardsAsList() {
 		return Arrays.asList(this.cards.clone());

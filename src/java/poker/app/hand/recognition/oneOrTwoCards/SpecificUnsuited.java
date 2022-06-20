@@ -53,7 +53,7 @@ public abstract class SpecificUnsuited extends HandRecognizer {
 	 * Recognizing Where there are specific cards defined by highCard and lowCard
 	 * attributes in the hand
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override
@@ -78,7 +78,7 @@ public abstract class SpecificUnsuited extends HandRecognizer {
 	}
 
 	/**
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold the Cards that match the class criterion
 	 */
 	@Override

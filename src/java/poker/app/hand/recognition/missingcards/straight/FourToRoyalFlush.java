@@ -13,7 +13,7 @@ public class FourToRoyalFlush extends FourToStraightFlush {
 	/**
 	 * Recognizing Where there is a Royal Flush in the hand that misses one card
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
     @Override

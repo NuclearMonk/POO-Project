@@ -54,7 +54,7 @@ public abstract class SpecificSuited extends HandRecognizer {
 	/**
 	 * 
 	 * 
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold the Cards that match the class criterion
 	 */
 	@Override
@@ -69,7 +69,7 @@ public abstract class SpecificSuited extends HandRecognizer {
 	 * Recognizing Where there are specific cards defined by highCard and lowCard
 	 * attributes and that they have the same suite
 	 * 
-	 * @param Hand to be checked
+	 * @param hand to be checked
 	 * @return HandRecognitionResult
 	 */
 	@Override

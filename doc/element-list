@@ -1,0 +1,15 @@
+src.java.poker.app
+src.java.poker.app.factories
+src.java.poker.app.hand
+src.java.poker.app.hand.recognition
+src.java.poker.app.hand.recognition.count
+src.java.poker.app.hand.recognition.missingcards.flush
+src.java.poker.app.hand.recognition.missingcards.straight
+src.java.poker.app.hand.recognition.multiple
+src.java.poker.app.hand.recognition.oneOrTwoCards
+src.java.poker.app.hand.recognition.sequence
+src.java.poker.app.stats
+src.java.poker.card
+src.java.poker.deck
+src.java.poker.player
+src.java.poker.player.actions

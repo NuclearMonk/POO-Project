@@ -9,7 +9,7 @@ public class SetBetAmountAction implements PlayerAction {
 
 	/**
 	 * 
-	 * @param amount To bet on
+	 * @param amountToSet 
 	 */
 	public SetBetAmountAction(Integer amountToSet) {
 		this.amountToSet = amountToSet;

@@ -13,7 +13,11 @@ import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 import src.java.poker.player.actions.SetBetAmountAction;
 import src.java.poker.player.actions.StatsAction;
-
+/**
+ * 
+ * Debug Player 
+ *
+ */
 public class DebugPlayer extends Player {
     private Scanner scanner;
 /**
@@ -31,7 +35,7 @@ public class DebugPlayer extends Player {
     }
 /**
  * 
- * @param Hand to give the action to
+ * @param hand to give the action to
  * @return PlayerAction 
  */
     @Override

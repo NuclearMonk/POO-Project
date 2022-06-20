@@ -48,6 +48,10 @@ import src.java.poker.app.hand.recognition.sequence.StraightRecognizer;
 import src.java.poker.player.actions.HoldCardsAction;
 import src.java.poker.player.actions.PlayerAction;
 
+/**
+ * The Strategy guide behind the simPlayer
+ *
+ */
 public class Brain {
 	private List<HandRecognizer> recognizers;
 
@@ -122,24 +126,28 @@ public class Brain {
 		recognizers.add(new KQ());
 		recognizers.add(new KJ());
 
-        /* 29 */
-        recognizers.add(new Ace());  
-        /* 30 */
-        recognizers.add(new KTSuited());   
-        /* 31 */
-        recognizers.add(new JackQueenKing());  
-        /* 32 */
-        recognizers.add(new FourToInsideStraightWithNoHighCards());
-        /* 33 */
-        recognizers.add(new ThreeToFlushNoHighCards());
-    }
-
-    public PlayerAction getAction(Hand hand) {
-        for (HandRecognizer handRecognizer : this.recognizers) {
-            if (handRecognizer.recognizeHand(hand).isResult()) {
-                return handRecognizer.getAdviceAction(hand);
-            }
-        }
-        return new HoldCardsAction(new ArrayList<>());
-    }
+		/* 29 */
+		recognizers.add(new Ace());
+		/* 30 */
+		recognizers.add(new KTSuited());
+		/* 31 */
+		recognizers.add(new JackQueenKing());
+		/* 32 */
+		recognizers.add(new FourToInsideStraightWithNoHighCards());
+		/* 33 */
+		recognizers.add(new ThreeToFlushNoHighCards());
+	}
+/**
+ * 
+ * @param hand to be checked 
+ * @return PlayerAction
+ */
+	public PlayerAction getAction(Hand hand) {
+		for (HandRecognizer handRecognizer : this.recognizers) {
+			if (handRecognizer.recognizeHand(hand).isResult()) {
+				return handRecognizer.getAdviceAction(hand);
+			}
+		}
+		return new HoldCardsAction(new ArrayList<>());
+	}
 }

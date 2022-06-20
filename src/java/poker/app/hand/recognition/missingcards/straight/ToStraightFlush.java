@@ -42,7 +42,7 @@ public class ToStraightFlush extends ToStraight {
 	}
 
 	/**
-	 * @param Hand to give the action according to
+	 * @param hand to give the action according to
 	 * @return PlayerAction to hold cards that matches the class criterion
 	 */
 
