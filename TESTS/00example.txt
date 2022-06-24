@@ -1,0 +1,33 @@
+java -jar pooProject.jar -d 1000 00cmd-file.txt 00card-file.txt
+The player is currently betting 5
+player's hand 2H KH 2S JS 6D
+player's Hand 2H JH 2S TC 9H
+Player Loses and his credit is: 995
+player's credit is 995
+b: illegal amount
+The player is currently betting 5
+player's hand QC AS 8H 8D 7S
+player's credit is 990
+player's Hand 3H 7D 8H 8D 5S
+Player Loses and his credit is: 990
+The player is currently betting 5
+player's hand 7D 4D 5S 7S 3H
+player should hold 1 4
+player's Hand 7D 4H JS 7S 4S
+Player Wins with TWO PAIR and his credit is: 990
+Hand nb
+------------------------
+Jacks Or Better 0
+Two Pair 1
+Three of a Kind 0
+Straight 0
+Flush 0
+Full house 0
+Four Of a Kind 0
+Straight Flush 0
+Royal Flush 0
+Other 2
+------------------------
+Total 3
+------------------------
+Credit 990(33.333336%)
