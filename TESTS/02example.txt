@@ -1,0 +1,30 @@
+java -jar pooProject.jar -d 1000 02cmd-file.txt 02card-file.txt
+The player is currently betting 1
+player's hand AH AD AS 2C 2S
+player's Hand AH AD AS KH KS
+Player Wins with FULL HOUSE and his credit is: 1009
+player's credit is 1009
+The player is currently betting 5
+player's hand QS QH JH AH 2C
+player's Hand QS QH QS AH 3S
+Player Wins with THREE OF A KIND and his credit is: 1019
+The player is currently betting 5
+player's hand 4C 7D 8D 9D TS
+player's Hand 4C 4H AS 9D AH
+Player Wins with TWO PAIR and his credit is: 1019
+Hand nb
+------------------------
+Jacks Or Better 0
+Two Pair 1
+Three of a Kind 1
+Straight 0
+Flush 0
+Full house 1
+Four Of a Kind 0
+Straight Flush 0
+Royal Flush 0
+Other 0
+------------------------
+Total 3
+------------------------
+Credit 1019(272.72726%)

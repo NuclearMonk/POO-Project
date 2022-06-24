@@ -1,0 +1,32 @@
+The player is currently betting 5
+player's hand AH KH QH JH TH
+player's Hand AH KH QH JH TH
+Player Wins with ROYAL FLUSH and his credit is: 4995
+player's credit is 4995
+The player is currently betting 5
+player's hand 8S 7S 6S 5S AS
+player's credit is 4990
+player's Hand 4S TC 6S 5S 9H
+Player Loses and his credit is: 4990
+The player is currently betting 5
+player's hand QC AS 8H 8D 7S
+player should hold 3 4
+player's Hand QC 3H 7D 8D 5S
+Player Loses and his credit is: 4985
+Hand nb
+------------------------
+Jacks Or Better 0
+Two Pair 0
+Three of a Kind 0
+Straight 0
+Flush 0
+Full house 0
+Four Of a Kind 0
+Straight Flush 0
+Royal Flush 1
+Other 2
+------------------------
+Total 3
+------------------------
+Credit 4985(26666.666%)
+PS C:\Users\Lenovo\Desktop\Group39\TESTS>

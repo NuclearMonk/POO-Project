@@ -1,0 +1,34 @@
+java -jar pooProject.jar -d 1000 03cmd-file.txt 03card-file.txt
+The player is currently betting 5
+player's hand AH 3S 6S 9H JC
+player's Hand AH 3S QC 8S 7S
+Player Loses and his credit is: 995
+player's credit is 995
+The player is currently betting 5
+player's hand 3S TC KS 2H 3H
+player's Hand 3S TC 4H 2H 4S
+Player Loses and his credit is: 990
+The player is currently betting 5
+player's hand 5C 3D KD QD AD
+player's Hand 5C 3D 8D QD QC
+Player Wins with JACKS OR BETTER and his credit is: 990
+The player is currently betting 5
+player's hand AS 8H 8D 7S 3H
+player's Hand AS 8H 8D 7D 5S
+Player Loses and his credit is: 985
+Hand nb
+------------------------
+Jacks Or Better 1
+Two Pair 0
+Three of a Kind 0
+Straight 0
+Flush 0
+Full house 0
+Four Of a Kind 0
+Straight Flush 0
+Royal Flush 0
+Other 3
+------------------------
+Total 4
+------------------------
+Credit 985(25.0%)
